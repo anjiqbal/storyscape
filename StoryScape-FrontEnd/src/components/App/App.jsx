@@ -1,18 +1,19 @@
 import { useState } from 'react'
+import Story from '../storyCollection/story/story'
+import StoryCard from '../storyCollection/storyCard/storyCard'
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <>
       <div>
        "Hello" 
       </div>
-      <h1>This is our APP</h1>
+      <h1>StoryScape</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      <Story  />
+      <StoryCard />
       </div>
      </>
   )
