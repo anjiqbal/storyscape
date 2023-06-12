@@ -1,15 +1,18 @@
 # StoryScape-Frontend
 
-Work in progress. 
+<h2> Work in progress. </h2>
 
-To be done:
+<ul>
+  
+  <h4>To be done: </h4>
 <br>
-Linking Story to story cards and making each story card clickable so it moves you onto a single in depth story page and giving making it be populated by the search term 
+<li>Linking Story to story cards and making each story card clickable so it moves you onto a single in depth story page and giving making it be populated by the search term </li>
 <br>
-Space out the nav bar and give it link functionality to move throught the site.
+<li> Space out the nav bar and give it link functionality to move throught the site. </li>
 <br>
-Make the search work with dummy data
+<li> Make the search work with dummy data. </li>
 <br>
-Dummy data from a Json file or set up bank end
+<li> Dummy data from a Json file or set up bank end. </li>
 <br>
-Complete upload form and give it dummy back end funtionality 
+<li> Complete upload form and give it dummy back end funtionality. </li>
+</ul>
