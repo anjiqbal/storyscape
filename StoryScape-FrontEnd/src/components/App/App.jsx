@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import UploadForm from '../uploadForm/uploadForm'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,7 +14,9 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        
       </div>
+      <UploadForm />
      </>
   )
 }

@@ -1,0 +1,25 @@
+//this is our main component for the upload form
+
+import React from 'react'
+import './uploadForm.css'
+import VideoUpload from './videoUpload/videoUpload'
+import ImageUpload from './imageUpload/imageUpload'
+import TextUpload from './textUpload/textUpload'
+//import the location input component
+import AudioUpload from './audioUpload/audioUpload'
+
+function UploadForm() {
+
+  return (
+    <div className=''>
+    <VideoUpload />
+    <ImageUpload />
+    <TextUpload />
+    {/* Location - tell us where the story occurred */}
+    <AudioUpload />
+    
+    </div>
+  )
+}
+
+export default UploadForm
