@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './navBar.css';
+//logos
 import { FcHome } from 'react-icons/fc';
 import { FcGlobe } from 'react-icons/fc';
 import { BsFillEnvelopeFill } from 'react-icons/bs';
