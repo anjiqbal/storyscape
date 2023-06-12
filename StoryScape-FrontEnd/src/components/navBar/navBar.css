@@ -1,23 +1,31 @@
 .nav {
     background-color: #8DB38B;
-}
-
-.brand {
-    justify-content: left;
+  }
+  
+  .navBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .brand {
     color: #fff;
     font-size: 1.5em;
     font-weight: bold;
     text-decoration: none;
-}
+  }
 
-.navBarContainer {
+  .profileLink {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
   }
   
   .linkContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
   }
   
@@ -27,3 +35,4 @@
     padding: 0 10px;
     color: black;
   }
+  
