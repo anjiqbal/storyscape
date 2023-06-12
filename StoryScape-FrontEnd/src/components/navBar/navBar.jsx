@@ -8,15 +8,15 @@ export default function NavBar() {
     return (
 <Navbar className="nav" collapseOnSelect expand="lg" >
 <Container className="navBarContainer">
-  <Navbar.Brand href="#home">Story Scape</Navbar.Brand>
+  <Navbar.Brand className='brand' href="#home">Story Scape</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#map">Map</Nav.Link>
-      <Nav.Link href="#post">Post</Nav.Link>
-      <Nav.Link href="#stories">Stories</Nav.Link>
-      <Nav.Link href="#ourstory">Our Story</Nav.Link>
+    <Nav className="linkContainer">
+      <Nav.Link className='navElement' href="#home">Home</Nav.Link>
+      <Nav.Link className='navElement' href="#map">Map</Nav.Link>
+      <Nav.Link className='navElement' href="#post">Post</Nav.Link>
+      <Nav.Link className='navElement' href="#stories">Stories</Nav.Link>
+      <Nav.Link className='navElement' href="#ourstory">Our Story</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Container>
