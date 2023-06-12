@@ -7,6 +7,7 @@ import ImageUpload from './imageUpload/imageUpload'
 import TextUpload from './textUpload/textUpload'
 //import the location input component
 import AudioUpload from './audioUpload/audioUpload'
+import StoryUpload from './StoryUpload/StoryUpload'
 
 function UploadForm() {
 
@@ -17,6 +18,7 @@ function UploadForm() {
     <TextUpload />
     {/* Location - tell us where the story occurred */}
     <AudioUpload />
+    <StoryUpload/>
     
     </div>
   )

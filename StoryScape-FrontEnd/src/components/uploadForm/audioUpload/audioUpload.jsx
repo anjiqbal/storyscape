@@ -2,26 +2,7 @@ import React, { useEffect } from 'react';
 import './audioUpload.css';
 
 function AudioUpload() {
-  /* Audio enable & disable switch */
-  useEffect(() => {
-    const switchElement = document.getElementById("audioUploadSwitch");
-    switchElement.addEventListener("change", handleSwitch);
-    return () => switchElement.removeEventListener("change", handleSwitch);
-  }, []);
-
-  const handleSwitch = (e) => {
-    const value = e.target.checked;
-    const sampleUrl = "https://upload.wikimedia.org/wikipedia/commons/f/f3/Anthem_of_Europe_%28US_Navy_instrumental_short_version%29.ogg";
-    if (value) {
-      document.getElementById("track").src = sampleUrl;
-      document.getElementById("track").load();
-      document.querySelector("div.player").classList.toggle('d-none');
-      document.querySelector(".file-upload-wrapper").classList.toggle('d-none');
-    } else {
-      document.querySelector("div.player").classList.toggle('d-none');
-      document.querySelector(".file-upload-wrapper").classList.toggle('d-none');
-    }
-  };
+ 
 
   /* upload audio file */
   const handleFiles = (event) => {
@@ -141,10 +122,7 @@ function AudioUpload() {
       <div className="row">
         <div className="col-md-12">
           <h1>Audio Upload</h1>
-          <div className="custom-control custom-switch">
-            <input type="checkbox" className="custom-control-input" id="audioUploadSwitch" />
-            <label className="custom-control-label" htmlFor="audioUploadSwitch">Enable Audio</label>
-          </div>
+         
           <div className="file-upload-wrapper">
             <label htmlFor="audioFile">Choose audio file</label>
             <input type="file" id="audioFile" onChange={handleFiles} accept="audio/*" />
