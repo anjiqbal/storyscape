@@ -1,11 +1,12 @@
-body{
 
+body{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     color: #f3f3fa;
     font-family: 'LATO' ,sans-serif;
+    
   }
   
   h2{
@@ -18,11 +19,12 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 450px;
+    width: 800px;
     max-width: 100%;
     padding: 25px;
     border: transparent;
     border-radius: 3px;
+    border: 2px black solid;
     
   }
 

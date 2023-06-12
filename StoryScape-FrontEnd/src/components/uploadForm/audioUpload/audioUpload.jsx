@@ -1,9 +1,8 @@
-// import React, { useEffect } from 'react';
+import React, {useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './audioUpload.css';
 
 function AudioUpload() {
- 
-
   /* upload audio file */
   const handleFiles = (event) => {
     const files = event.target.files;

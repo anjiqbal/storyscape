@@ -1,0 +1,15 @@
+textarea {
+    resize: none;
+    border-radius: 8%;
+    padding: 5px;
+    margin: 5px;
+}
+
+#count_message {
+  background-color: smoke;
+  color: #ffffff;
+  margin-top: -20px;
+  margin-right: 5px;
+  border: 2px black solid;
+/* border for testing and css alignment */
+}

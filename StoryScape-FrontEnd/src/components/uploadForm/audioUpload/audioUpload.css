@@ -2,11 +2,11 @@
 
 body {
   /* vertically center for content */
-  background: rgb(91, 136, 32);
   min-height: 100vh;
   display: flex;
   align-items: center;
   font-family: 'Roboto', serif;
+  justify-content: center;
 }
 
 .progress {
