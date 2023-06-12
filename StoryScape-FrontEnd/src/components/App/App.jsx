@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import Story from '../storyCollection/story/story'
+import StoryCard from '../storyCollection/storyCard/storyCard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,12 +11,16 @@ function App() {
     navigate("/profileOther");
     //We set the state to input because setPokemonName has not yet updated the state to include the new input
   }
+ 
+
   return (
     <>
       <div>
       Hello
       </div>
-      <h1>This is our APP</h1>
+      <h1>StoryScape</h1>
+      <Story  />
+      <StoryCard />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -33,6 +39,7 @@ function App() {
         <button type="submit">Search</button>
       </form>
     </section>
+      
      </>
   )
 }
