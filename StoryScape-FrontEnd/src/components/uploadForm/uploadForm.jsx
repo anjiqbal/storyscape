@@ -1,6 +1,6 @@
 //this is our main component for the upload form
 
-import React from 'react'
+// import React from 'react'
 import './uploadForm.css'
 import VideoUpload from './videoUpload/videoUpload'
 import ImageUpload from './imageUpload/imageUpload'
@@ -12,7 +12,7 @@ import StoryUpload from './StoryUpload/StoryUpload'
 function UploadForm() {
 
   return (
-    <div className=''>
+    <div className='user-upload-container'>
     <VideoUpload />
     <ImageUpload />
     <TextUpload />

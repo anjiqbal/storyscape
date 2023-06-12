@@ -4,8 +4,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background:linear-gradient(to right, #D50000,#b06ab3);
-    color: #d7d7ef;
+    color: #f3f3fa;
     font-family: 'LATO' ,sans-serif;
   }
   
@@ -13,6 +12,19 @@ body{
     margin: 50px 0;
   }
   
+  .user-upload-container{
+    background: rgb(166,171,162);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    max-width: 100%;
+    padding: 25px;
+    border: transparent;
+    border-radius: 3px;
+    
+  }
 
   .file-drop-area{
   
@@ -38,6 +50,13 @@ body{
     font-size: 12px;
     text-transform: uppercase;
   
+  }
+
+  .choose-file-button:hover{
+    background-color: rgba(236, 236, 236, 0.769);
+    color:black;
+    border:1px solid rgba(255,255,255,0.15);
+    cursor: pointer;
   }
   
   .file-message{
