@@ -7,10 +7,8 @@ function App() {
 
   return (
     <>
-      <div>
-       "Hello" 
-      </div>
-      <h1>StoryScape</h1>
+    <h1>StoryScape</h1>
+    <h2>Preserve,Share,Inspire: Your Past, Our Future</h2>
       <div className="card">
       <Story  />
       <StoryCard />
