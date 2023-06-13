@@ -8,6 +8,7 @@ function DatePickerComponent() {
   return (
     <div>
       <DatePicker
+      placeholderText= "Select a date"
         selected={startDate}
         onChange={(date) => setStartDate(date)}
       />

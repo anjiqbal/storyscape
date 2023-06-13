@@ -8,6 +8,8 @@ import TextUpload from './textUpload/textUpload'
 //import the location input component
 import AudioUpload from './audioUpload/audioUpload'
 import StoryUpload from './StoryUpload/StoryUpload'
+import DatePickerComponent from './datePicker/datePickerForm'
+import LocationInput from './locationInput/locationInput'
 
 function UploadForm() {
 
@@ -19,7 +21,8 @@ function UploadForm() {
     {/* Location - tell us where the story occurred */}
     <AudioUpload />
     <StoryUpload/>
-    
+    <DatePickerComponent />
+    <LocationInput />
     </div>
   )
 }
