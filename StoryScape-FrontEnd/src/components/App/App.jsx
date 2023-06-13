@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Story from '../storyCollection/story/story'
 import StoryCard from '../storyCollection/storyCard/storyCard'
+import StoryCollection from '../storyCollection/storyCollection';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
       <h1>StoryScape</h1>
       <Story  />
       <StoryCard />
+      <StoryCollection />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
