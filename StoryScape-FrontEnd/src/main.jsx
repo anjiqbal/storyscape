@@ -4,6 +4,7 @@ import App from './components/App/App.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './components/login/login.jsx';
 import SignUp from './components/signUp/signUp.jsx';
+import UploadForm from './components/uploadForm/uploadForm.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
@@ -12,8 +13,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route index path="/" element={<App />} />
         <Route path="login" element={<Login />} />
         <Route path="signUp" element={<SignUp />} />
+        <Route path="uploadForm" element={<UploadForm />} />
         {/* <Route path="" element={<CardDetails />} />
-        <Route path="" element={<CardDetails />} />
         <Route path="" element={<CardDetails />} /> */}
       </Routes>
     </BrowserRouter>
