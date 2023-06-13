@@ -1,9 +1,25 @@
 import React, {useState} from 'react'
-import './storyUpload.css'
+// import './storyUpload.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 function StoryUpload() {
+  const [show, setShow] = useState(false);
+  const [description, setDescription] = useState('');
+
   const [text, setText] = useState('');
   const max_text_length = 40000;
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  function handleCloseSave() {
+    setDescription(document.getElementById("exampleForm.ControlTextarea1").value);
+    setShow(false);
+        }
+console.log(description);
 
   const handleChange = (event) => {
     const text_length = event.target.value.length;
@@ -12,20 +28,48 @@ function StoryUpload() {
     document.getElementById("count_message").innerHTML = remaining_text + " characters remaining";
   };
   return (
-    <div>  
-        <div className="col-sm-4 well">
-        <form acceptCharset="UTF-8" action="" method="POST">
-            <textarea className="form-control" id="storyText" name="text" 
-               maxLength="40000" placeholder="Tell your story" rows="5" value={text} onChange={handleChange}></textarea>
-            <span className="pull-right label label-default" id="count_message">{text.length} / {max_text_length}</span>
-              {/* <br/>
-            <button className="btn btn-info" type="submit">Post New Message</button> */}
-        </form>
-    </div>
-      
-    
-    </div>
-  )
+    <>
+
+    <div className="col-sm-4 well">
+      <form acceptCharset="UTF-8" action="" method="POST">
+        <textarea readOnly className="form-control" id="text" name="text" maxLength="40000" placeholder="My story is about" rows="5" value={description} ></textarea>
+
+      </form>
+
+      <Button variant="primary" onClick={handleShow}>
+          EDIT
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Description</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Type your story</Form.Label>
+              <Form.Control as="textarea" rows={4} onChange={handleChange} />
+              <span className="pull-right label label-default" id="count_message">{text.length} / {max_text_length}</span>
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleCloseSave} >
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      </div>
+    </>
+
+  );
+
 }
 
 export default StoryUpload

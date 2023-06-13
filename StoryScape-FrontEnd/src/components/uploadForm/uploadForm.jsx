@@ -18,11 +18,10 @@ function UploadForm() {
     <VideoUpload />
     <ImageUpload />
     <TextUpload />
-    {/* Location - tell us where the story occurred */}
+    <LocationInput />
     <AudioUpload />
     <StoryUpload/>
     <DatePickerComponent />
-    <LocationInput />
     </div>
   )
 }

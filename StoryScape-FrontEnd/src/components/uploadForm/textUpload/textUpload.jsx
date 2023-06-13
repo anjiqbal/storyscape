@@ -2,7 +2,6 @@ import  { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './textUpload.css';
 
-
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -37,9 +36,7 @@ const handleChange = (event) => {
       <div className="col-sm-4 well">
         <form acceptCharset="UTF-8" action="" method="POST">
           <textarea readOnly className="form-control" id="text" name="text" maxLength="200" placeholder="My story is about" rows="5" value={description} ></textarea>
-          
-          {/* <br/>
-          <button className="btn btn-info" type="submit">Post New Message</button> */}
+  
         </form>
 
         <Button variant="primary" onClick={handleShow}>
@@ -56,7 +53,7 @@ const handleChange = (event) => {
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
-                <Form.Label>Description</Form.Label>
+                <Form.Label>Type a short description of your story</Form.Label>
                 <Form.Control as="textarea" rows={4} onChange={handleChange} />
                 <span className="pull-right label label-default" id="count_message">{text.length} / {max_text_length}</span>
               </Form.Group>
