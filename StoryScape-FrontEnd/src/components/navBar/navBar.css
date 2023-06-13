@@ -10,7 +10,7 @@
   
   .brand {
     position: fixed;
-    left: 0;
+    left: 10px;
     color: #fff;
     font-size: 1.5em;
     font-weight: bold;
@@ -22,7 +22,7 @@
 
   .profileLink {
     display: flex;
-    justify-content: left;
+    justify-content: right;
     align-items: center;
     color: #fff;
     text-decoration: none;
