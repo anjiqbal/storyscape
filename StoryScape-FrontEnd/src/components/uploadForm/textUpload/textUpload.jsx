@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './textUpload.css';
+import ModalForText from './Modal/Modal';
 
 function TextUpload() {
   const [text, setText] = useState('');
@@ -22,6 +23,7 @@ function TextUpload() {
           {/* <br/>
           <button className="btn btn-info" type="submit">Post New Message</button> */}
         </form>
+        <ModalForText/>
       </div>
     </>
   );
