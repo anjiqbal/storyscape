@@ -6,7 +6,7 @@ function App() {
   const navigate = useNavigate();
   function handleSubmit(event) {
     event.preventDefault();
-    navigate("/uploadForm");
+    navigate("/aboutUs");
     //We set the state to input because setPokemonName has not yet updated the state to include the new input
   }
   return (
