@@ -5,9 +5,16 @@ import Form from 'react-bootstrap/Form';
 
 function ModalForText() {
     const [show, setShow] = useState(false);
+    const [description, setDescription] = useState('');
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+function handleCloseSave() {
+    setDescription(document.getElementById("exampleForm.ControlTextarea1").value);
+    setShow(false);
+        }
+console.log(description);
   
     return (
       <>
@@ -34,7 +41,7 @@ function ModalForText() {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={handleCloseSave}>
               Save Changes
             </Button>
           </Modal.Footer>
