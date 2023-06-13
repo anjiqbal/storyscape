@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './components/App/App.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './components/login/login.jsx';
+import SignUp from './components/signUp/signUp.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
@@ -10,10 +11,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route index path="/" element={<App />} />
         <Route path="login" element={<Login />} />
+        <Route path="signUp" element={<SignUp />} />
+        {/* <Route path="" element={<CardDetails />} />
         <Route path="" element={<CardDetails />} />
-        <Route path="" element={<CardDetails />} />
-        <Route path="" element={<CardDetails />} />
-        <Route path="" element={<CardDetails />} />
+        <Route path="" element={<CardDetails />} /> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

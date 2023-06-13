@@ -6,13 +6,13 @@ function App() {
   const navigate = useNavigate();
   function handleSubmit(event) {
     event.preventDefault();
-    navigate("/login");
+    navigate("/signUp");
     //We set the state to input because setPokemonName has not yet updated the state to include the new input
   }
   return (
     <>
       <div>
-       "Hello" 
+      Hello
       </div>
       <h1>This is our APP</h1>
       <div className="card">
@@ -20,7 +20,7 @@ function App() {
           count is {count}
         </button>
         </div>
-        <section class="form-container">
+        <section className="form-container">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
