@@ -18,7 +18,7 @@ function TextUpload() {
     <>
       <div className="col-sm-4 well">
         <form acceptCharset="UTF-8" action="" method="POST">
-          <textarea readOnly className="form-control" id="text" name="text" maxLength="200" placeholder="Please add a short description of your video" rows="5" value={} onChange={handleChange}></textarea>
+          <textarea readOnly className="form-control" id="text" name="text" maxLength="200" placeholder="Please add a short description of your video" rows="5" value={text} onChange={handleChange}></textarea>
           <span className="pull-right label label-default" id="count_message">{text.length} / {max_text_length}</span>
           {/* <br/>
           <button className="btn btn-info" type="submit">Post New Message</button> */}
