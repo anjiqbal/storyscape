@@ -5,13 +5,13 @@ export default function Story() {
   return (
     <>
       <h1>Title</h1>
-      <video controls loop autoPlay muted poster="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/12145465_444078379115659_399268826_n.jpg" className="life-one-photo-video">
-        <source src="https://www.youtube.com/watch?v=qz0aGYrrlhU" />
+      <video controls loop autoPlay muted poster="https://drive.google.com/file/d/1J2qrLOjQn_0CqlYnasZouqc7YItk8Pyi/view?usp=drive_link ">
+        <source src="https://drive.google.com/file/d/1J2qrLOjQn_0CqlYnasZouqc7YItk8Pyi/view?usp=drive_link" />
       </video>
         <p>Short description of video</p>
         <p><GrMapLocation/> Location:</p>
 
-<figure>
+<figure ClassName="audio-section">
     <figcaption>Listen to Audio:</figcaption>
     <audio
         controls
