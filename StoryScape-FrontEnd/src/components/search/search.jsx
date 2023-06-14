@@ -1,9 +1,10 @@
-
 import { useState } from "react";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+
 
 function Search({ setSearchTerm }) {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const [input, setInput] = useState("");
   function handleInput(input) {
     setInput(input);
@@ -11,11 +12,9 @@ function Search({ setSearchTerm }) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    navigate("/storyCollection");
     setSearchTerm(input);
     setInput("");
-
-    // navigate("/cardCollection", { state: input });
-    //We set the state to input because setSearchTerm has not yet updated the state to include the new input
   }
 
   function handleEnter(event) {
@@ -44,3 +43,7 @@ function Search({ setSearchTerm }) {
 }
 
 export default Search;
+
+Search.propTypes = {
+  setSearchTerm: PropTypes.func.isRequired,
+};
