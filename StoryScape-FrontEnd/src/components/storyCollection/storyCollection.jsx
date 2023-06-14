@@ -1,23 +1,36 @@
-import React from 'react'
 import { useState, useEffect } from "react";
-import StoryCard from './storyCard/storyCard';
-import dummyData from '../../../db.json';
-
+import StoryCard from "./storyCard/storyCard";
+import dummyData from "../../../db.json";
+import { useLocation } from "react-router-dom";
 
 export default function StoryCollection() {
-console.log(dummyData.stories[0].title);
-  
-const stories = dummyData.stories
+  // Get the search term from the location state
+  const location = useLocation();
+  const searchTerm = location.state;
+
+  // Initialise state variables
+  const [filteredStories, setFilteredStories] = useState([]);
+  const stories = dummyData.stories;
+
+  // Filter the stories based on the search term
+  useEffect(() => {
+    const filteredData = stories.filter(
+      (story) => story["location-country"] === searchTerm
+    );
+    setFilteredStories(filteredData);
+  }, [searchTerm, stories]);
+
   return (
     <div>
-    {Array.isArray(stories) &&
-                stories.map((story) => (
-                  <StoryCard storyTitle = {story.title}
-                  key = {story.story_id}
-                  />
-                ))}
+      {filteredStories.length === 0 ? (
+        <p>No matching stories found.</p>
+      ) : (
+        filteredStories.map((story) => (
+          <StoryCard storyTitle={story.title} key={story.story_id} storyId={story.story_id}/>
+        ))
+      )}
     </div>
-  )
+  );
 }
 
 /* 
@@ -43,7 +56,6 @@ const stories = dummyData.stories
 //   const recipes = JSON.parse(recipesJSON);
 //   return recipes;
 // }
-
 
 //USEEFFECT + FETHCING WITH API
 //   useEffect(() => {
