@@ -1,7 +1,6 @@
-import { useState } from 'react'
-
+import { useEffect, useState } from "react";
+import Search from "../search/search";
 import UploadForm from '../uploadForm/uploadForm'
-
 import Navbar from '../navBar/navBar'
 import { useNavigate } from "react-router-dom";
 import Story from '../storyCollection/story/story'
@@ -11,7 +10,11 @@ import StoryCollection from '../storyCollection/storyCollection';
 
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+  console.log(searchTerm);
   const navigate = useNavigate();
+
+
   function handleSubmit(event) {
     event.preventDefault();
     navigate("/storyCollection");
@@ -27,6 +30,7 @@ function App() {
     <>
       <div>
        <Navbar />
+    <Search setSearchTerm={setSearchTerm} />
       </div>
       <div className="card">
          <section className="form-container">
@@ -42,13 +46,7 @@ function App() {
       </section>
       </div>
 
-      
-     </>
-  
-
-    
+    </>
   );
-
 }
-
 export default App;
