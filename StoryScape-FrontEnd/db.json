@@ -1,0 +1,72 @@
+{
+  "stories": [
+    {
+      "story_id": 1,
+      "user_id": 1,
+      "name": "Ruth Den Boef",
+      "title": "Ruth's memories of Newcastle & Suburban Co-Operative Society (known as The Store)",
+      "description": "Ruth's father, mother, aunty and other family members worked at the Newcastle & Suburban Co-Operative Society (known as The Store) from the 1920's onwards and she was a regularly customer, recalling some fond memories.",
+      "location-country": "Australia",
+      "location-city": "Newcastle",
+      "year": "1925",
+      "month": "March",
+      "files": [
+        {
+          "type": "video",
+          "url": "https://drive.google.com/file/d/1J2qrLOjQn_0CqlYnasZouqc7YItk8Pyi/view?usp=drive_link",
+          "description": "Video footage of Ruth talking about her memories"
+        }
+      ]
+    },
+    {
+      "story_id": 2,
+      "user_id": 2,
+      "name": "Esme Lancaster",
+      "title": "Esme's life - from Jamaica to England",
+      "description": "Esme lived in Jamaica until 18th December 1950, when she travelled to England with the aim of improving her education. Though she was married at the time her husband did not join her until a few months later. Ultimately, she married twice and describes her marriages as the only regrets of her life.",
+      "location-country": "England",
+      "location-city": "Birmingham",
+      "year": "1955",
+      "month": "April",
+      "files": [
+        {
+          "type": "audio",
+          "url": "https://drive.google.com/file/d/1_1yo8TmJosj2HNgQjrQNhRR4HnCsHMoO/view?usp=drive_link",
+          "description": "Audio of Esme remembering her life"
+        },
+        {
+          "type": "image",
+          "url": "https://drive.google.com/file/d/1lKlwEviB8Io4aTKKaVxYRayLenxw9-BW/view?usp=drive_link",
+          "description": "Black and white photo of a young Esme"
+        },
+        {
+          "type": "text",
+          "content": "Name: Esme Lancaster MBE Born: Jamaica, 1st March 1917. Education: Esme attended junior school in Jamaica. She talks about the difficulties she faced trying to attend secondary school, as her family would not pay the fees. She eventually secured a scholarship to continue into higher education. Esme continued her education at college in England. Job: Esme worked as a teacher on a 'Sugar Estate' in Jamaica. Later she trained as a social worker in England. Oral History Interview: 1992 at the age of 75. Interview overview: Esme lived in Jamaica until 18th December 1950 when she travelled to England with the aim of improving her education. Though she was married at the time her husband did not join her until a few months later. Ultimately, she married twice and describes her marriages as the only regrets of her life. Esme talks with great pride about her 'fourth grandfather' who came to Jamaica as an enslaved African. Esme credits her great-grandfather with establishing her identity as a Black person.\n\n\"And he was fourteen years old when he came to Jamaica. His father was sold too; but he was sold for much more than his father because he was a very educated young man at that age.\"\n\nEsme settled in Handsworth, Birmingham, where her sister was already living. She was a Pentecostal Christian and describes how important her faith was to her. Esme had one adopted son and dedicated much of her life to helping children: through fostering, playgroups, and community organizations. She considered this work as her proudest achievement. She spent time living in Bristol, Birmingham, and South America, returning to Jamaica on occasion.\n\nDespite the difficulties Esme faced when emigrating to England, the cold, poor housing, homesickness, and prejudices she experienced, she did not regret the decision,\n\n\"We've gained a lot of experience from it, from travelling, travelling alone is a school.\"\n\nEsme was proud of her identity as a Black person,\n\n\"I'm not a Black British, I am a Black person anywhere, if I am in Britain I am a Black person, in Jamaica I am a Black person born in Jamaica and anywhere in the world I am a Black person\""
+        }
+      ]
+    },
+    {
+      "story_id": 3,
+      "user_id": 3,
+      "name": "Hizam Fayed",
+      "title": "Memories of life and work in Balsall Heath",
+      "description": "Hizam Fayed talking about his memories of life and work, and the Yemeni community, in Balsall Heath.",
+      "location-country": "England",
+      "location-city": "Birmingham",
+      "year": "1964",
+      "month": "October",
+      "files": [
+        {
+          "type": "video",
+          "url": "https://drive.google.com/file/d/1z6fO8Qoi0SL0ON3EASns9yWCvFmzzLaj/view?usp=drive_link",
+          "description": "Video footage of Hizam Fayed remembering his life"
+        },
+        {
+          "type": "image",
+          "url": "https://drive.google.com/file/d/1wz6HH1SdD5eAdLOWEUNmBpGvi_C2jjRM/view?usp=drive_link",
+          "description": "image of Hizam Fayed"
+        }
+      ]
+    }
+  ]
+}
