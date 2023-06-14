@@ -11,14 +11,14 @@ function App() {
   }
   return (
     <>
-      <div>Hello</div>
-      <h1>This is our APP</h1>
+      <h1>Welcome to StoryScape</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
       </div>
       <section className="form-container">
+        <button>Test button</button>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Search for a card" />
           <button type="submit">Search</button>
