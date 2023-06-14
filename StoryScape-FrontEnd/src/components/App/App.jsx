@@ -1,24 +1,54 @@
 import { useState } from 'react'
+
 import UploadForm from '../uploadForm/uploadForm'
 
+import Navbar from '../navBar/navBar'
+import { useNavigate } from "react-router-dom";
+import Story from '../storyCollection/story/story'
+import StoryCard from '../storyCollection/storyCard/storyCard'
+import StoryCollection from '../storyCollection/storyCollection';
+
+
+
 function App() {
-  const [count, setCount] = useState(0)
+  const navigate = useNavigate();
+  function handleSubmit(event) {
+    event.preventDefault();
+    navigate("/storyCollection");
+  }
+  
+   function upload(event) {
+    event.preventDefault();
+    navigate("/uploadForm");
+  }
+ 
 
   return (
     <>
       <div>
-       "Hello" 
+       <Navbar />
       </div>
-      <h1>This is our APP</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        
+         <section className="form-container">
+        <form onSubmit={handleSubmit}>
+          <input type="text" placeholder="Search for a story" />
+          <button type="submit">Search</button>
+        </form>
+      </section>
+ <section className="form-container">
+        <form onSubmit={upload}>
+          <button type="submit">upload a story</button>
+        </form>
+      </section>
       </div>
-      <UploadForm />
+
+      
      </>
-  )
+  
+
+    
+  );
+
 }
 
-export default App
+export default App;
