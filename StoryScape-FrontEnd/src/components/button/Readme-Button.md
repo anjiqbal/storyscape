@@ -39,31 +39,7 @@ Rendering as an input element:
 
 
 
-Rendering as a React Router Link component:
-import { Link } from 'react-router-dom';
-<Button as={Link} to="/path" text="Go to Path" />
-
-
-
-Rendering as a <div> element:
-<Button as="div" text="Div Button" onClick={handleDivButtonClick} />
-
-
-
-Rendering as a <span> element:
-<Button as="span" text="Span Button" onClick={handleSpanButtonClick} />
-
-
-
-Rendering as a React Bootstrap Button component:
-import Button from 'react-bootstrap/Button';
-<Button as={Button} variant="primary" onClick={handleBootstrapButtonClick}>Bootstrap Button</Button>
-
-
-
-Rendering as a Material-UI Button component:
-import Button from '@material-ui/core/Button';
-<Button as={Button} variant="contained" color="primary" onClick={handleMaterialButtonClick}>Material-UI Button</Button>
+more examples 
 
 
 These are just a few examples to demonstrate the versatility of the as prop. You can use any valid HTML element, custom React component or even third-party UI library component as the value for the "as" prop allowing you to tailor the button's behavior and appearance to your specific needs.
