@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Story from '../storyCollection/story/story'
 import StoryCard from '../storyCollection/storyCard/storyCard'
 import StoryCollection from '../storyCollection/storyCollection';
-import "./App.css";
+import "./app.css";
 
 
 
