@@ -10,14 +10,10 @@ import StoryCollection from '../storyCollection/storyCollection';
 
 
 function App() {
-
-
   const [searchTerm, setSearchTerm] = useState("");
   console.log(searchTerm);
-  
   const navigate = useNavigate();
-const [searchTerm, setSearchTerm] = useState("");
-  console.log(searchTerm);
+
 
   function handleSubmit(event) {
     event.preventDefault();
