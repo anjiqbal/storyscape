@@ -31,9 +31,10 @@ function App() {
           <StoryMission />
       {/* Random Story Section */}
 
+
       {/* Upload a Story button to be on bottom of page */}
           <form onSubmit={handleUploadButton}>
-          <button type="submit" className="upload-story-btn">Upload a story</button>
+          <button type="submit" className="upload-story-btn">Upload a Story</button>
           </form>
     </>
   );

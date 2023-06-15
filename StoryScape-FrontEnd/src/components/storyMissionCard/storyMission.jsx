@@ -1,12 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './storymission.css';
 import Container from 'react-bootstrap/Container';
+import logo from './System_32_Logo-removebg_HD.png'
 
 
 function storyMission() {
   return (
     <Container className='mission-container'>
-    <img className='mission-image' src='' alt=''/>
+    <img className='mission-image' src={logo} alt=''/>
     <h4 className='mission-title'>Our Mission</h4>
     <p className='mission-line-1'>To connect the world through our experiences</p>
     <p className='mission-line-2'>Create a vibrant tapestry with your memories saved for generation after 
