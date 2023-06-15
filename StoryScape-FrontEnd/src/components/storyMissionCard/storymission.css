@@ -33,25 +33,25 @@
 
 .mission-line-1{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     font-weight: bold;
+    text-align: center;
 }
-.mission-line-2{
-    justify-content: center;
-    font-weight: bold;
-}
-.mission-line-3{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-weight: bold;
-}
+
 a{
     color:black;
+    flex-direction: column;
+    text-align: center;
     
 }
-.mission-line-4{
+.mission-line-2{
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    
+}
+.mission-line-3{
     justify-content: center;
     
 }
