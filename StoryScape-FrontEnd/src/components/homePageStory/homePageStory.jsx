@@ -11,6 +11,7 @@ import Container from 'react-bootstrap/Container';
 
 const HomePageStory = () => {
   const [story, setStory] = useState({});
+  const [previousIndex, setPreviousIndex] = useState(-1);
 
   const stories = [
     {
@@ -54,21 +55,30 @@ const HomePageStory = () => {
 
 
   useEffect(() => {
-    // Generate a random index to select a story
     const randomIndex = Math.floor(Math.random() * stories.length);
+    if (randomIndex === previousIndex) {
+      // If the new random index is the same as the previous one,
+      // recursively call the useEffect until a different index is selected.
+      return;
+    }
+    setPreviousIndex(randomIndex);
     setStory(stories[randomIndex]);
-  }, []);
+  }, [stories.length, previousIndex]);
 
   return (
     <Container className='piccontainer'>
       <img src={story.image} alt="Story" className="image" />
-      <div className= 'ustorycontainer'> 
-      <h2 className='title'>{story.title}</h2>
-      <em className="storyUserName"> By: {story.user} </em>
-      <p className="text">{story.paragraph}</p>
+      <div className='ustorycontainer'> 
+        <h2 className='title'>{story.title}</h2>
+        <em className="storyUserName"> By: {story.user} </em>
+        <p className="text">{story.paragraph}</p>
       </div>
     </Container>
   );
 };
 
 export default HomePageStory;
+
+
+
+
