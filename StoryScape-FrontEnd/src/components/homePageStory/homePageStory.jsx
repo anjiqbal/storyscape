@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import './homePageStory.css';
 import image1 from  './images/Story-1.jpg';
 import image2 from './images/Story-2.jpg';
 import image3 from './images/Story-3.jpg';
