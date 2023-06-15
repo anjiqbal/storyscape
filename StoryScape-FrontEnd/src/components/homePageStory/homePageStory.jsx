@@ -3,6 +3,8 @@ import image1 from './images/Story-1.jpg';
 import image2 from './images/Story-2.jpg';
 import image3 from './images/Story-3.jpg';
 import './HomePageStory.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
 
 const HomePageStory = () => {
   const [story, setStory] = useState({});
@@ -29,10 +31,10 @@ const HomePageStory = () => {
   }, []);
 
   return (
-    <div className="piccontainer">
+    <Container className='piccontainer'>
       <img src={story.image} alt="Story" className="image" />
       <p className="text">{story.paragraph}</p>
-    </div>
+    </Container>
   );
 };
 
