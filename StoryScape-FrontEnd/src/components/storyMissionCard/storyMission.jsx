@@ -12,7 +12,7 @@ function storyMission() {
     <p className='mission-line-2'>Create a vibrant tapestry with your memories saved for generation after 
 generation. 
 </p>
-    <p className='mission-line-3'><a href=''> Click here </a> to find out more</p>
+    <p className='mission-line-3'><a href=''> Click here</a>&nbsp; to find out more</p>
     <p className='mission-line-4'>Sincerely,<br />
     The StoryScape Team</p>
     <p className='slogan-signoff'>Your past, Our future</p>
