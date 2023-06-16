@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-
 function Search({ setSearchTerm }) {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
@@ -12,13 +11,15 @@ function Search({ setSearchTerm }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    navigate("/storyCollection");
+    navigate("/storyCollection", { state: input });
     setSearchTerm(input);
     setInput("");
   }
 
   function handleEnter(event) {
     if (event.key === "Enter") {
+      event.preventDefault();
+      navigate("/storyCollection", { state: input });
       setSearchTerm(input);
       setInput("");
     }
