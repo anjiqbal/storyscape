@@ -57,8 +57,7 @@ const HomePageStory = () => {
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * stories.length);
     if (randomIndex === previousIndex) {
-      // If the new random index is the same as the previous one,
-      // recursively call the useEffect until a different index is selected.
+
       return;
     }
     setPreviousIndex(randomIndex);
