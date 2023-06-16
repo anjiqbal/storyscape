@@ -3,6 +3,7 @@ import Search from "../search/search";
 import Navbar from "../navBar/navBar";
 import { useNavigate } from "react-router-dom";
 import "./app.css";
+import HomePageStory from "../homePageStory/homePageStory";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,6 +28,7 @@ function App() {
           </form>
         </section>
       </div>
+      <HomePageStory/>
     </>
   );
 }
