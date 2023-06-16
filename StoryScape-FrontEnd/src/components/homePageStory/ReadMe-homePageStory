@@ -1,0 +1,7 @@
+In this component, The useState hook is used to store the currently selected story, and the useEffect hook is used to randomly select a story and set it when the component mounts (on page load).
+
+The stories array holds three objects, each representing a story. Each object contains an image property (representing the image path) and a paragraph property (representing the corresponding paragraph).
+
+On the component's render, we display the selected story's image using an img element with the src attribute set to the image path. We also display the paragraph using a p element.
+
+With this implementation, the component will render a different random story on each page refresh.

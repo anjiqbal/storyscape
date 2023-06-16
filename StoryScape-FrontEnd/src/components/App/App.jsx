@@ -4,6 +4,7 @@ import Navbar from "../navBar/navBar";
 import { useNavigate } from "react-router-dom";
 import "./app.css";
 import StoryMission from "../storyMissionCard/storyMission";
+import HomePageStory from "../homePageStory/homePageStory";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,15 +28,11 @@ function App() {
           <Search  setSearchTerm={setSearchTerm} />
         </section>
       </div>
-      {/* Story Mission section */}
           <StoryMission />
-      {/* Random Story Section */}
-
-
-      {/* Upload a Story button to be on bottom of page */}
           <form onSubmit={handleUploadButton}>
           <button type="submit" className="upload-story-btn">Upload a Story</button>
           </form>
+      <HomePageStory/>
     </>
   );
 }
