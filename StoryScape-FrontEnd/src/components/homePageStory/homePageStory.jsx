@@ -5,7 +5,7 @@ import image3 from './images/Story-3.jpg';
 import image4 from './images/Story-4.jpg';
 import image5 from './images/Story-5.jpg';
 import image6 from './images/Story-6.jpg';
-import './HomePageStory.css';
+import './homePageStory.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 
