@@ -1,11 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './navBar.css';
 //logos
 import { FcHome } from 'react-icons/fc';
-import { FcGlobe } from 'react-icons/fc';
+
 import { BsFillEnvelopeFill } from 'react-icons/bs';
 import { GoBook } from 'react-icons/go';
 import { FaRegHandshake } from 'react-icons/fa';

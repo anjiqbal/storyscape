@@ -1,9 +1,30 @@
-.navbar {
-    left:0;
-    right:0;
-    position:fixed;
-    top:0;
-}
+.container {
+    display: grid;
+    grid-template-rows: auto auto auto auto; /* Adjust the number of rows as needed */
+    grid-gap: 20px; /* Adjust the gap between rows */
+  }
+  
+  .navbar {
+    grid-row: 1;
+  }
+  
+  .card {
+    grid-row: 2;
+  }
+  
+  .story-mission {
+    grid-row: 3;
+  }
+  
+  .upload-form {
+    grid-row: 4;
+  }
+  
+  .home-page-story {
+    grid-row: 5;
+  }
+  
+
 .card{
     background-color: #D9D9D9;
 }
@@ -18,7 +39,7 @@
     padding: 10px;
     margin: 10px;
     cursor: pointer;
-    ;
+    
 }
 .upload-story-btn{
     background-color: #04724D;
@@ -40,4 +61,4 @@
     font-weight: bold;
     border: 2px solid #04724D;
     transition: 0.3s;
-}
+} 

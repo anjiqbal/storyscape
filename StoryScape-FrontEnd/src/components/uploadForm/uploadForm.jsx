@@ -16,6 +16,7 @@ import LocationInput from './locationInput/locationInput'
 function UploadForm() {
 
   return (
+    <div className='user-upload-outer'>
     <div className='user-upload-container'>
     <VideoUpload />
     <ImageUpload />
@@ -24,6 +25,7 @@ function UploadForm() {
     <AudioUpload />
     <StoryUpload/>
     <DatePickerComponent />
+    </div>
     </div>
   )
 }

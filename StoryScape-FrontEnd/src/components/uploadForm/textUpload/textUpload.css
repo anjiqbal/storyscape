@@ -1,4 +1,4 @@
-.col-sm-4.well{
+ .col-sm-4.well{
 border: 2px black solid;
 /* border for testing and css alignment */
 }
@@ -18,4 +18,4 @@ textarea {
   margin-right: 5px;
   border: 2px black solid;
 /* border for testing and css alignment */
-}
+} 
