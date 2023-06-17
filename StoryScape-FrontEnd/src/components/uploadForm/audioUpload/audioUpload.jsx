@@ -120,7 +120,7 @@ function AudioUpload() {
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <h1>Audio Upload</h1>
+          <h3>Audio Upload</h3>
          
           <div className="file-upload-wrapper">
             <label htmlFor="audioFile">Choose audio file</label>

@@ -33,13 +33,13 @@ const handleChange = (event) => {
     return (
       <>
 
-      <div className="col-sm-4 well">
+      <div className="col-sm-5 well">
         <form acceptCharset="UTF-8" action="" method="POST">
           <textarea readOnly className="form-control" id="text" name="text" maxLength="200" placeholder="My story is about" rows="5" value={description} ></textarea>
   
         </form>
 
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="primary" onClick={handleShow} className='edit-btn'>
             EDIT
         </Button>
   

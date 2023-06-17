@@ -1,8 +1,5 @@
-
-
 //this is our main component for the upload form
 
-// import React from 'react'
 import './uploadForm.css'
 import VideoUpload from './videoUpload/videoUpload'
 import ImageUpload from './imageUpload/imageUpload'
@@ -17,6 +14,7 @@ function UploadForm() {
 
   return (
     <div className='user-upload-container'>
+    <h2>Upload Form</h2>
     <VideoUpload />
     <ImageUpload />
     <TextUpload />
@@ -24,6 +22,7 @@ function UploadForm() {
     <AudioUpload />
     <StoryUpload/>
     <DatePickerComponent />
+    <input className="btn btn-primary" type="submit" value="Submit" />
     </div>
   )
 }
