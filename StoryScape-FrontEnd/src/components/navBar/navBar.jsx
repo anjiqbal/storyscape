@@ -36,16 +36,13 @@ export default function NavBar() {
           <Link className="nav-link" to="/profile">
             Profile
           </Link>
-          <Link className="nav-link" to="/">
-            Home
+          <Link className="nav-link" to="/uploadForm">
+            Upload
           </Link>
-          <Link className="nav-link" to="/post">
-            Post
-          </Link>
-          <Link className="nav-link" to="/stories">
+          <Link className="nav-link" to="/storyCollection">
             Stories
           </Link>
-          <Link className="nav-link" to="/our-story">
+          <Link className="nav-link" to="/aboutUs">
             Our Story
           </Link>
         </div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import StoryCard from "./storyCard/storyCard";
 import dummyData from "../../../db.json";
 import { useLocation } from "react-router-dom";
+import NavBar from "../navBar/navBar";
 
 export default function StoryCollection() {
   // Get the search term from the location state
@@ -22,11 +23,18 @@ export default function StoryCollection() {
 
   return (
     <div>
+      <header>
+        <NavBar />
+      </header>
       {filteredStories.length === 0 ? (
         <p>No matching stories found.</p>
       ) : (
         filteredStories.map((story) => (
-          <StoryCard storyTitle={story.title} key={story.story_id} storyId={story.story_id}/>
+          <StoryCard
+            storyTitle={story.title}
+            key={story.story_id}
+            storyId={story.story_id}
+          />
         ))
       )}
     </div>

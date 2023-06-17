@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="storyCollection" element={<StoryCollection />} />
         <Route path="story" element={<Story />} />
         <Route path="aboutUs" element={<AboutUs/>} />
-        <Route path="profileOwn" element={<ProfileOwn/>} />
+        <Route path="profile" element={<ProfileOwn/>} />
         <Route path="profileOther" element={<ProfileOther/>} />
       </Routes>
     </BrowserRouter>
