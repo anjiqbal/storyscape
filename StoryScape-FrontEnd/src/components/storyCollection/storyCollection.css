@@ -1,0 +1,15 @@
+
+.story-collection-wrapper {
+    background-color: #fbf5e0;
+    padding-top: 5rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+  
+  .story-collection-content {
+    overflow-x: hidden;
+  }
+  
+
+ 

@@ -5,47 +5,41 @@ import { useNavigate, Link } from "react-router-dom";
 export default function NavBar() {
   const navigate = useNavigate();
 
-  // function handleClick(event) {
-  //   event.preventDefault();
-  //   navigate(`/${props.path}`);
-  // }
-  // //href="#ProfileOwn"
-
   return (
-    <nav className="navbar navbar-expand-lg  ">
-    <div className="container-fluid">
-      <Link className="navbar-brand" to="/">
-        <img src={logo} alt="Logo" className="navbar-logo" />
-        <span className="navbar-brand-name">StoryScape</span>
-      </Link>
+    <nav className="navbar navbar-expand-lg fixed-top">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          <img src={logo} alt="Logo" className="navbar-logo" />
+          <span className="navbar-brand-name">StoryScape</span>
+        </Link>
 
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <div className="navbar-nav ms-auto">
-          <Link className="nav-link" to="/uploadForm">
-            Upload
-          </Link>
-          <Link className="nav-link" to="/discover">
-            Discover
-          </Link>
-          <Link className="nav-link" to="/signUp">
-            Sign In
-          </Link>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="navbar-nav ms-auto">
+            <Link className="nav-link" to="/uploadForm">
+              Upload
+            </Link>
+            <Link className="nav-link" to="/discover">
+              Discover
+            </Link>
+            <Link className="nav-link" to="/signUp">
+              Sign In
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   );
 }
 

@@ -1,7 +1,8 @@
 .navbar {
-  background-color: #8db38b;
+  background-color: #FBF5E0;
   font-weight: bold;
   border-bottom: 1px solid black;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-logo {
@@ -15,5 +16,5 @@
 }
 
 .navbar-nav .nav-link:hover {
-  color: black;
+  background-color: #F9D8C4;
 }

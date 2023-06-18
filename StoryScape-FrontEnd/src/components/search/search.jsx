@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./search.css";
 import PropTypes from "prop-types";
 
 function Search({ setSearchTerm }) {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
+
   function handleInput(input) {
     setInput(input);
   }
@@ -26,18 +28,26 @@ function Search({ setSearchTerm }) {
   }
 
   return (
-    <section>
+    <section className="search-section ">
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search for a location"
-          value={input}
-          onChange={(event) => {
-            handleInput(event.target.value);
-          }}
-          onKeyDown={handleEnter}
-        />
-        <button type="submit">Search</button>
+        <p className="description search-description">
+          Discover stories from around the world
+        </p>
+        <div className="input-container">
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search for a location"
+            value={input}
+            onChange={(event) => {
+              handleInput(event.target.value);
+            }}
+            onKeyDown={handleEnter}
+          />
+          <button className="search-button" type="submit">
+            Search
+          </button>
+        </div>
       </form>
     </section>
   );
