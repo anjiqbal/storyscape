@@ -12,7 +12,7 @@ export default function NavBar() {
   // //href="#ProfileOwn"
 
   return (
-    <nav className="navbar navbar-expand-lg ">
+    <nav className="navbar navbar-expand-lg  ">
     <div className="container-fluid">
       <Link className="navbar-brand" to="/">
         <img src={logo} alt="Logo" className="navbar-logo" />
