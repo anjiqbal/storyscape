@@ -1,0 +1,28 @@
+.location-search-input {
+display: flex;
+position: relative;
+width: 60%;
+}
+
+#nav-icon{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 30px;
+height: 40px;
+transform: scale(1.1);
+}
+
+.search-location-btn {
+display: flex;
+position: relative;
+border-radius: 20%;
+width: 40px;
+align-items: center;
+justify-content: center;
+}
+
+#search-icon{
+    display: inline;
+    transform: scale(1.1);
+}

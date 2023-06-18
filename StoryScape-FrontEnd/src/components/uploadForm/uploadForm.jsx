@@ -14,14 +14,20 @@ function UploadForm() {
 
   return (
     <div className='user-upload-container'>
-    <h2>Upload Form</h2>
+    <h3>Upload Form</h3>
     <VideoUpload />
     <ImageUpload />
+    <hr />
     <TextUpload />
+    <hr />
     <LocationInput />
+    <hr />
     <AudioUpload />
+    <hr />
     <StoryUpload/>
+    <hr />
     <DatePickerComponent />
+    <hr />
     <input className="btn btn-primary" type="submit" value="Submit" />
     </div>
   )
