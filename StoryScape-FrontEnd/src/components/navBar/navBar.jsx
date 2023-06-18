@@ -33,17 +33,14 @@ export default function NavBar() {
 
       <div className="collapse navbar-collapse" id="navbarNav">
         <div className="navbar-nav ms-auto">
-          <Link className="nav-link" to="/profile">
-            Profile
-          </Link>
           <Link className="nav-link" to="/uploadForm">
             Upload
           </Link>
-          <Link className="nav-link" to="/storyCollection">
-            Stories
+          <Link className="nav-link" to="/discover">
+            Discover
           </Link>
-          <Link className="nav-link" to="/aboutUs">
-            Our Story
+          <Link className="nav-link" to="/signUp">
+            Sign In
           </Link>
         </div>
       </div>
