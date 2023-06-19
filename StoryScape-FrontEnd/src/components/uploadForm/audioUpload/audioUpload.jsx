@@ -118,9 +118,7 @@ function AudioUpload() {
   };
 
   return (
-
-    <div className="outer-container">
-         <div className="container">
+    <div className="container">
       <div className="row">
         <div className="col-md-12">
           <h3>Audio Upload</h3>
