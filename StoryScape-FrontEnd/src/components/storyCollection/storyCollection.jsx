@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import StoryCard from "./storyCard/storyCard";
 import dummyData from "../../../db.json";
+import { Row, Col } from "react-bootstrap";
+import Footer from "../Footer/footer";
 import { useLocation } from "react-router-dom";
+import NavBar from "../navBar/navBar";
+import "./storyCollection.css";
 
 export default function StoryCollection() {
   // Get the search term from the location state
@@ -21,17 +25,35 @@ export default function StoryCollection() {
   }, [searchTerm, stories]);
 
   return (
-    <div>
-      {filteredStories.length === 0 ? (
-        <p>No matching stories found.</p>
-      ) : (
-        filteredStories.map((story) => (
-          <StoryCard storyTitle={story.title} key={story.story_id} storyId={story.story_id}/>
-        ))
-      )}
+    <div className="story-collection-wrapper">
+      <header>
+        <NavBar />
+      </header>
+      <main className="story-collection-content">
+        <Row className="h-100">
+          <Col>
+            {filteredStories.length === 0 ? (
+              <p>No matching stories found.</p>
+            ) : (
+              filteredStories.map((story) => (
+                <StoryCard
+                  storyTitle={story.title}
+                  key={story.story_id}
+                  storyId={story.story_id}
+                />
+              ))
+            )}
+           
+          </Col>
+        </Row>
+      </main>
+      <footer >
+        <Footer />
+      </footer>
     </div>
   );
 }
+
 
 /* 
 - const searchTerm = "England"

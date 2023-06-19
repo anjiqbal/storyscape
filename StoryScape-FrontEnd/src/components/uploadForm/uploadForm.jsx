@@ -12,11 +12,18 @@ import AudioUpload from './audioUpload/audioUpload'
 import StoryUpload from './StoryUpload/StoryUpload'
 import DatePickerComponent from './datePicker/datePickerForm'
 import LocationInput from './locationInput/locationInput'
+import NavBar from '../navBar/navBar'
 
 function UploadForm() {
 
   return (
+    <>
+    <header>
+      <NavBar />
+    </header>
+    <div className='user-upload-outer'>
     <div className='user-upload-container'>
+
     <VideoUpload />
     <ImageUpload />
     <TextUpload />
@@ -25,6 +32,8 @@ function UploadForm() {
     <StoryUpload/>
     <DatePickerComponent />
     </div>
+    </div>
+    </>
   )
 }
 
