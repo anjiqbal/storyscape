@@ -1,3 +1,4 @@
+.env.local
 # Logs
 logs
 *.log
@@ -20,4 +21,4 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
-.env
+
