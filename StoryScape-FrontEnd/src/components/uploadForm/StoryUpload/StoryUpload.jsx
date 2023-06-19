@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-// import './storyUpload.css'
+import  {useState} from 'react'
+//import './storyUpload.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -25,18 +25,18 @@ console.log(description);
     const text_length = event.target.value.length;
     const remaining_text = max_text_length - text_length;
     setText(event.target.value);
-    document.getElementById("count_message").innerHTML = remaining_text + " characters remaining";
+    document.getElementById("count_message").innerHTML = remaining_text.toLocaleString() + " characters remaining";
   };
   return (
     <>
 
-    <div className="col-sm-4 well">
+    <div className="col-sm-5 well">
       <form acceptCharset="UTF-8" action="" method="POST">
         <textarea readOnly className="form-control" id="text" name="text" maxLength="40000" placeholder="My story is about" rows="5" value={description} ></textarea>
 
       </form>
 
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className='edit-btn'>
           EDIT
       </Button>
 
@@ -52,7 +52,7 @@ console.log(description);
             >
               <Form.Label>Type your story</Form.Label>
               <Form.Control as="textarea" rows={4} onChange={handleChange} />
-              <span className="pull-right label label-default" id="count_message">{text.length} / {max_text_length}</span>
+              <span className="pull-right label label-default" id="count_message">{text.length.toLocaleString()} / {max_text_length.toLocaleString()}</span>
             </Form.Group>
           </Form>
         </Modal.Body>

@@ -118,54 +118,27 @@ function AudioUpload() {
   };
 
   return (
-    <div className="outer-container">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <h1>Audio Upload</h1>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <h3>Audio Upload</h3>
+         
+          <div className="file-upload-wrapper">
+            <label htmlFor="audioFile">Choose audio file</label>
+            <input type="file" id="audioFile" onChange={handleFiles} accept="audio/*" />
+          </div>
+          <div className="player d-none">
+            <audio id="track">
+              <source src="" type="audio/mpeg" />
+            </audio>
+            <div className="controls">
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="btn-group">
+                    <button id="start" type="button" className="btn btn-outline-primary" onClick={handleStartClick}>Start</button>
+                    <button id="pause" type="button" className="btn btn-outline-primary d-none" onClick={handlePauseClick}>Pause</button>
+                    <button id="reset" type="button" className="btn btn-outline-primary" onClick={handleResetClick}>Reset</button>
 
-            <div className="file-upload-wrapper">
-              <label htmlFor="audioFile">Choose audio file</label>
-              <input
-                type="file"
-                id="audioFile"
-                onChange={handleFiles}
-                accept="audio/*"
-              />
-            </div>
-            <div className="player d-none">
-              <audio id="track">
-                <source src="" type="audio/mpeg" />
-              </audio>
-              <div className="controls">
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="btn-group">
-                      <button
-                        id="start"
-                        type="button"
-                        className="btn btn-outline-primary"
-                        onClick={handleStartClick}
-                      >
-                        Start
-                      </button>
-                      <button
-                        id="pause"
-                        type="button"
-                        className="btn btn-outline-primary d-none"
-                        onClick={handlePauseClick}
-                      >
-                        Pause
-                      </button>
-                      <button
-                        id="reset"
-                        type="button"
-                        className="btn btn-outline-primary"
-                        onClick={handleResetClick}
-                      >
-                        Reset
-                      </button>
-                    </div>
                   </div>
                   <div className="col-md-6">
                     <div className="duration text-right">
