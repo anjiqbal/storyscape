@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@4c/tsconfig": "^0.4.1",
     "@react-google-maps/api": "^2.18.1",
     "bootstrap": "^5.3.0",
     "bootstrap-icons": "^1.10.5",
