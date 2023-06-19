@@ -9,12 +9,20 @@ import AudioUpload from './audioUpload/audioUpload'
 import StoryUpload from './StoryUpload/StoryUpload'
 import DatePickerComponent from './datePicker/datePickerForm'
 import LocationInput from './locationInput/locationInput'
+import NavBar from '../navBar/navBar'
 
 function UploadForm() {
 
   return (
+    <>
+    <header>
+      <NavBar />
+    </header>
+    <div className='user-upload-outer'>
     <div className='user-upload-container'>
+
     <h3>Upload Form</h3>
+
     <VideoUpload />
     <ImageUpload />
     <hr />
@@ -30,6 +38,8 @@ function UploadForm() {
     <hr />
     <input className="btn btn-primary" type="submit" value="Submit" />
     </div>
+    </div>
+    </>
   )
 }
 
