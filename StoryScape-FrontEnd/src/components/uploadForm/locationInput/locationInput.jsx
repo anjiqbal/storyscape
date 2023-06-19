@@ -40,12 +40,14 @@ function LocationInput() {
     <NavBar /> 
     
     <div className="location-search-input">
+    {/* i is the pre-built icon that was imported from bootstrap-icons and this one is the navigation arrow */}
     <i className="bi bi-cursor-fill" id='nav-icon'></i>
     {/* Put the input in the Autocomplete which will then use the Google map API to find matches according to what the user types in */}
     <Autocomplete>
     {/* class name form-control is built in and gives the input styles from bootstrap. aria-describedby is a good attribute to have to help accessibility ref uses originRef which takes in useRef from react */}
     <input type="text" className="form-control" id="location-input" aria-describedby="locationInput" placeholder="Search Places ..." ref={originRef}/>
     </Autocomplete>
+    {/* A button with the prebuilt search icon inside, that was imported from bootstrap-icons */}
     <button className='search-location-btn'><i className="bi bi-search" id='search-icon'></i></button>
     {/* The Container for the map  */}
     <Container > 
