@@ -12,27 +12,19 @@ import supabase from "../../config/supabaseClient";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
-
+  console.log(supabase);
   function handleUploadButton(event) {
     event.preventDefault();
     navigate("/uploadForm");
   }
-  const [fetchError, setFetchError] = useState(null);
-  const [stories, setStories] = useState({});
 
   useEffect(() => {
-    
-    const fetchStories = async () => {
+    const fetchData = async () => {
       const { data, error } = await supabase.from("users").select();
-      console.log(data)
+      console.log(data);
     };
-
-    
-
-    fetchStories();
+    fetchData();
   }, []);
-
-  console.log(stories);
 
   return (
     <main className="app">
