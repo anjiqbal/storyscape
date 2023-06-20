@@ -7,11 +7,14 @@ import { Row, Col } from "react-bootstrap";
 import "./app.css";
 import StoryMission from "../storyMissionCard/storyMission";
 import HomePageStory from "../homePageStory/homePageStory";
+// import supabase from "../../config/supabase";
+
+
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
-
+// console.log (supabase)
   function handleUploadButton(event) {
     event.preventDefault();
     navigate("/uploadForm");
