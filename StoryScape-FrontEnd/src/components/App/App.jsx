@@ -7,24 +7,24 @@ import { Row, Col } from "react-bootstrap";
 import "./app.css";
 import StoryMission from "../storyMissionCard/storyMission";
 import HomePageStory from "../homePageStory/homePageStory";
-import supabase from "../../config/supabaseClient";
+//import supabase from "../../config/supabaseClient";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
-  console.log(supabase);
+  // console.log(supabase);
   function handleUploadButton(event) {
     event.preventDefault();
     navigate("/uploadForm");
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data, error } = await supabase.from("users").select();
-      console.log(data);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const { data, error } = await supabase.from("users").select();
+  //     console.log(data);
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <main className="app">
