@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Search from "../search/search";
 import Navbar from "../navBar/navBar";
 import Footer from "../Footer/footer";
@@ -9,42 +9,31 @@ import StoryMission from "../storyMissionCard/storyMission";
 import HomePageStory from "../homePageStory/homePageStory";
 import supabase from "../../config/supabaseClient";
 
-
-
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
-console.log(supabase)
+
   function handleUploadButton(event) {
     event.preventDefault();
     navigate("/uploadForm");
   }
-  Const[fetchError, setFetchError] =useState(null)
-  const [stories,setStories]= useState(null)
-  
-  // useEffect(()=>{
-  //   const fetchStories = async()=>{
-  //     const {data,error} = await supabase.from ('users')
-  //       .select ()
-  //       }
-  
-  
-  //       if (error){	
-  //         setFetchError('could not fetch stories')
-  //         setStories(null)
-  //         console.log(error)
-  //         }
-  //       if (data){
-  //         setStories(data)
-  //         setFetchError(null)
-  //         }
-        
-  
-  //   fetchStories()
-  // },[])
+  const [fetchError, setFetchError] = useState(null);
+  const [stories, setStories] = useState({});
 
-  // console.log(stories)
-  
+  useEffect(() => {
+    
+    const fetchStories = async () => {
+      const { data, error } = await supabase.from("users").select();
+      console.log(data)
+    };
+
+    
+
+    fetchStories();
+  }, []);
+
+  console.log(stories);
+
   return (
     <main className="app">
       {/* Navbar section */}
@@ -54,8 +43,8 @@ console.log(supabase)
       <div className="filler"></div>
       <div className="first-row">
         <Row>
-           {/* StoryMission component */}
-           <Col xs={12} md={6}>
+          {/* StoryMission component */}
+          <Col xs={12} md={6}>
             <StoryMission />
           </Col>
           {/* Search component and Upload button */}
@@ -79,12 +68,11 @@ console.log(supabase)
               </Col>
             </Row>
           </Col>
-       
         </Row>
       </div>
       <div className="filler-two"></div>
       <div className="second-row">
-      <h2>Trending on StoryScape</h2>
+        <h2>Trending on StoryScape</h2>
         <Row>
           {/* HomePageStory components */}
           <Col sm={12} md={4}>
