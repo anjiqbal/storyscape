@@ -239,7 +239,7 @@ const countries = [
     { country: 'uzbekistan', code: 'UZ' },
     { country: 'vanuatu', code: 'VU' },
     { country: 'venezuela (bolivarian republic of)', code: 'VE' },
-    { country: 'viet nam', code: 'VN' },
+    { country: 'vietnam', code: 'VN' },
     { country: 'virgin islands (british)', code: 'VG' },
     { country: 'virgin islands (u.s.)', code: 'VI' },
     { country: 'wallis and futuna', code: 'WF' },
