@@ -67,20 +67,23 @@ function LocationInput() {
     <NavBar /> 
     <div className="location-search-input">
     {/* i is the pre-built icon that was imported from bootstrap-icons and this one is the navigation arrow */}
-    <i className="bi bi-cursor-fill" id='nav-icon'></i>
+
     {/* Put the input in the Autocomplete which will then use the Google map API to find matches according to what the user types in */}
     <Autocomplete onLoad={(autocomplete) => originRef.current = autocomplete}>
     {/* class name form-control is built in and gives the input styles from bootstrap. aria-describedby is a good attribute to have to help accessibility ref uses originRef which takes in useRef from react */}
+
     <input type="text" className="form-control" id="location-input" aria-describedby="locationInput" placeholder="Search Places ..." />
+
     </Autocomplete>
     {/* A button with the prebuilt search icon inside, that was imported from bootstrap-icons */}
     <button className='search-location-btn' onClick={handlePlaceSelect}><i className="bi bi-search" id='search-icon'></i></button>
     {/* The Container for the map  */}
-    <Container > 
-    <GoogleMap
-            center={center}
-            zoom={10}
-            mapContainerStyle={{ width: '100%', height: '100%' }}
+
+    {/* <Container > 
+      <GoogleMap
+          center={center}
+          zoom={10}
+          mapContainerStyle={{ width: '100%', height: '100%' }}
           // these are the options for the map, we can change these later
           options={{
             zoomControl: true,
@@ -89,9 +92,11 @@ function LocationInput() {
             fullscreenControl: true,
           }}
           // when the map loads it will set the map to the map state
-          onLoad={map => setMap(map)}
-        />
-    </Container>
+
+          onLoad={ map => setMap(map) }
+        >
+      </GoogleMap>
+    </Container> */}
     </div>
   </>
         
