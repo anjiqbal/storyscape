@@ -7,10 +7,8 @@ import { Row, Col } from "react-bootstrap";
 import "./app.css";
 import StoryMission from "../storyMissionCard/storyMission";
 import HomePageStory from "../homePageStory/homePageStory";
+
 import supabase from "../../config/supabaseClient.jsx";
-//import {createClient} from '@supabase/supabase-js';
-
-
 
 
 function App() {
@@ -19,7 +17,7 @@ function App() {
   const [stories,setStories]= useState(null)
 
   const navigate = useNavigate();
-  console.log(supabase);
+  // console.log(supabase);
   function handleUploadButton(event) {
     event.preventDefault();
     navigate("/uploadForm");
