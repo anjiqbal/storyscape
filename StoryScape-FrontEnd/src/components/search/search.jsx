@@ -22,6 +22,11 @@ function Search({ setSearchTerm }) {
     }
   }
 
+  function handleClick(country) {
+    setInput(country.country);
+    // setFilteredCountries([]);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     navigate("/storyCollection", { state: input });
@@ -58,7 +63,7 @@ function Search({ setSearchTerm }) {
           {filteredCountries.length > 0 && (
             <ul className="search-results">
               {filteredCountries.map((country) => (
-                <li key={country.country}>{country.country}</li>
+                <li key={country.country} onClick={() => handleClick(country)}>{country.country}</li>
               ))}
             </ul>
           )}
