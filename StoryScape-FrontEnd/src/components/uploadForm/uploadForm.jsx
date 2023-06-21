@@ -13,13 +13,37 @@ function UploadForm() {
   const [title, setTitle] = useState("");
   const [storyDescription, setStoryDescription] = useState("");
   const [story, setStory] = useState("");
-  const [location, setLocation] = useState("");
+  // const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
 
-  function handleInput(input) {
+  function handleTitle(input) {
     setTitle(input);
   }
-  console.log(title)
+
+
+  function handleStoryDescription(input) {
+    setStoryDescription(input);
+  }
+
+
+  function handleStory(input) {
+    setStory(input);
+  }
+
+  // function handleLocation(input) {
+  //   setLocation(input);
+  // }
+
+  function handleDate(input) {
+    setDate(input);
+  }
+console.log(date)
+console.log(story)
+console.log(storyDescription) 
+console.log(title)
+
+
+ 
 
   return (
     <>
@@ -36,7 +60,7 @@ function UploadForm() {
                 type="text"
                 placeholder="Growing up in Birmingham in the 40's"
                 onChange={(event) => {
-                  handleInput(event.target.value);
+                  handleTitle(event.target.value);
                 }}
               />
             </div>
@@ -44,10 +68,11 @@ function UploadForm() {
           <Row className="description-row">
             <div className="input-container">
               <label>Story Description:</label>
-
+             
               <textarea
                 type="text"
                 placeholder="Growing up in Birmingham in the 40's"
+                onChange = {(event) => { handleStoryDescription(event.target.value)}}
               />
             </div>
           </Row>
@@ -60,7 +85,7 @@ function UploadForm() {
           <Row className="date-row">
             <div className="input-container">
               <label>Story date</label>
-              <DatePickerComponent />
+              <DatePickerComponent handleDate = {handleDate} />
             </div>
           </Row>
 
@@ -70,6 +95,7 @@ function UploadForm() {
               <textarea
                 type="textarea"
                 placeholder="Growing up in Birmingham in the 40's"
+                onChange = {(event) => { handleStory(event.target.value)}}
               />
             </div>
           </Row>
