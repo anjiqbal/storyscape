@@ -7,14 +7,11 @@ import { Row, Col } from "react-bootstrap";
 import "./app.css";
 import StoryMission from "../storyMissionCard/storyMission";
 import HomePageStory from "../homePageStory/homePageStory";
-//import supabase from "../../config/supabaseClient.jsx";
-import {createClient} from '@supabase/supabase-js';
+import supabase from "../../config/supabaseClient.jsx";
+//import {createClient} from '@supabase/supabase-js';
 
 
-const supabaseURL =import.meta.env.VITE_APP_SUPABASE_URL;
-const supabaseKey =import.meta.env.VITE_APP_ANON_KEY;
 
-const supabase = createClient(supabaseURL, supabaseKey);
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
