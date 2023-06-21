@@ -49,14 +49,14 @@ function UploadForm() {
               <DatePickerComponent />
             </div>
           </Row>
-          <h4>Upload at least one of the following</h4>
+          
           <Row className="story-text-row">
             <div className="input-container">
               <label>Write your story:</label>
               <StoryUpload />
             </div>
           </Row>
-          <Row className="video-row">
+          {/* <Row className="video-row">
             <div className="input-container">
               <label>Upload Video</label>
               <VideoUpload />
@@ -79,7 +79,7 @@ function UploadForm() {
               <label>Audio description</label>
               <input type="text" placeholder="Grandad talking about his..." />
             </div>
-          </Row>
+          </Row> */}
           <Row className="btn-row">
             <div className="input-container">
               <button className="draft-btn">Save Draft</button>
