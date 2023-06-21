@@ -1,7 +1,14 @@
-
+import NavBar from "../navBar/navBar";
 
 export default function Discover() {
   return (
-    <h1>discover</h1>
-  )
+    <>
+    <NavBar />
+
+    <div>Discover</div>
+    </>
+  );
 }
+
+
+
