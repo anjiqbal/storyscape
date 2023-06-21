@@ -1,6 +1,6 @@
-
 .search-section {
   padding: 10%;
+  position: relative;
 }
 
 form {
@@ -12,6 +12,7 @@ form {
 .input-container {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .search-input {
@@ -43,3 +44,27 @@ form {
   font-weight: 700;
   font-size: 20px;
 }
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  z-index: 999;
+}
+
+.search-results li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.search-results li:hover {
+  background-color: #f2f2f2;
+}
+

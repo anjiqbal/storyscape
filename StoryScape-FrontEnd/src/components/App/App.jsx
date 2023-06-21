@@ -20,6 +20,9 @@ function App() {
   const [stories,setStories]= useState(null)
   const navigate = useNavigate();
 
+  const [userData, setUserData] = useState([]); // State to store the fetched user data
+  // console.log(supabase);
+
   function handleUploadButton(event) {
     event.preventDefault();
     navigate("/uploadForm");
@@ -44,6 +47,17 @@ function App() {
   
   console.log(stories)
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const { data, error } = await supabase.from("users").select();
+  //     if (error) {
+  //       console.error(error);
+  //     } else {
+  //       setUserData(data);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
   return (
     <main className="app">
       {/* Navbar section */}
@@ -106,3 +120,28 @@ function App() {
 }
 
 export default App;
+
+
+// return (
+//   <main className="app">
+//     {/* Navbar section */}
+//     <header>
+//       <Navbar />
+//     </header>
+//     <div className="filler"></div>
+//     <div className="first-row">
+//       {/* Rest of your code */}
+//     </div>
+//     <div className="filler-two"></div>
+//     <div className="second-row">
+//       {/* Render the fetched user data */}
+//       {userData.map((user) => (
+//         <HomePageStory key={user.id} user={user} />
+//       ))}
+//     </div>
+//     {/* Rest of your code */}
+//   </main>
+// );
+// }
+
+// export default App;

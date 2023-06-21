@@ -2,9 +2,9 @@ import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-function DatePickerComponent() {
+function DatePickerComponent({handleDate}) {
   const [startDate, setStartDate] = useState(null);
-
+  handleDate(startDate)
   return (
     <div>
       <DatePicker

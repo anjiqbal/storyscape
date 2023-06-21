@@ -97,6 +97,10 @@ input {
   border-bottom: 1px solid black;
 }
 
+.btn-row {
+  border-bottom: none;
+}
+
 .input-container {
   display: flex;
   align-items: center;
