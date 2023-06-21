@@ -1,8 +1,7 @@
-//this is our main component for the upload form
+
 import { Row, Col } from "react-bootstrap";
 import "./uploadForm.css";
-
-//import the location input component
+import supabase from "../../config/supabaseClient";
 import { useState, useEffect } from "react";
 import DatePickerComponent from "./datePicker/datePickerForm";
 import LocationInput from "./locationInput/locationInput";
@@ -51,6 +50,17 @@ function UploadForm() {
   }
 
   console.log(storyObject);
+
+  useEffect(() => {
+    async function uploadStory() {
+      const { data, error } = await supabase
+        .from("stories")
+        .insert([storyObject]);
+    }
+    uploadStory();
+  }, [storyObject]);
+  
+ 
 
   return (
     <>
