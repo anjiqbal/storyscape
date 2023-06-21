@@ -7,7 +7,7 @@ import countries from "./countries.jsx";
 function Search({ setSearchTerm }) {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
-  const [filteredCountries, setFilteredCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState(countries);
 
   function handleSearch(e) {
     const searchTerm = e.target.value.toLowerCase();
@@ -18,12 +18,12 @@ function Search({ setSearchTerm }) {
       );
       setFilteredCountries(filtered);
     } else {
-      setFilteredCountries([]);
+      setFilteredCountries(countries);
     }
   }
 
-  function handleClick(country) {
-    setInput(country.country);
+  function handleSelectChange(e) {
+    setInput(e.target.value);
     setFilteredCountries([]);
   }
 
@@ -43,7 +43,6 @@ function Search({ setSearchTerm }) {
       setInput("");
       setFilteredCountries([]);
     }
-    console.log(input)
   }
 
   return (
@@ -63,8 +62,8 @@ function Search({ setSearchTerm }) {
           /> */}
           <select
             className="search-input"
-            value={input}
-            onChange={handleSearch}
+            value={""}
+            onChange={handleSelectChange}
             onKeyDown={handleEnter}
           >
             <option disabled value="">
