@@ -16,6 +16,11 @@ function UploadForm() {
   const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
 
+  function handleInput(input) {
+    setTitle(input);
+  }
+  console.log(title)
+
   return (
     <>
       <header>
@@ -30,6 +35,9 @@ function UploadForm() {
               <input
                 type="text"
                 placeholder="Growing up in Birmingham in the 40's"
+                onChange={(event) => {
+                  handleInput(event.target.value);
+                }}
               />
             </div>
           </Row>
