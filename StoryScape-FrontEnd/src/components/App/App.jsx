@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Search from "../search/search";
 import Navbar from "../navBar/navBar";
 import Footer from "../Footer/footer";
@@ -11,14 +11,38 @@ import HomePageStory from "../homePageStory/homePageStory";
 
 
 
+import supabase from "../../config/supabaseClient.jsx";
+
+
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
+
+  const [fetchError, setFetchError] = useState(null)
+  const [stories,setStories]= useState(null)
   const navigate = useNavigate();
-// console.log (supabase)
+
   function handleUploadButton(event) {
     event.preventDefault();
     navigate("/uploadForm");
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data, error } = await supabase.from('stories').select()
+      if (error){	
+				setFetchError('could not fetch stories')
+				setStories(null)
+				console.log(error)
+      }
+			if (data) {
+				setStories(data)
+				setFetchError(null)
+				}
+    };
+
+    fetchData();
+  }, []);
+  
+  console.log(stories)
 
   return (
     <main className="app">
@@ -29,8 +53,8 @@ function App() {
       <div className="filler"></div>
       <div className="first-row">
         <Row>
-           {/* StoryMission component */}
-           <Col xs={12} md={6}>
+          {/* StoryMission component */}
+          <Col xs={12} md={6}>
             <StoryMission />
           </Col>
           {/* Search component and Upload button */}
@@ -54,12 +78,11 @@ function App() {
               </Col>
             </Row>
           </Col>
-       
         </Row>
       </div>
       <div className="filler-two"></div>
       <div className="second-row">
-      <h2>Trending on StoryScape</h2>
+        <h2>Trending on StoryScape</h2>
         <Row>
           {/* HomePageStory components */}
           <Col sm={12} md={4}>
