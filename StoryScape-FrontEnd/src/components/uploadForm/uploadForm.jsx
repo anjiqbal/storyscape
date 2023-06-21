@@ -1,4 +1,3 @@
-
 import { Row, Col } from "react-bootstrap";
 import "./uploadForm.css";
 import supabase from "../../config/supabaseClient";
@@ -7,8 +6,6 @@ import DatePickerComponent from "./datePicker/datePickerForm";
 import LocationInput from "./locationInput/locationInput";
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
-
-
 
 function UploadForm() {
   const [title, setTitle] = useState("");
@@ -39,9 +36,8 @@ function UploadForm() {
   }
   function handleSubmit(event) {
     event.preventDefault();
-  
+
     const newStoryObject = {
-      user_id: 29035792,
       story_title: title,
       story_description: storyDescription,
       story_location: "Birmingham",
@@ -49,13 +45,16 @@ function UploadForm() {
       story_main: story,
     };
     setStoryObject(newStoryObject);
-  
+
     async function uploadStory() {
       const { data, error } = await supabase
         .from("stories")
         .insert({ ...newStoryObject });
       // Handle the response
+      console.log(data);
+      console.log(error);
     }
+
     uploadStory();
   }
 
