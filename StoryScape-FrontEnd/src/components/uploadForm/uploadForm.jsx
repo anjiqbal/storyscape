@@ -2,12 +2,14 @@ import { Row, Col } from "react-bootstrap";
 import "./uploadForm.css";
 import supabase from "../../config/supabaseClient";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import DatePickerComponent from "./datePicker/datePickerForm";
 import LocationInput from "./locationInput/locationInput";
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
 
 function UploadForm() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [storyDescription, setStoryDescription] = useState("");
   const [story, setStory] = useState("");
@@ -50,24 +52,20 @@ function UploadForm() {
       const { data, error, status } = await supabase
         .from("stories")
         .insert({ ...newStoryObject })
-        .select(); 
+        .select();
       // Handle the response
       console.log(data);
       console.log(error);
       console.log(status);
       if (status === 201) {
-        alert("Story uploaded successfully");
+        navigate("/success");
+      } else {
+        alert("Story upload failed");
+      }
     }
-    else {
-      alert("Story upload failed"); 
-    }
-    }
-
 
     uploadStory();
   }
-
- 
 
   return (
     <>
