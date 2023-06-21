@@ -1,18 +1,21 @@
 //this is our main component for the upload form
 import { Row, Col } from "react-bootstrap";
 import "./uploadForm.css";
-import VideoUpload from "./videoUpload/videoUpload";
-import ImageUpload from "./imageUpload/imageUpload";
-import TextUpload from "./textUpload/textUpload";
+
 //import the location input component
-import AudioUpload from "./audioUpload/audioUpload";
-import StoryUpload from "./StoryUpload/StoryUpload";
+import { useState, useEffect } from "react";
 import DatePickerComponent from "./datePicker/datePickerForm";
 import LocationInput from "./locationInput/locationInput";
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
 
 function UploadForm() {
+  const [title, setTitle] = useState("");
+  const [storyDescription, setStoryDescription] = useState("");
+  const [story, setStory] = useState("");
+  const [location, setLocation] = useState("");
+  const [date, setDate] = useState("");
+
   return (
     <>
       <header>
@@ -34,7 +37,10 @@ function UploadForm() {
             <div className="input-container">
               <label>Story Description:</label>
 
-              <TextUpload />
+              <textarea
+                type="text"
+                placeholder="Growing up in Birmingham in the 40's"
+              />
             </div>
           </Row>
           <Row className="location-row">
@@ -49,11 +55,14 @@ function UploadForm() {
               <DatePickerComponent />
             </div>
           </Row>
-          
+
           <Row className="story-text-row">
             <div className="input-container">
               <label>Write your story:</label>
-              <StoryUpload />
+              <textarea
+                type="textarea"
+                placeholder="Growing up in Birmingham in the 40's"
+              />
             </div>
           </Row>
           {/* <Row className="video-row">
