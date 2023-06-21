@@ -47,16 +47,27 @@ function UploadForm() {
     setStoryObject(newStoryObject);
 
     async function uploadStory() {
-      const { data, error } = await supabase
+      const { data, error, status } = await supabase
         .from("stories")
-        .insert({ ...newStoryObject });
+        .insert({ ...newStoryObject })
+        .select(); 
       // Handle the response
       console.log(data);
       console.log(error);
+      console.log(status);
+      if (status === 201) {
+        alert("Story uploaded successfully");
     }
+    else {
+      alert("Story upload failed"); 
+    }
+    }
+
 
     uploadStory();
   }
+
+ 
 
   return (
     <>
