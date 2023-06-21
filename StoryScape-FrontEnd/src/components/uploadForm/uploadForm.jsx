@@ -40,6 +40,7 @@ function UploadForm() {
     event.preventDefault();
 
     const newStoryObject = {
+      user_id: 1,
       story_title: title,
       story_description: storyDescription,
       story_location: "Birmingham",
@@ -60,7 +61,7 @@ function UploadForm() {
       if (status === 201) {
         navigate("/success");
       } else {
-        alert("Story upload failed");
+       navigate ("/fail")
       }
     }
 
