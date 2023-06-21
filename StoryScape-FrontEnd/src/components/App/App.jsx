@@ -7,10 +7,20 @@ import { Row, Col } from "react-bootstrap";
 import "./app.css";
 import StoryMission from "../storyMissionCard/storyMission";
 import HomePageStory from "../homePageStory/homePageStory";
-import supabase from "../../config/supabaseClient";
+//import supabase from "../../config/supabaseClient.jsx";
+import {createClient} from '@supabase/supabase-js';
+
+
+const supabaseURL =import.meta.env.VITE_APP_SUPABASE_URL;
+const supabaseKey =import.meta.env.VITE_APP_ANON_KEY;
+
+const supabase = createClient(supabaseURL, supabaseKey);
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [fetchError, setFetchError] = useState(null)
+  const [stories,setStories]= useState(null)
+
   const navigate = useNavigate();
   console.log(supabase);
   function handleUploadButton(event) {
@@ -20,11 +30,22 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data, error } = await supabase.from("users").select();
-      console.log(data);
+      const { data, error } = await supabase.from('stories').select()
+      if (error){	
+				setFetchError('could not fetch stories')
+				setStories(null)
+				console.log(error)
+      }
+			if (data) {
+				setStories(data)
+				setFetchError(null)
+				}
     };
+
     fetchData();
   }, []);
+  
+  console.log(stories)
 
   return (
     <main className="app">
