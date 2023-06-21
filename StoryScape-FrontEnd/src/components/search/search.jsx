@@ -2,13 +2,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./search.css";
 import PropTypes from "prop-types";
+import countries from "./countries.jsx";
 
 function Search({ setSearchTerm }) {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
 
-  function handleInput(input) {
-    setInput(input);
+  function handleSearch(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    setInput(searchTerm);
   }
 
   function handleSubmit(event) {
@@ -28,22 +30,27 @@ function Search({ setSearchTerm }) {
   }
 
   return (
-    <section className="search-section ">
+    <section className="search-section">
       <form onSubmit={handleSubmit}>
         <p className="description search-description">
           Discover stories from around the world
         </p>
         <div className="input-container">
-          <input
+          <select
             className="search-input"
-            type="text"
-            placeholder="Search for a location"
             value={input}
-            onChange={(event) => {
-              handleInput(event.target.value);
-            }}
+            onChange={handleSearch}
             onKeyDown={handleEnter}
-          />
+          >
+            <option disabled value="">
+              Search for a country
+            </option>
+            {countries.map((country) => (
+              <option key={country.country} value={country.country}>
+                {country.country}
+              </option>
+            ))}
+          </select>
           <button className="search-button" type="submit">
             Search
           </button>
@@ -53,8 +60,8 @@ function Search({ setSearchTerm }) {
   );
 }
 
-export default Search;
-
 Search.propTypes = {
   setSearchTerm: PropTypes.func.isRequired,
 };
+
+export default Search;
