@@ -24,7 +24,7 @@ function Search({ setSearchTerm }) {
 
   function handleClick(country) {
     setInput(country.country);
-    // setFilteredCountries([]);
+    setFilteredCountries([]);
   }
 
   function handleSubmit(event) {
@@ -43,6 +43,7 @@ function Search({ setSearchTerm }) {
       setInput("");
       setFilteredCountries([]);
     }
+    console.log(input)
   }
 
   return (
@@ -52,21 +53,29 @@ function Search({ setSearchTerm }) {
           Discover stories from around the world
         </p>
         <div className="input-container">
-          <input
+          {/* <input
             className="search-input"
             type="text"
             placeholder="Search for a location"
             value={input}
             onChange={handleSearch}
             onKeyDown={handleEnter}
-          />
-          {filteredCountries.length > 0 && (
-            <ul className="search-results">
-              {filteredCountries.map((country) => (
-                <li key={country.country} onClick={() => handleClick(country)}>{country.country}</li>
-              ))}
-            </ul>
-          )}
+          /> */}
+          <select
+            className="search-input"
+            value={input}
+            onChange={handleSearch}
+            onKeyDown={handleEnter}
+          >
+            <option disabled value="">
+              Search for a country
+            </option>
+            {filteredCountries.map((country) => (
+              <option key={country.country} value={country.country}>
+                {country.country}
+              </option>
+            ))}
+          </select>
           <button className="search-button" type="submit">
             Search
           </button>
