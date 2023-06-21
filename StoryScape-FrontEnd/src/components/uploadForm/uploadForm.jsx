@@ -8,6 +8,8 @@ import LocationInput from "./locationInput/locationInput";
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
 
+
+
 function UploadForm() {
   const [title, setTitle] = useState("");
   const [storyDescription, setStoryDescription] = useState("");
@@ -37,7 +39,7 @@ function UploadForm() {
   }
   function handleSubmit(event) {
     event.preventDefault();
-
+  
     const newStoryObject = {
       user_id: 29035792,
       story_title: title,
@@ -47,20 +49,15 @@ function UploadForm() {
       story_main: story,
     };
     setStoryObject(newStoryObject);
-  }
-
-  console.log(storyObject);
-
-  useEffect(() => {
+  
     async function uploadStory() {
       const { data, error } = await supabase
         .from("stories")
-        .insert([storyObject]);
+        .insert({ ...newStoryObject });
+      // Handle the response
     }
     uploadStory();
-  }, [storyObject]);
-  
- 
+  }
 
   return (
     <>
