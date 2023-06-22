@@ -45,7 +45,7 @@ function App() {
     fetchData();
   }, []);
   
-  console.log(stories)
+  // console.log(stories)
 
   // useEffect(() => {
   //   const fetchData = async () => {

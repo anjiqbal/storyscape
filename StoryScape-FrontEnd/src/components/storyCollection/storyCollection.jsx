@@ -1,42 +1,133 @@
 import { useState, useEffect } from "react";
 import StoryCard from "./storyCard/storyCard";
-import dummyData from "../../../db.json";
 import { Row, Col } from "react-bootstrap";
 import Footer from "../Footer/footer";
 import { useLocation } from "react-router-dom";
 import NavBar from "../navBar/navBar";
 import "./storyCollection.css";
+import supabase from "../../config/supabaseClient";
 
 
 export default function StoryCollection() {
   // Get the search term from the location state
   const location = useLocation();
-  const searchTerm = location.state;
+  const input = location.state;
+  const [result, setResult] = useState([]);
 
+  console.log(input)
+
+useEffect(() => {
+  const fetchData = async () => {
+      const { data, error } = await supabase
+    .from("stories")
+    .select()
+    .eq("story_location", input);
+    
+    if(data!==null){
+      console.log(data)
+      setResult(data)
+    } 
+  
+
+    if (error){	
+      alert ('error')
+      setFetchError('could not fetch stories')
+      setStories(null)
+      console.log(error)
+    }
+    if (data) {
+      setStories(data)
+      setFetchError(null)
+      }
+  };
+
+  fetchData();
+
+}, []); 
+
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//     const { data, error } = await supabase.from('stories').select()
+//     if (error){	
+//       alert ('error')
+//       setFetchError('could not fetch stories')
+//       setStories(null)
+//       console.log(error)
+//     }
+//     if (data) {
+//       setStories(data)
+//       setFetchError(null)
+//       }
+//   };
+
+//   fetchData();
+// }, []);
   // Initialise state variables
-  const [filteredStories, setFilteredStories] = useState([]);
-  const stories = dummyData.stories;
+  // const [filteredStories, setFilteredStories] = useState([]);
+  // const stories = searchTerm.stories;
 
-  // Filter the stories based on the search term
-  useEffect(() => {
-    const filteredData = stories.filter(
-      (story) => story["location-country"] === searchTerm
-    );
-    setFilteredStories(filteredData);
-  }, [searchTerm, stories]);
+  // // Filter the stories based on the search term
+  // useEffect(() => {
+  //   async function fetchStories() {
+  //     const { data, error } = await supabase
+  //       .from("stories")
+  //       .select()
+  //       .eq("country", searchTerm);
+  
+  //     if (error) {
+  //       console.error("Error fetching data from Supabase:", error);
+  //     } else {
+  //       setFilteredStories(data);
+  //     }
+  //   }
+  
+  //   fetchStories();
+  // }, [searchTerm]);
+ 
+ 
+ 
+ 
+ 
+ 
+  // useEffect(() => {
+  //   const filteredData = stories.filter(
+  //     (story) => story["location-country"] === searchTerm
+  //   );
+  //   setFilteredStories(filteredData);
+  // }, [searchTerm, stories]);
+
+  // async function handleSubmit(searchTerm, event) {
+  //   event.preventDefault();
+
+  //   const { data, error } = await supabase
+  //     .from("stories")
+  //     .select('story_location')
+  //     // .eq("country", input.toLowerCase());
+
+  //   if (error) {
+  //     console.error("Error fetching data from Supabase:", error);
+  //   } else {
+  //     navigate("/storyCollection", { state: data });
+  //     setSearchTerm(input);
+  //     setInput("");
+  //   }
+  // }
 
   return (
     <div className="story-collection-wrapper">
       <header>
         <NavBar />
       </header>
+      <>
+      {result && (
       <main className="story-collection-content">
         <Row className="h-100">
           <Col>
-            {filteredStories.length === 0 ? (
+            {result.length === 0 ? (
               <p>No matching stories found.</p>
             ) : (
-              filteredStories.map((story) => (
+              result.map((story) => (
                 <StoryCard
                   storyTitle={story.title}
                   key={story.story_id}
@@ -48,6 +139,7 @@ export default function StoryCollection() {
           </Col>
         </Row>
       </main>
+      )}</>
       <footer >
         <Footer />
       </footer>

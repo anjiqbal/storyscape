@@ -9,44 +9,68 @@ function Search({ setSearchTerm }) {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
 
-  function handleSearch(e) {
+  function handleCountry(e) {
     const searchTerm = e.target.value;
     setInput(searchTerm);
   }
 
-  async function handleSubmit(searchTerm, event) {
+  function handleSubmit(event) {
     event.preventDefault();
-
-    const { data, error } = await supabase
-      .from("stories")
-      .select('story_location')
-      // .eq("country", input.toLowerCase());
-
-    if (error) {
-      console.error("Error fetching data from Supabase:", error);
-    } else {
-      navigate("/storyCollection", { state: data });
-      setSearchTerm(input);
-      setInput("");
-    }
+    navigate("/storyCollection", { state: input });
+    props.setSearchTerm(input);
+    setInput("");
   }
 
-  async function handleEnter(event) {
-    event.preventDefault();
-
-    const { data, error } = await supabase
-    .from("stories")
-    .select('story_location')
-      .eq("country", input.toLowerCase());
-
-    if (error) {
-      console.error("Error fetching data from Supabase:", error);
-    } else {
-      navigate("/storyCollection", { state: data });
-      setSearchTerm(input);
+  function handleEnter(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      navigate("/storyCollection", { state: input });
+      props.setSearchTerm(input);
       setInput("");
     }
+    
   }
+// async function handleSubmit(event) {
+//     event.preventDefault();
+  
+//     const { data, error } = await supabase
+//       .from("stories")
+//       .select("*")
+//       .eq("story_location", input);
+  
+//     if (error) {
+//       console.error("Error fetching data from Supabase:", error);
+//     } else {
+//       navigate("/storyCollection", { state: data });
+//       setSearchTerm(input);
+//       setInput("");
+//     }
+//   }
+
+  // async function handleEnter(event) {
+  //   event.preventDefault();
+  
+  //   // const { data, error } = await supabase
+  //   //   .from("stories")
+  //   //   .select("*")
+  //   //   .eq("story_location", input);
+  
+    
+  //   // event.preventDefault();
+
+  //   // const { data, error } = await supabase
+  //   // .from("stories")
+  //   // .select('story_location')
+  //   //   .eq("country", input.toLowerCase());
+
+  //   if (error) {
+  //     console.error("Error fetching data from Supabase:", error);
+  //   } else {
+  //     navigate("/storyCollection", { state: data });
+  //     setSearchTerm(input);
+  //     setInput("");
+  //   }
+  // }
 
   return (
     <section className="search-section">
@@ -58,7 +82,7 @@ function Search({ setSearchTerm }) {
           <select
             className="search-input"
             value={input}
-            onChange={handleSearch}
+            onChange={handleCountry}
             onKeyDown={handleEnter}
           >
             <option disabled value="">
