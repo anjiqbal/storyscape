@@ -19,8 +19,11 @@
 }
 
 .image {
-  width: 90%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  background-color: aliceblue;
+  border-color: rgb(215, 0, 0);
 }
 
 .ustorycontainer {
