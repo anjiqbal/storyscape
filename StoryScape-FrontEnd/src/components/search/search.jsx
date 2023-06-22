@@ -10,18 +10,18 @@ function Search({ setSearchTerm }) {
   const [input, setInput] = useState("");
 
   function handleSearch(e) {
-    const searchTerm = e.target.value.toLowerCase();
+    const searchTerm = e.target.value;
     setInput(searchTerm);
   }
 
-  async function handleSubmit(event) {
+  async function handleSubmit(searchTerm, event) {
     event.preventDefault();
-  
+
     const { data, error } = await supabase
       .from("stories")
-      .select()
-      .eq("country", input);
-  
+      .select('story_location')
+      // .eq("country", input.toLowerCase());
+
     if (error) {
       console.error("Error fetching data from Supabase:", error);
     } else {
@@ -33,12 +33,12 @@ function Search({ setSearchTerm }) {
 
   async function handleEnter(event) {
     event.preventDefault();
-  
+
     const { data, error } = await supabase
-      .from("stories")
-      .select()
-      .eq("country", input);
-  
+    .from("stories")
+    .select('story_location')
+      .eq("country", input.toLowerCase());
+
     if (error) {
       console.error("Error fetching data from Supabase:", error);
     } else {
