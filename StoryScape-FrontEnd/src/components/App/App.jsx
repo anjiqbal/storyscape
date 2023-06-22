@@ -16,6 +16,7 @@ import supabase from "../../config/supabaseClient.jsx";
 
 function App() {
 
+  const [searchTerm, setSearchTerm] = useState("");
   const [fetchError, setFetchError] = useState(null)
   const [stories,setStories]= useState(null)
   const navigate = useNavigate();
