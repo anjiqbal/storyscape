@@ -3,6 +3,8 @@ import "./uploadForm.css";
 import supabase from "../../config/supabaseClient";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+
 import DatePickerComponent from "./datePicker/datePickerForm";
 import LocationInput from "./locationInput/locationInput";
 import NavBar from "../navBar/navBar";
@@ -10,12 +12,23 @@ import Footer from "../Footer/footer";
 
 function UploadForm() {
   const navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [title, setTitle] = useState("");
   const [storyDescription, setStoryDescription] = useState("");
   const [story, setStory] = useState("");
   // const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
   const [storyObject, setStoryObject] = useState({});
+
+  function onSubmit(data) {
+    const newStoryObject = {
+      story_title: data.title,
+      story_description: data.storyDescription,
+      story_location: "Birmingham",
+      story_date: data.date,
+      story_main: data.story,
+    };
+
 
   function handleTitle(input) {
     setTitle(input);
@@ -60,7 +73,7 @@ function UploadForm() {
       if (status === 201) {
         navigate("/success");
       } else {
-       navigate ("/fail")
+        navigate("/fail");
       }
     }
 
@@ -75,7 +88,7 @@ function UploadForm() {
       <div className="user-upload-outer">
         <h1>Share your story with the world</h1>
         <div className="user-upload-container">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Row className="title-row">
               <div className="input-container">
                 <label>Story Title:</label>
@@ -85,20 +98,26 @@ function UploadForm() {
                   onChange={(event) => {
                     handleTitle(event.target.value);
                   }}
-                />
+                  {...register("title", { required: true })}
+                  />
+              {errors.title && <p>Title is required</p>}
+                
               </div>
             </Row>
             <Row className="description-row">
               <div className="input-container">
                 <label>Story Description:</label>
-
                 <textarea
+                rows="4"
                   type="text"
                   placeholder="Growing up in Birmingham in the 40's"
                   onChange={(event) => {
                     handleStoryDescription(event.target.value);
                   }}
-                />
+                  placeholder="Growing up in Birmingham in the 40's"
+                {...register("storyDescription", { required: true })}
+              />
+              {errors.storyDescription && <p>Story Description is required</p>}
               </div>
             </Row>
             <Row className="location-row">
@@ -110,7 +129,11 @@ function UploadForm() {
             <Row className="date-row">
               <div className="input-container">
                 <label>Story date</label>
-                <DatePickerComponent handleDate={handleDate} />
+                <DatePickerComponent    handleDate={(selectedDate) => {
+                  handleDate(selectedDate);
+                  setValue("date", selectedDate, { shouldValidate: true });
+                }} />
+                
               </div>
             </Row>
 
@@ -118,15 +141,39 @@ function UploadForm() {
               <div className="input-container">
                 <label>Write your story:</label>
                 <textarea
+                rows="10"
                   type="textarea"
                   placeholder="Growing up in Birmingham in the 40's"
                   onChange={(event) => {
                     handleStory(event.target.value);
                   }}
+                  {...register("story", { required: true })}
                 />
+                   {errors.storyDescription && <p>Story is required</p>}
               </div>
             </Row>
-            {/* <Row className="video-row">
+
+            <Row className="btn-row">
+              <div className="btn-container">
+                {/* <button id="draft-btn">Save Draft</button> */}
+                <button id="preview-btn">Preview</button>
+                <button className="upload-btn" type="submit">
+                  Upload
+                </button>
+              </div>
+            </Row>
+          </form>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+export default UploadForm;
+
+{
+  /* <Row className="video-row">
             <div className="input-container">
               <label>Upload Video</label>
               <VideoUpload />
@@ -149,22 +196,5 @@ function UploadForm() {
               <label>Audio description</label>
               <input type="text" placeholder="Grandad talking about his..." />
             </div>
-          </Row> */}
-            <Row className="btn-row">
-              <div className="input-container">
-                <button className="draft-btn">Save Draft</button>
-                <button className="preview-btn">Preview</button>
-                <button className="upload-btn" type="submit">
-                  Upload
-                </button>
-              </div>
-            </Row>
-          </form>
-        </div>
-      </div>
-      <Footer />
-    </>
-  );
+          </Row> */
 }
-
-export default UploadForm;
