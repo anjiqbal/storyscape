@@ -60,7 +60,7 @@ function UploadForm() {
       if (status === 201) {
         navigate("/success");
       } else {
-       navigate ("/fail")
+        navigate("/fail");
       }
     }
 
@@ -91,8 +91,8 @@ function UploadForm() {
             <Row className="description-row">
               <div className="input-container">
                 <label>Story Description:</label>
-
                 <textarea
+                rows="4"
                   type="text"
                   placeholder="Growing up in Birmingham in the 40's"
                   onChange={(event) => {
@@ -118,6 +118,7 @@ function UploadForm() {
               <div className="input-container">
                 <label>Write your story:</label>
                 <textarea
+                rows="10"
                   type="textarea"
                   placeholder="Growing up in Birmingham in the 40's"
                   onChange={(event) => {
@@ -126,7 +127,28 @@ function UploadForm() {
                 />
               </div>
             </Row>
-            {/* <Row className="video-row">
+
+            <Row className="btn-row">
+              <div className="btn-container">
+                {/* <button id="draft-btn">Save Draft</button> */}
+                <button id="preview-btn">Preview</button>
+                <button className="upload-btn" type="submit">
+                  Upload
+                </button>
+              </div>
+            </Row>
+          </form>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+export default UploadForm;
+
+{
+  /* <Row className="video-row">
             <div className="input-container">
               <label>Upload Video</label>
               <VideoUpload />
@@ -149,22 +171,5 @@ function UploadForm() {
               <label>Audio description</label>
               <input type="text" placeholder="Grandad talking about his..." />
             </div>
-          </Row> */}
-            <Row className="btn-row">
-              <div className="input-container">
-                <button className="draft-btn">Save Draft</button>
-                <button className="preview-btn">Preview</button>
-                <button className="upload-btn" type="submit">
-                  Upload
-                </button>
-              </div>
-            </Row>
-          </form>
-        </div>
-      </div>
-      <Footer />
-    </>
-  );
+          </Row> */
 }
-
-export default UploadForm;
