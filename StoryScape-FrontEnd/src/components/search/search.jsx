@@ -28,34 +28,32 @@ function Search({ setSearchTerm }) {
       props.setSearchTerm(input);
       setInput("");
     }
-    
   }
-// async function handleSubmit(event) {
-//     event.preventDefault();
-  
-//     const { data, error } = await supabase
-//       .from("stories")
-//       .select("*")
-//       .eq("story_location", input);
-  
-//     if (error) {
-//       console.error("Error fetching data from Supabase:", error);
-//     } else {
-//       navigate("/storyCollection", { state: data });
-//       setSearchTerm(input);
-//       setInput("");
-//     }
-//   }
+  // async function handleSubmit(event) {
+  //     event.preventDefault();
+
+  //     const { data, error } = await supabase
+  //       .from("stories")
+  //       .select("*")
+  //       .eq("story_location", input);
+
+  //     if (error) {
+  //       console.error("Error fetching data from Supabase:", error);
+  //     } else {
+  //       navigate("/storyCollection", { state: data });
+  //       setSearchTerm(input);
+  //       setInput("");
+  //     }
+  //   }
 
   // async function handleEnter(event) {
   //   event.preventDefault();
-  
+
   //   // const { data, error } = await supabase
   //   //   .from("stories")
   //   //   .select("*")
   //   //   .eq("story_location", input);
-  
-    
+
   //   // event.preventDefault();
 
   //   // const { data, error } = await supabase
@@ -78,16 +76,13 @@ function Search({ setSearchTerm }) {
         <p className="description search-description">
           Discover stories from around the world
         </p>
-        <div className="input-container">
+        <div id="input-container">
           <select
             className="search-input"
             value={input}
             onChange={handleCountry}
             onKeyDown={handleEnter}
           >
-            <option disabled value="">
-              Search for a country
-            </option>
             {countries.map((country) => (
               <option key={country.country} value={country.country}>
                 {country.country}
