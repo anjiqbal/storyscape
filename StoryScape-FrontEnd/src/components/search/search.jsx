@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./search.css";
 import PropTypes from "prop-types";
 import countries from "./countries.jsx";
+import supabase from "../../config/supabaseClient";
 
 function Search({ setSearchTerm }) {
   const navigate = useNavigate();
@@ -13,17 +14,35 @@ function Search({ setSearchTerm }) {
     setInput(searchTerm);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    navigate("/storyCollection", { state: input });
-    setSearchTerm(input);
-    setInput("");
+  
+    const { data, error } = await supabase
+      .from("stories")
+      .select()
+      .eq("country", input);
+  
+    if (error) {
+      console.error("Error fetching data from Supabase:", error);
+    } else {
+      navigate("/storyCollection", { state: data });
+      setSearchTerm(input);
+      setInput("");
+    }
   }
 
-  function handleEnter(event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      navigate("/storyCollection", { state: input });
+  async function handleEnter(event) {
+    event.preventDefault();
+  
+    const { data, error } = await supabase
+      .from("stories")
+      .select()
+      .eq("country", input);
+  
+    if (error) {
+      console.error("Error fetching data from Supabase:", error);
+    } else {
+      navigate("/storyCollection", { state: data });
       setSearchTerm(input);
       setInput("");
     }

@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import NavBar from "../navBar/navBar";
 import "./storyCollection.css";
 
+
 export default function StoryCollection() {
   // Get the search term from the location state
   const location = useLocation();

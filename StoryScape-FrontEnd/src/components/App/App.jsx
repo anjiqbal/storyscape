@@ -76,7 +76,7 @@ function App() {
             <Row>
               <Col>
                 <div className="form-container">
-                  <Search setSearchTerm={setSearchTerm} />
+                  <Search  />
                 </div>
               </Col>
             </Row>
