@@ -13,9 +13,13 @@
   font-size: 18px;
   margin-left: 15px;
   color: black;
+  transition: 0.75s;
 }
 
 
 .navbar-nav .nav-link:hover {
-  background-color: #F9D8C4;
-}
+  background-color: black;
+  color: #FBF5E0;
+  border-radius: 48px;
+} 
+/*nav bar already has transition effect on it? from bootstrap? */
