@@ -33,10 +33,15 @@ form {
   cursor: pointer;
   margin-left: 20px;
   font-weight: bold;
+  transition: 0.75s;
+  border: 2px solid black;
 }
 
 .search-button:hover {
-  background-color: #f9d8c4;
+  background-color: black;
+  border: 2px solid black;
+  color: #f9d8c4;
+  
 }
 
 .description {
