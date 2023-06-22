@@ -3,6 +3,19 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh; 
+  background-color:#FBF5E0;
+  
+}
+
+.success-card {
+  display: flex;
+  justify-content: center;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+}
+
+.text-center{
+  background-color:#FBF5E0;
+  border: none;
 }
 
 .uploadText {
@@ -12,8 +25,10 @@
 }
 
 .success-header {
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
   background-color: #c8d6b9;
-  margin: 3rem; black;
+  margin: 3rem; 
+  width: 100%;
   
 }
 .success-collection-content {
@@ -21,12 +36,15 @@
 }
 .success-body {
   background-color: #c8d6b9;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  margin: 3rem; black
+  margin: 3rem; 
+  width: 100%;
 }
+
 .successButton {
   background-color: #F9D8C4;
   color: black;
@@ -40,6 +58,7 @@
   text-align: center;
   justify-content: center;
   transition: all 0.75s;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
 }
 
 .successButton:hover {
