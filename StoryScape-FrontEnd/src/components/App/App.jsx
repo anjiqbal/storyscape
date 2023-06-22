@@ -33,7 +33,8 @@ function App() {
     const fetchData = async () => {
       const { data, error } = await supabase.from('stories').select()
       if (error){	
-				setFetchError('could not fetch stories')
+				alert ('error')
+        setFetchError('could not fetch stories')
 				setStories(null)
 				console.log(error)
       }
@@ -101,13 +102,13 @@ function App() {
         <Row>
           {/* HomePageStory components */}
           <Col sm={12} md={4}>
-            <HomePageStory />
+            <HomePageStory stories={stories} />
           </Col>
           <Col sm={12} md={4}>
-            <HomePageStory />
+            <HomePageStory stories={stories} />
           </Col>
           <Col sm={12} md={4}>
-            <HomePageStory />
+            <HomePageStory stories={stories} />
           </Col>
         </Row>
       </div>
