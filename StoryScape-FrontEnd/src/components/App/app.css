@@ -19,14 +19,15 @@
   align-items: center;
   text-align: center;
   justify-content: center;
+  transition: 0.75s;
 }
 
 .upload-story-btn:hover {
-  background-color: #fffbfe;
-  color: black;
+  background-color: black;
+  color: #f9d8c4;
+  transform: rotate(360deg);
   font-weight: bold;
   border: 2px solid black;
-  transition: 0.3s;
 }
 
 .first-row {

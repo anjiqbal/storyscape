@@ -24,6 +24,8 @@
   object-fit: cover;
   background-color: aliceblue;
   border-color: rgb(215, 0, 0);
+  max-height: 250px;
+
 }
 
 .ustorycontainer {

@@ -12,7 +12,9 @@ import AboutUs from './components/aboutUs/aboutUs.jsx';
 import ProfileOwn from './components/userProfile/profileOwn.jsx';
 import ProfileOther from './components/userProfileOther/profileOther.jsx';
 import Discover from './components/discover/discover.jsx';
+import UploadSuccess from './components/uploadForm/uploadSuccess/uploadSuccess.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UploadFailed from './components/uploadForm/uploadError/uploadError.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
@@ -28,6 +30,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="profile" element={<ProfileOwn/>} />
         <Route path="profileOther" element={<ProfileOther/>} />
         <Route path="discover" element={<Discover/>} />
+        <Route path="success" element={<UploadSuccess/>} />
+        <Route path="fail" element={<UploadFailed/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
