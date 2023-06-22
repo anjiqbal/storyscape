@@ -40,7 +40,6 @@ function UploadForm() {
     event.preventDefault();
 
     const newStoryObject = {
-      user_id: 1,
       story_title: title,
       story_description: storyDescription,
       story_location: "Birmingham",
