@@ -3,20 +3,21 @@ import { useNavigate } from "react-router-dom";
 import "./search.css";
 import PropTypes from "prop-types";
 import countries from "./countries.jsx";
+import supabase from "../../config/supabaseClient";
 
 function Search({ setSearchTerm }) {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
 
-  function handleSearch(e) {
-    const searchTerm = e.target.value.toLowerCase();
+  function handleCountry(e) {
+    const searchTerm = e.target.value;
     setInput(searchTerm);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     navigate("/storyCollection", { state: input });
-    setSearchTerm(input);
+    props.setSearchTerm(input);
     setInput("");
   }
 
@@ -24,10 +25,52 @@ function Search({ setSearchTerm }) {
     if (event.key === "Enter") {
       event.preventDefault();
       navigate("/storyCollection", { state: input });
-      setSearchTerm(input);
+      props.setSearchTerm(input);
       setInput("");
     }
+    
   }
+// async function handleSubmit(event) {
+//     event.preventDefault();
+  
+//     const { data, error } = await supabase
+//       .from("stories")
+//       .select("*")
+//       .eq("story_location", input);
+  
+//     if (error) {
+//       console.error("Error fetching data from Supabase:", error);
+//     } else {
+//       navigate("/storyCollection", { state: data });
+//       setSearchTerm(input);
+//       setInput("");
+//     }
+//   }
+
+  // async function handleEnter(event) {
+  //   event.preventDefault();
+  
+  //   // const { data, error } = await supabase
+  //   //   .from("stories")
+  //   //   .select("*")
+  //   //   .eq("story_location", input);
+  
+    
+  //   // event.preventDefault();
+
+  //   // const { data, error } = await supabase
+  //   // .from("stories")
+  //   // .select('story_location')
+  //   //   .eq("country", input.toLowerCase());
+
+  //   if (error) {
+  //     console.error("Error fetching data from Supabase:", error);
+  //   } else {
+  //     navigate("/storyCollection", { state: data });
+  //     setSearchTerm(input);
+  //     setInput("");
+  //   }
+  // }
 
   return (
     <section className="search-section">
@@ -39,7 +82,7 @@ function Search({ setSearchTerm }) {
           <select
             className="search-input"
             value={input}
-            onChange={handleSearch}
+            onChange={handleCountry}
             onKeyDown={handleEnter}
           >
             <option disabled value="">

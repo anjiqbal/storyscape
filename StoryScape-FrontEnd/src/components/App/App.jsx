@@ -47,7 +47,7 @@ function App() {
     fetchData();
   }, []);
   
-  console.log(stories)
+  // console.log(stories)
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -78,7 +78,7 @@ function App() {
             <Row>
               <Col>
                 <div className="form-container">
-                  <Search setSearchTerm={setSearchTerm} />
+                  <Search  />
                 </div>
               </Col>
             </Row>
