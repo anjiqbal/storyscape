@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import placeHolderImage from "./images/StoryScape_placeholder2.PNG";
+import placeHolderImage from "./images/StoryScape_placeholder2.png";
 // import image2 from "./images/Story-2.jpg";
 // import image3 from "./images/Story-3.jpg";
 // import image4 from "./images/Story-4.jpg";
