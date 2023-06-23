@@ -7,15 +7,23 @@ import DatePickerComponent from "./datePicker/datePickerForm";
 import LocationInput from "./locationInput/locationInput";
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
+import countries from "./../search/countries";
 
 function UploadForm() {
   const navigate = useNavigate();
+  const [input, setInput] = useState("");
   const [title, setTitle] = useState("");
   const [storyDescription, setStoryDescription] = useState("");
   const [story, setStory] = useState("");
   // const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
   const [storyObject, setStoryObject] = useState({});
+
+  function handleCountry(e) {
+    const searchTerm = e.target.value;
+    setInput(searchTerm);
+  }
+
 
   function handleTitle(input) {
     setTitle(input);
@@ -42,7 +50,7 @@ function UploadForm() {
     const newStoryObject = {
       story_title: title,
       story_description: storyDescription,
-      story_location: "Birmingham",
+      story_location: input,
       story_date: date,
       story_main: story,
     };
@@ -66,6 +74,7 @@ function UploadForm() {
 
     uploadStory();
   }
+  console.log(storyObject)
 
   return (
     <>
@@ -92,7 +101,7 @@ function UploadForm() {
               <div className="input-container">
                 <label>Story Description:</label>
                 <textarea
-                rows="4"
+                  rows="4"
                   type="text"
                   placeholder="Growing up in Birmingham in the 40's"
                   onChange={(event) => {
@@ -104,7 +113,19 @@ function UploadForm() {
             <Row className="location-row">
               <div className="input-container">
                 <label>Story Location:</label>
-                <LocationInput />
+                <div id="input-container">
+                  <select
+                    className="search-input"
+                    
+                    onChange={handleCountry}
+                  >
+                    {countries.map((country) => (
+                      <option key={country.country} value={country.country}>
+                        {country.country}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </Row>
             <Row className="date-row">
@@ -118,7 +139,7 @@ function UploadForm() {
               <div className="input-container">
                 <label>Write your story:</label>
                 <textarea
-                rows="10"
+                  rows="10"
                   type="textarea"
                   placeholder="Growing up in Birmingham in the 40's"
                   onChange={(event) => {

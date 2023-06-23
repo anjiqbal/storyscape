@@ -7,6 +7,8 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+
 }
 
 #input-container {
@@ -52,6 +54,8 @@ form {
   margin-bottom: 1rem;
   font-weight: 700;
   font-size: 20px;
+  text-align: center;
+  text-align-last: center
 }
 /* 
 .search-results {
