@@ -57,3 +57,69 @@ h2 {
   margin: 0;
   padding: 0;
 }
+
+.dark-btn {
+  background-color: #f9d8c4;
+  color: black;
+  border-radius: 28px;
+  display: block;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  transition: 0.75s;
+  position: absolute;
+  top: 95px;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.dark-btn:hover{
+  background-color: black;
+  color: #f9d8c4;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+/* DARK MODE STYLES */
+.dark-btn.dark-mode {
+  background-color: black;
+  color: #f9d8c4;
+}
+
+.app.dark-mode .dark-btn {
+  right: 20px;
+  top: 95px;
+  background-color: black;
+  color: #f9d8c4;
+}
+.app.dark-mode {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+.card.dark-mode {
+  background-color: #404040;
+  color: #ffffff;
+}
+
+.upload-story-btn.dark-mode {
+  background-color: #494949;
+  color: #ffffff;
+}
+
+.first-row.dark-mode {
+  background-color: #2b2b2b;
+}
+
+.second-row.dark-mode {
+  background-color: #1f1f1f;
+}
+
+.app.dark-mode .trending-title {
+  color: #ffffff;
+}
+
