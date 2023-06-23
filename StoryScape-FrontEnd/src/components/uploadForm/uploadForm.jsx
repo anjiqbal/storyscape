@@ -24,7 +24,6 @@ function UploadForm() {
     setInput(searchTerm);
   }
 
-
   function handleTitle(input) {
     setTitle(input);
   }
@@ -46,6 +45,12 @@ function UploadForm() {
   }
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (!date) {
+      // Date is not selected, display error message or take necessary action
+     alert("Please select a date");
+      return;
+    }
 
     const newStoryObject = {
       story_title: title,
@@ -74,7 +79,7 @@ function UploadForm() {
 
     uploadStory();
   }
-  console.log(storyObject)
+  console.log(storyObject);
 
   return (
     <>
@@ -89,6 +94,7 @@ function UploadForm() {
               <div className="input-container">
                 <label>Story Title:</label>
                 <input
+                  required
                   type="text"
                   placeholder="Growing up in Birmingham in the 40's"
                   onChange={(event) => {
@@ -101,6 +107,7 @@ function UploadForm() {
               <div className="input-container">
                 <label>Story Description:</label>
                 <textarea
+                  required
                   rows="4"
                   type="text"
                   placeholder="Growing up in Birmingham in the 40's"
@@ -116,7 +123,7 @@ function UploadForm() {
                 <div id="input-container">
                   <select
                     className="search-input"
-                    
+                    required
                     onChange={handleCountry}
                   >
                     {countries.map((country) => (
@@ -139,6 +146,7 @@ function UploadForm() {
               <div className="input-container">
                 <label>Write your story:</label>
                 <textarea
+                  required
                   rows="10"
                   type="textarea"
                   placeholder="Growing up in Birmingham in the 40's"
