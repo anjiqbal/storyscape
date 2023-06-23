@@ -29,46 +29,7 @@ function Search({ setSearchTerm }) {
       setInput("");
     }
   }
-  // async function handleSubmit(event) {
-  //     event.preventDefault();
 
-  //     const { data, error } = await supabase
-  //       .from("stories")
-  //       .select("*")
-  //       .eq("story_location", input);
-
-  //     if (error) {
-  //       console.error("Error fetching data from Supabase:", error);
-  //     } else {
-  //       navigate("/storyCollection", { state: data });
-  //       setSearchTerm(input);
-  //       setInput("");
-  //     }
-  //   }
-
-  // async function handleEnter(event) {
-  //   event.preventDefault();
-
-  //   // const { data, error } = await supabase
-  //   //   .from("stories")
-  //   //   .select("*")
-  //   //   .eq("story_location", input);
-
-  //   // event.preventDefault();
-
-  //   // const { data, error } = await supabase
-  //   // .from("stories")
-  //   // .select('story_location')
-  //   //   .eq("country", input.toLowerCase());
-
-  //   if (error) {
-  //     console.error("Error fetching data from Supabase:", error);
-  //   } else {
-  //     navigate("/storyCollection", { state: data });
-  //     setSearchTerm(input);
-  //     setInput("");
-  //   }
-  // }
 
   return (
     <section className="search-section">
@@ -83,6 +44,10 @@ function Search({ setSearchTerm }) {
             onChange={handleCountry}
             onKeyDown={handleEnter}
           >
+          {/* Placeholder before countries */}
+          <option value="" disabled>
+          Select a country
+          </option>
             {countries.map((country) => (
               <option key={country.country} value={country.country}>
                 {country.country}
