@@ -10,7 +10,7 @@ export default function NavBar() {
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img src={logo} alt="Logo" className="navbar-logo" />
-          <span className="navbar-brand-name">StoryScape</span>
+          {/* <span className="navbar-brand-name">StoryScape</span> */}
         </Link>
 
         <button
