@@ -6,6 +6,9 @@ import { useLocation } from "react-router-dom";
 import NavBar from "../navBar/navBar";
 import "./storyCollection.css";
 import supabase from "../../config/supabaseClient";
+import "./../homePageStory/homePageStory.css"
+
+
 
 export default function StoryCollection() {
   const location = useLocation();
@@ -45,19 +48,23 @@ export default function StoryCollection() {
         {result && (
           <main className="story-collection-content">
             <Row className="h-100">
-              <Col>
-                {result.length === 0 ? (
+              {result.length === 0 ? (
+                <Col>
                   <p>No matching stories found.</p>
-                ) : (
-                  result.map((story) => (
+                </Col>
+              ) : (
+                result.map((story) => (
+                  <Col sm={12} md={4}>
                     <StoryCard
-                      storyTitle={story.story_title}
-                      key={story.story_id}
+                      result={result}
                       storyId={story.story_id}
+                      storyTitle={story.story_title}
+                      storyLocation={story.story_location}
+                      storyDescription={story.story_description}
                     />
-                  ))
-                )}
-              </Col>
+                  </Col>
+                ))
+              )}
             </Row>
           </main>
         )}

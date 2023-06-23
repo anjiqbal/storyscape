@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png"
+import "../../homePageStory/homePageStory.css";
 
-export default function StoryCard({ storyTitle, storyId, key }) {
+export default function StoryCard({ storyTitle,storyLocation , storyDescription, storyId, result, key }) {
   const navigate = useNavigate();
 
   function handleClick(event) {
@@ -10,12 +13,19 @@ export default function StoryCard({ storyTitle, storyId, key }) {
   console.log(storyId);
   return (
     <>
+    {result && (
       <ul>
-        <li key={key}>
-          {storyTitle}{" "}
-          <button onClick={handleClick}>Click here for more...</button>
-        </li>
+      <Container className="piccontainer">
+      <img src={placeholderImage} alt="Story" className="image" />
+      <div className="ustorycontainer">
+        <h2 className="title">{storyTitle}</h2>
+        <em className="storyUserName">  {storyLocation} </em>
+        <p className="text">{storyDescription}</p>
+      </div>
+      <button onClick={handleClick}>Click here for more...</button>
+    </Container>
       </ul>
+    )}
     </>
   );
 }
