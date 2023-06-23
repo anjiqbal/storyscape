@@ -1,0 +1,72 @@
+.error-collection-wrapper {
+    padding-top: 5rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh; 
+    background-color:#FBF5E0;
+    
+  }
+  
+  .error-card {
+    display: flex;
+    justify-content: center;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  }
+  
+  .error-text-center{
+    background-color:#FBF5E0;
+    border: none;
+  }
+  
+  .error-uploadText {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 500;
+    color: #000000;
+  }
+  
+  .error-header {
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    background-color: #d47676;
+    margin: 3rem; 
+    width: 100%;
+    text-align: center;
+    
+    
+  }
+  .error-collection-content {
+    overflow-x: hidden;
+  }
+  .error-body {
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    background-color: #d47676;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 3rem; 
+    width: 100%;
+    text-align: center;
+  }
+  
+  .errorButton {
+    background-color: #F9D8C4;
+    color: black;
+    border-radius: 28px;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 12px;
+    margin: 15px ;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transition: all 0.75s;
+  }
+  
+  .errorButton:hover {
+    background-color: black;
+    transform: rotate(360deg);
+    border: 2px solid black;
+    color:#F9D8C4;
+  }
