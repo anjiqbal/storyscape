@@ -7,10 +7,6 @@ import { Row, Col } from "react-bootstrap";
 import "./app.css";
 import StoryMission from "../storyMissionCard/storyMission";
 import HomePageStory from "../homePageStory/homePageStory";
-// import supabase from "../../config/supabase";
-
-
-
 import supabase from "../../config/supabaseClient.jsx";
 
 
@@ -124,26 +120,3 @@ function App() {
 export default App;
 
 
-// return (
-//   <main className="app">
-//     {/* Navbar section */}
-//     <header>
-//       <Navbar />
-//     </header>
-//     <div className="filler"></div>
-//     <div className="first-row">
-//       {/* Rest of your code */}
-//     </div>
-//     <div className="filler-two"></div>
-//     <div className="second-row">
-//       {/* Render the fetched user data */}
-//       {userData.map((user) => (
-//         <HomePageStory key={user.id} user={user} />
-//       ))}
-//     </div>
-//     {/* Rest of your code */}
-//   </main>
-// );
-// }
-
-// export default App;

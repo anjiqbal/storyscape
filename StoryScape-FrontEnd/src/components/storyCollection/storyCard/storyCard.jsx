@@ -22,7 +22,7 @@ export default function StoryCard({ storyTitle,storyLocation , storyDescription,
         <em className="storyUserName">  {storyLocation} </em>
         <p className="text">{storyDescription}</p>
       </div>
-      <button onClick={handleClick}>Click here for more...</button>
+      <button onClick={handleClick} className="click-here-btn">Click here for more...</button>
     </Container>
       </ul>
     )}

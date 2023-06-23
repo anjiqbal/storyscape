@@ -50,3 +50,23 @@
   border-top: 2px solid black;
   overflow: ellipsis;
 }
+
+.click-here-btn{
+  background-color: #f9d8c4;
+  color: black;
+  border-radius: 28px;
+  display: block;
+  font-weight: bold;
+  padding: 12px;
+  margin: 15px;
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  transition: 0.75s;
+}
+
+.click-here-btn:hover{
+  background-color: black;
+  color: #f9d8c4;
+}
