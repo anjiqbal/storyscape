@@ -7,6 +7,9 @@ import NavBar from "../navBar/navBar";
 import "./storyCollection.css";
 import supabase from "../../config/supabaseClient";
 
+
+
+
 export default function StoryCollection() {
   const location = useLocation();
   const input = location.state;
@@ -49,11 +52,15 @@ export default function StoryCollection() {
                 {result.length === 0 ? (
                   <p>No matching stories found.</p>
                 ) : (
+
                   result.map((story) => (
                     <StoryCard
-                      storyTitle={story.story_title}
-                      key={story.story_id}
+                      result={result}
                       storyId={story.story_id}
+                      storyTitle={story.story_title}
+                      storyLocation ={story.story_location}
+                      storyDescription={story.story_description}
+                      key={story.story_id}
                     />
                   ))
                 )}
