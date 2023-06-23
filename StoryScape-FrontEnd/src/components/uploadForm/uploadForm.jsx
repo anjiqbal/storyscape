@@ -53,6 +53,7 @@ function UploadForm() {
     }
 
     const newStoryObject = {
+      id:1,
       story_title: title,
       story_description: storyDescription,
       story_location: input,
