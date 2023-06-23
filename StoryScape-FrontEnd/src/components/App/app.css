@@ -70,11 +70,9 @@ h2 {
   align-items: center;
   text-align: center;
   justify-content: center;
-  transition: 0.75s;
   position: absolute;
-  top: 95px;
   right: 10px;
-  transform: translateY(-50%);
+  top: 95px;
 }
 
 .dark-btn:hover{
@@ -91,7 +89,7 @@ h2 {
 }
 
 .app.dark-mode .dark-btn {
-  right: 20px;
+  right: 10px;
   top: 95px;
   background-color: black;
   color: #f9d8c4;
