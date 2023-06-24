@@ -1,10 +1,20 @@
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color: #c8d6b9;
+    
+}
+.about-us-page{
+    background-color: #fbf5e0;
+   
+    display: flex;
+}
 .wedabest {
     padding-top: 100px;
 }
 
 .wedabest img {
     width: 50%;
-}
-a{
-    text-decoration: none;
 }
