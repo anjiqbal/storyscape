@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.footer-search-section {
+  padding: 0; /* Remove the padding */
+}
+
 form {
   display: flex;
   flex-direction: column;
