@@ -1,20 +1,22 @@
-a{
+.team-anchor{
     text-decoration: none;
 }
-a:hover{
-    text-decoration: underline;
-    color: #c8d6b9;
-    
+.team-anchor:hover{
+    /* text-decoration: underline; */
+    color: #FBF5E0;
+    background-color: black;
+    border-radius: 20px;
+    padding: 5px;
 }
 .about-us-page{
-    background-color: #fbf5e0;
-   
+    background-color: #FBF5E0;
+    padding: 55px;
     display: flex;
 }
 .wedabest {
     padding-top: 100px;
 }
-
 .wedabest img {
-    width: 50%;
+    width: 20%;
+    height: 20%;
 }
