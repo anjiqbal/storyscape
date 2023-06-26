@@ -1,3 +1,34 @@
-/* .audio-section {
-    margin-left: -2000px; /* Adjust the value as needed 
-  } */
+.mainStoryContainer {
+  background-color: #fbf5e0;
+  padding-top: 5rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.mainStoryTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* .mainStoryImageContainer {
+  width: 50%;
+  height: 50%;
+} */
+
+.mainStoryLocation {
+  padding-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.mainStoryDescription {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2rem;
+}
