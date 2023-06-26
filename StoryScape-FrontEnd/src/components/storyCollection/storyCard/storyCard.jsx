@@ -3,11 +3,11 @@ import Container from "react-bootstrap/Container";
 import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png"
 import "../../homePageStory/homePageStory.css";
 
-export default function StoryCard({ storyTitle, storyLocation, storyDescription, storyId, result }) {
+export default function StoryCard({ storyTitle, storyLocation, storyDescription, storyMain, storyId, result }) {
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate("/story", { state: { storyId, storyTitle, storyLocation, storyDescription } });
+    navigate("/story", { state: { storyId, storyTitle, storyLocation, storyDescription, storyMain } });
   }
   
   console.log(storyId);
@@ -20,7 +20,8 @@ export default function StoryCard({ storyTitle, storyLocation, storyDescription,
       <div className="ustorycontainer">
         <h2 className="title">{storyTitle}</h2>
         <em className="storyUserName">  {storyLocation} </em>
-        <p className="text">{storyDescription}</p>
+        <p className="storyDescription">{storyDescription}</p>
+        <p className="storyMain">{storyMain}</p>
       </div>
       <button onClick={handleClick} className="click-here-btn">Click here for more...</button>
     </Container>

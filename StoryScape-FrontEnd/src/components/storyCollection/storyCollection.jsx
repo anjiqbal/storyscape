@@ -60,6 +60,7 @@ export default function StoryCollection() {
                       storyTitle={story.story_title}
                       storyLocation={story.story_continent}
                       storyDescription={story.story_description}
+                      storyMain={story.story_main}
                     />
                   </Col>
                 ))

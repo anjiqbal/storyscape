@@ -4,12 +4,11 @@ import NavBar from "../../navBar/navBar";
 import Footer from "../../Footer/footer";
 import { Row } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
-import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png"
-
+import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png";
 
 export default function StoryPage() {
   const location = useLocation();
-  const { storyId, storyTitle, storyLocation, storyDescription } =
+  const { storyId, storyTitle, storyLocation, storyDescription, storyMain } =
     location.state;
 
   return (
@@ -25,15 +24,21 @@ export default function StoryPage() {
           </Container>
 
           <Container className="mainStoryImageContainer">
-            <img src={placeholderImage} alt="StoryImage" className="mainStoryImage"/>
+            <img
+              src={placeholderImage}
+              alt="StoryImage"
+              className="mainStoryImage"
+            />
           </Container>
 
           <Container className="mainStoryLocation">
             <p>{storyLocation}</p>
           </Container>
 
-          <Container className="mainStoryDescription">
-            <p>{storyDescription}</p>
+          
+
+          <Container className="mainStoryMain">
+            <p>{storyMain}</p>
           </Container>
 
           {/* Render the full story content here */}
