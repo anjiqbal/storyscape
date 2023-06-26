@@ -23,11 +23,11 @@ export default function StoryPage() {
           <Container className="mainStoryTitle">
             <h2>{storyTitle}</h2>
           </Container>
-
+          <Container className="imageContainerMain">  
           <Container className="mainStoryImageContainer">
             <img src={placeholderImage} alt="StoryImage" className="mainStoryImage"/>
           </Container>
-
+          </Container>
           <Container className="mainStoryLocation">
             <p>{storyLocation}</p>
           </Container>
