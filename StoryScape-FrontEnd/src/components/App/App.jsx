@@ -49,9 +49,9 @@ function App() {
       {/* Navbar section */}
       <header>
         <Navbar />
-        <button onClick={toggleDarkMode} className="dark-btn">
+        {/* <button onClick={toggleDarkMode} className="dark-btn">
           Toggle Dark Mode
-        </button>
+        </button> */}
       </header>
       <div className="filler"></div>
       <div className="first-row">
