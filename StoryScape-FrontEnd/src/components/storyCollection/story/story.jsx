@@ -8,11 +8,12 @@ import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2
 
 export default function StoryPage() {
   const location = useLocation();
-  const { storyId, storyTitle, storyLocation, storyDescription, storyMain } =
+  const { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate } =
     location.state;
 
   return (
     <>
+    <div className="entireContainer">
       <header>
         {" "}
         <NavBar />{" "}
@@ -31,10 +32,15 @@ export default function StoryPage() {
             />
           </Container>
           </Container>
-          <Container className="mainStoryLocation">
+          <Container className="mainStoryContinent">
+            <p>{storyContinent}</p>
+          </Container>
+          <Container className="storyLocation">
             <p>{storyLocation}</p>
           </Container>
-
+          <Container className="storyDate">
+            <p>{storyDate}</p>
+          </Container>
         
           <Container className="mainStoryMain">
             <p>{storyMain}</p>
@@ -48,6 +54,7 @@ export default function StoryPage() {
         {" "}
         <Footer />{" "}
       </footer>
+      </div>
     </>
   );
 }

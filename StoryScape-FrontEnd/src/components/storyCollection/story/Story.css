@@ -1,3 +1,7 @@
+.entireContainer {
+  background-color:#FBF5E0;
+}
+
 .mainStoryContainer{
   padding-top: 5rem;
   display: grid;
@@ -15,7 +19,6 @@
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: 450px;
-  
 }
 
 .mainStoryTitle {
@@ -43,9 +46,14 @@
     height: 100%;
     object-fit: cover;
     max-height: 250px;
+    transition:transform 0.75s;
   }
 
-.mainStoryLocation {
+  .mainStoryImage:hover {
+    transform: scale(1.4);
+  }
+
+.mainStoryContinent {
   padding-top: 2rem;
   font-size: 1.5rem;
   font-weight: 500;
