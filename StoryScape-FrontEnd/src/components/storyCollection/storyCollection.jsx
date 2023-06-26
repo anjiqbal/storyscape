@@ -58,7 +58,7 @@ export default function StoryCollection() {
                       result={result}
                       storyId={story.story_id}
                       storyTitle={story.story_title}
-                      storyLocation={story.story_location}
+                      storyLocation={story.story_continent}
                       storyDescription={story.story_description}
                     />
                   </Col>
