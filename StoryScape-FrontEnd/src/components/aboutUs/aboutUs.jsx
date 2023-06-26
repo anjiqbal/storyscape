@@ -1,5 +1,5 @@
 import NavBar from "../navBar/navBar";
-import Footer from "../footer/footer";
+import Footer from "../Footer/footer";
 import weDaBest from "./djk.png";
 import team from "./grouppic.png";
 import './aboutUs.css'
