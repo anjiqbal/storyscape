@@ -1,56 +1,49 @@
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import "./Story.css";
+import NavBar from "../../navBar/navBar";
+import Footer from "../../Footer/footer";
+import { Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png"
+
 
 export default function StoryPage() {
   const location = useLocation();
-  const story_id = location.state; // grabs the state passed
-  const stories = dummyData.stories;
-  const [story, setStory] = useState(null); // Declare and initialise the story state
-
-  useEffect(() => {
-    const filteredStory = stories.find((s) => s["story_id"] === story_id);
-
-    setStory(filteredStory); // Update the story state with the filtered story
-  }, [stories, story_id]);
-
-  const renderAudioPlayer = () => {
-    const audioFile = story.files.find((file) => file.type === "audio");
-    if (audioFile) {
-      return (
-        <audio controls>
-          <source src={audioFile.url}  />
-          Your browser does not support the audio element.
-        </audio>
-      );
-    }
-    return null;
-  };
+  const { storyId, storyTitle, storyLocation, storyDescription } =
+    location.state;
 
   return (
     <>
-      {story && <h1>{story.title}</h1>}{" "}
-      {story && (
-        <p>
-          {story["location-country"]}, {story["location-city"]}
-        </p>
-      )}{" "}
-      {story && (
-        <p>
-          {story.year}, {story.month}
-        </p>
-      )}{" "}
-      {story && <p>{story.description}</p>}
-      {story && renderAudioPlayer()}
-      {story && (
+      <header>
+        {" "}
+        <NavBar />{" "}
+      </header>
+      <Container className="mainStoryContainer">
         <div>
-          {story.files
-            .filter((file) => file.type === "text")
-            .map((file, index) => (
-              <p key={index}>{JSON.stringify(file.content)}</p>
-            ))}
+          <Container className="mainStoryTitle">
+            <h2>{storyTitle}</h2>
+          </Container>
+
+          <Container className="mainStoryImageContainer">
+            <img src={placeholderImage} alt="StoryImage" className="mainStoryImage"/>
+          </Container>
+
+          <Container className="mainStoryLocation">
+            <p>{storyLocation}</p>
+          </Container>
+
+          <Container className="mainStoryDescription">
+            <p>{storyDescription}</p>
+          </Container>
+
+          {/* Render the full story content here */}
         </div>
-      )}
-      {/* Render the story title if story is not null */}
+      </Container>
+
+      <footer>
+        {" "}
+        <Footer />{" "}
+      </footer>
     </>
   );
 }

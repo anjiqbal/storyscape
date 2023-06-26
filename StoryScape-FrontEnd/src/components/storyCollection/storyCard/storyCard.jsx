@@ -3,14 +3,13 @@ import Container from "react-bootstrap/Container";
 import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png"
 import "../../homePageStory/homePageStory.css";
 
-
 export default function StoryCard({ storyTitle, storyLocation, storyDescription, storyId, result }) {
+  const navigate = useNavigate();
 
-
-  function handleClick(event) {
-    event.preventDefault();
-    navigate("/story", { state: storyId }); //key is the story_id - passed to story component
+  function handleClick() {
+    navigate("/story", { state: { storyId, storyTitle, storyLocation, storyDescription } });
   }
+  
   console.log(storyId);
   return (
     <>
