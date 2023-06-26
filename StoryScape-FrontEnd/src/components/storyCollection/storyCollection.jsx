@@ -19,7 +19,7 @@ export default function StoryCollection() {
       const { data, error } = await supabase
         .from("stories")
         .select()
-        .eq("story_location", input);
+        .eq("story_continent", input);
 
       if (data !== null) {
         setResult(data);

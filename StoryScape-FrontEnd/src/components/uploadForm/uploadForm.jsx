@@ -117,9 +117,30 @@ function UploadForm() {
                 />
               </div>
             </Row>
+            <Row className="continent-row">
+            <label className="label-continent">Story Location-continent:</label>
+            <select
+             required
+            className="search-input"
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+            
+          >
+           <option value="">Search for a continent</option> {/* Default empty option */}
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="Oceania">Oceania</option>
+            <option value="South America">South America</option>
+          </select>
+              </Row>
             <Row className="location-row">
               <div className="input-container">
-                <label>Story Location:</label>
+                <label>Story Location-country:</label>
+                
+
                 <div id="input-container">
                   <select
                     className="search-input"
