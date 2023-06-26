@@ -3,7 +3,17 @@
   overflow-x: hidden;
 }
 
+#form-container {
+  padding: 60px;
+}
 
+.upload-form form{
+  padding-left: 48px;
+}
+
+.homepage-input-headings {
+  margin-bottom: 30px;
+}
 
 .card {
   background-color: #d9d9d9;
@@ -12,35 +22,35 @@
 .upload-story-btn {
   background-color: #f9d8c4;
   color: black;
-  border-radius: 28px;
+
   display: block;
   font-weight: bold;
   padding: 12px;
-  margin: 15px;
+  margin-bottom: 30px;
   cursor: pointer;
   align-items: center;
   text-align: center;
   justify-content: center;
+  width: 100px;
   transition: 0.75s;
 }
 
-.homepage-search {
-  padding-top: 20px;
-}
+
 
 .upload-story-btn:hover {
   background-color: black;
   color: #f9d8c4;
-  transform: rotate(360deg);
+  border-radius: 28px;
+  /* transform: rotate(360deg); */
   font-weight: bold;
   border: 2px solid black;
+  
 }
 
 .first-row {
   width: 80%;
   margin: 0 auto;
-  padding-top: 4rem;
-  padding-bottom: 5rem;
+
   border: 2px solid black;
   background-color: #c8d6b9;
 }

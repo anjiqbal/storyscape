@@ -57,32 +57,30 @@ function App() {
       <div className="first-row">
         <Row>
           {/* StoryMission component */}
-          <Col xs={12} md={6}>
+          <Col xs={12} s={12} md={12} lg={6} className="home-storymission">
             <StoryMission />
           </Col>
           {/* Search component and Upload button */}
-          <Col xs={12} md={6}>
+          <Col xs={12} s={12} md={12} lg={6}>
             <Row>
-              <Col>
-                <div className="form-container">
-                  <h3 className="homepage-search">
-                    Discover stories from around the world
-                  </h3>
-
-                  <Search />
-                </div>
-              </Col>
+              <div id="form-container">
+                <h4 className="homepage-input-headings">
+                  Discover stories from around the world
+                </h4>
+                <Search />
+              </div>
             </Row>
             <Row>
-              <Col>
+              
                 <section className="upload-form">
                   <form onSubmit={handleUploadButton}>
+                  <h4 className="homepage-input-headings">Or, upload your own...</h4>
                     <button type="submit" className="upload-story-btn">
-                      Upload a Story
+                      Upload
                     </button>
                   </form>
                 </section>
-              </Col>
+             
             </Row>
           </Col>
         </Row>
