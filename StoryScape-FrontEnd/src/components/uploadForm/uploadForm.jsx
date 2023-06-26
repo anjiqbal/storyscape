@@ -15,13 +15,18 @@ function UploadForm() {
   const [title, setTitle] = useState("");
   const [storyDescription, setStoryDescription] = useState("");
   const [story, setStory] = useState("");
-  // const [location, setLocation] = useState("");
+  const [continent, setContinent] = useState("");
   const [date, setDate] = useState("");
   const [storyObject, setStoryObject] = useState({});
 
   function handleCountry(e) {
     const searchTerm = e.target.value;
     setInput(searchTerm);
+  }
+
+  function handleContinent(e) {
+    const continent = e.target.value;
+    setContinent(continent);
   }
 
   function handleTitle(input) {
@@ -55,9 +60,10 @@ function UploadForm() {
     const newStoryObject = {
       story_title: title,
       story_description: storyDescription,
-      story_location: input,
+      story_country: input,
       story_date: date,
       story_main: story,
+      story_continent: continent,
     };
     setStoryObject(newStoryObject);
 
@@ -117,9 +123,31 @@ function UploadForm() {
                 />
               </div>
             </Row>
+            <Row className="continent-row">
+            <label className="label-continent">Story Location-continent:</label>
+            <select
+             required
+            className="search-input"
+            value={continent}
+            
+            onChange={handleContinent}
+            
+          >
+           <option value="">Search for a continent</option> {/* Default empty option */}
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="Oceania">Oceania</option>
+            <option value="South America">South America</option>
+          </select>
+              </Row>
             <Row className="location-row">
               <div className="input-container">
-                <label>Story Location:</label>
+                <label>Story Location-country:</label>
+                
+
                 <div id="input-container">
                   <select
                     className="search-input"

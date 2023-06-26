@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./search.css";
 import PropTypes from "prop-types";
-import countries from "./countries.jsx";
-import supabase from "../../config/supabaseClient";
+
+
 
 function Search({ setSearchTerm, showDescription, isFooter }) {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
 
-  function handleCountry(e) {
+  function handleContinent(e) {
     const searchTerm = e.target.value;
     setInput(searchTerm);
   }
@@ -42,15 +42,17 @@ function Search({ setSearchTerm, showDescription, isFooter }) {
           <select
             className="search-input"
             value={input}
-            onChange={handleCountry}
+            onChange={handleContinent}
             onKeyDown={handleEnter}
           >
-           <option value="">Search for a country</option> {/* Default empty option */}
-            {countries.map((country) => (
-              <option key={country.country} value={country.country}>
-                {country.country}
-              </option>
-            ))}
+           <option value="">Search for a continent</option> {/* Default empty option */}
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="Oceania">Oceania</option>
+            <option value="South America">South America</option>
           </select>
           <button className="search-button" type="submit">
             Search
