@@ -53,7 +53,7 @@ function UploadForm() {
 
     if (!date) {
       // Date is not selected, display error message or take necessary action
-     alert("Please select a date");
+      alert("Please select a date");
       return;
     }
 
@@ -124,29 +124,31 @@ function UploadForm() {
               </div>
             </Row>
             <Row className="continent-row">
-            <label className="label-continent">Story Location-continent:</label>
-            <select
-             required
-            className="search-input"
-            value={continent}
-            
-            onChange={handleContinent}
-            
-          >
-           <option value="">Search for a continent</option> {/* Default empty option */}
-            <option value="Africa">Africa</option>
-            <option value="Asia">Asia</option>
-            <option value="Antarctica">Antarctica</option>
-            <option value="Europe">Europe</option>
-            <option value="North America">North America</option>
-            <option value="Oceania">Oceania</option>
-            <option value="South America">South America</option>
-          </select>
-              </Row>
+              <div className="input-container">
+                <label>Story Location-continent:</label>
+                <div id="continent-container">
+                  <select
+                    required
+                    className="search-input"
+                    value={continent}
+                    onChange={handleContinent}
+                  >
+                    <option value="">Search for a continent</option>{" "}
+                    {/* Default empty option */}
+                    <option value="Africa">Africa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Antarctica">Antarctica</option>
+                    <option value="Europe">Europe</option>
+                    <option value="North America">North America</option>
+                    <option value="Oceania">Oceania</option>
+                    <option value="South America">South America</option>
+                  </select>
+                </div>
+              </div>
+            </Row>
             <Row className="location-row">
               <div className="input-container">
                 <label>Story Location-country:</label>
-                
 
                 <div id="input-container">
                   <select
@@ -154,7 +156,8 @@ function UploadForm() {
                     required
                     onChange={handleCountry}
                   >
-                    <option value="">Search for a country</option> {/* Default empty option */}
+                    <option value="">Search for a country</option>{" "}
+                    {/* Default empty option */}
                     {countries.map((country) => (
                       <option key={country.country} value={country.country}>
                         {country.country}

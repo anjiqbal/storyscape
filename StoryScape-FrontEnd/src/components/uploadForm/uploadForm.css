@@ -106,7 +106,13 @@ input, textarea {
   align-items: center;
   width: 100%;
   padding: 2rem;
+}
 
+.user-upload-container .continent-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
 }
 
 .btn-row {
