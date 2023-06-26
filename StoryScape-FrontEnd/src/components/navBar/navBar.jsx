@@ -43,14 +43,14 @@ export default function NavBar() {
   );
 }
 
-{
+
   /* <Navbar className="nav" collapseOnSelect expand="lg">
 <Container className="navBarContainer">
   <Navbar.Brand className="brand" as={Link} to="">
     Story Scape
   </Navbar.Brand>
   <Nav.Link className="navElement profileLink" as={Link} to="profileOwn"> {/*corrected this*/
-}
+
 //      Profile
 //   </Nav.Link>
 //   <Navbar.Toggle aria-controls="responsive-navbar-nav" />

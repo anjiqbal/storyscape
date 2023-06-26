@@ -72,7 +72,7 @@ h2 {
   justify-content: center;
   position: absolute;
   right: 10px;
-  top: 95px;
+  top: 81px;
 }
 
 .dark-btn:hover{
@@ -90,7 +90,7 @@ h2 {
 
 .app.dark-mode .dark-btn {
   right: 10px;
-  top: 95px;
+  top: 81px;
   background-color: black;
   color: #f9d8c4;
 }
