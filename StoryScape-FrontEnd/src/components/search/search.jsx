@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import countries from "./countries.jsx";
 import supabase from "../../config/supabaseClient";
 
-function Search({ setSearchTerm }) {
+function Search({ setSearchTerm, showDescription, isFooter }) {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
 
@@ -30,13 +30,14 @@ function Search({ setSearchTerm }) {
     }
   }
 
-
   return (
-    <section className="search-section">
+    <section className={`search-section ${isFooter ? "footer-search-section" : ""}`}>
       <form onSubmit={handleSubmit}>
-        <p className="description search-description">
-          Discover stories from around the world
-        </p>
+        {showDescription && (
+          <p className="description search-description">
+            Discover stories from around the world
+          </p>
+        )}
         <div id="input-container">
           <select
             className="search-input"
@@ -44,10 +45,7 @@ function Search({ setSearchTerm }) {
             onChange={handleCountry}
             onKeyDown={handleEnter}
           >
-          {/* Placeholder before countries */}
-          <option value="" disabled>
-          Select a country
-          </option>
+           <option value="">Search for a country</option> {/* Default empty option */}
             {countries.map((country) => (
               <option key={country.country} value={country.country}>
                 {country.country}
@@ -65,6 +63,9 @@ function Search({ setSearchTerm }) {
 
 Search.propTypes = {
   setSearchTerm: PropTypes.func.isRequired,
+  showDescription: PropTypes.bool.isRequired,
+  isFooter: PropTypes.bool.isRequired,
 };
 
 export default Search;
+
