@@ -43,24 +43,16 @@ function App() {
     fetchData();
   }, []);
   
-  // console.log(stories)
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const { data, error } = await supabase.from("users").select();
-  //     if (error) {
-  //       console.error(error);
-  //     } else {
-  //       setUserData(data);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+  //FOR DARK MODE
+const [darkMode, setDarkMode] = useState(false);
+const toggleDarkMode = () => setDarkMode(!darkMode);
   return (
-    <main className="app">
+    <main className={`app ${darkMode ? 'dark-mode' : ''}`}>
       {/* Navbar section */}
       <header>
         <Navbar />
+      <button onClick={toggleDarkMode} className="dark-btn">Toggle Dark Mode</button>
       </header>
       <div className="filler"></div>
       <div className="first-row">
@@ -94,7 +86,7 @@ function App() {
       </div>
       <div className="filler-two"></div>
       <div className="second-row">
-        <h2>Trending on StoryScape</h2>
+        <h2 className="trending-title">Trending on StoryScape</h2>
         <Row>
           {/* HomePageStory components */}
           <Col sm={12} md={4}>

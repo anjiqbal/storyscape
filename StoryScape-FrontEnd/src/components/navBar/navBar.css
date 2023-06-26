@@ -1,5 +1,6 @@
 .navbar {
   background-color: #FBF5E0;
+  background-color: #FBF5E0;
   font-weight: bold;
   border-bottom: 1px solid black;
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
@@ -8,6 +9,7 @@
 .navbar-logo {
   width: 50px;
   margin-right: 10px;
+  display: inline-block;
 }
 .navbar-nav .nav-link {
   font-size: 18px;
@@ -23,3 +25,14 @@
   border-radius: 48px;
 } 
 /*nav bar already has transition effect on it? from bootstrap? */
+
+.navbar-brand-name {
+  display: inline-block
+}
+
+@media (max-width: 767px) {
+  /* Hide the brand name and show only the logo in mobile view */
+  .navbar-brand-name {
+    display: none;
+  }
+}
