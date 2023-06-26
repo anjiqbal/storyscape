@@ -8,7 +8,7 @@ function storyMission() {
   return (
     <Container className='mission-container'>
     <h1>Connecting the world through our life stories and experiences</h1>
-    <img className='mission-image' src={logo} alt=''/>
+    <img className='mission-image' src={logo} alt='StoryScape logo with text: Preserve, Share, Inspire. Your Past, Our Future'/>
     </Container>
   )
 }

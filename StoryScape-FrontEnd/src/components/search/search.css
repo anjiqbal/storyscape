@@ -15,7 +15,7 @@ form {
 
 }
 
-#input-container {
+.search-section .input-container {
   display: grid;
   grid-template-columns: 1fr auto; /* Set the input field and button to occupy columns of equal width */
   align-items: center;

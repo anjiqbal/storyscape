@@ -33,14 +33,11 @@ function Search({ setSearchTerm, showDescription, isFooter }) {
   return (
     <section className={`search-section ${isFooter ? "footer-search-section" : ""}`}>
       <form onSubmit={handleSubmit}>
-        {showDescription && (
-          <p className="description search-description">
-            Discover stories from around the world
-          </p>
-        )}
-        <div id="input-container">
+   
+        <div className="input-container">
           <select
             className="search-input"
+            aria-label="Search for a continent"
             value={input}
             onChange={handleContinent}
             onKeyDown={handleEnter}

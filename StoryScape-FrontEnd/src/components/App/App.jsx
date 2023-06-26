@@ -9,12 +9,10 @@ import StoryMission from "../storyMissionCard/storyMission";
 import HomePageStory from "../homePageStory/homePageStory";
 import supabase from "../../config/supabaseClient.jsx";
 
-
 function App() {
-
   const [searchTerm, setSearchTerm] = useState("");
-  const [fetchError, setFetchError] = useState(null)
-  const [stories,setStories]= useState(null)
+  const [fetchError, setFetchError] = useState(null);
+  const [stories, setStories] = useState(null);
   const navigate = useNavigate();
 
   const [userData, setUserData] = useState([]); // State to store the fetched user data
@@ -27,32 +25,33 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data, error } = await supabase.from('stories').select()
-      if (error){	
-				alert ('error')
-        setFetchError('could not fetch stories')
-				setStories(null)
-				console.log(error)
+      const { data, error } = await supabase.from("stories").select();
+      if (error) {
+        alert("error");
+        setFetchError("could not fetch stories");
+        setStories(null);
+        console.log(error);
       }
-			if (data) {
-				setStories(data)
-				setFetchError(null)
-				}
+      if (data) {
+        setStories(data);
+        setFetchError(null);
+      }
     };
 
     fetchData();
   }, []);
-  
 
   //FOR DARK MODE
-const [darkMode, setDarkMode] = useState(false);
-const toggleDarkMode = () => setDarkMode(!darkMode);
+  const [darkMode, setDarkMode] = useState(false);
+  const toggleDarkMode = () => setDarkMode(!darkMode);
   return (
-    <main className={`app ${darkMode ? 'dark-mode' : ''}`}>
+    <main className={`app ${darkMode ? "dark-mode" : ""}`}>
       {/* Navbar section */}
       <header>
         <Navbar />
-      <button onClick={toggleDarkMode} className="dark-btn">Toggle Dark Mode</button>
+        <button onClick={toggleDarkMode} className="dark-btn">
+          Toggle Dark Mode
+        </button>
       </header>
       <div className="filler"></div>
       <div className="first-row">
@@ -66,7 +65,11 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
             <Row>
               <Col>
                 <div className="form-container">
-                  <Search  />
+                  <h3 className="homepage-search">
+                    Discover stories from around the world
+                  </h3>
+
+                  <Search />
                 </div>
               </Col>
             </Row>
@@ -110,5 +113,3 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
 }
 
 export default App;
-
-
