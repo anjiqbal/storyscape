@@ -126,6 +126,7 @@ function UploadForm() {
                     required
                     onChange={handleCountry}
                   >
+                    <option value="">Search for a country</option> {/* Default empty option */}
                     {countries.map((country) => (
                       <option key={country.country} value={country.country}>
                         {country.country}
