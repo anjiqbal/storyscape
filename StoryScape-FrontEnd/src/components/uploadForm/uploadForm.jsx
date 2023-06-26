@@ -15,13 +15,18 @@ function UploadForm() {
   const [title, setTitle] = useState("");
   const [storyDescription, setStoryDescription] = useState("");
   const [story, setStory] = useState("");
-  // const [location, setLocation] = useState("");
+  const [continent, setContinent] = useState("");
   const [date, setDate] = useState("");
   const [storyObject, setStoryObject] = useState({});
 
   function handleCountry(e) {
     const searchTerm = e.target.value;
     setInput(searchTerm);
+  }
+
+  function handleContinent(e) {
+    const continent = e.target.value;
+    setContinent(continent);
   }
 
   function handleTitle(input) {
@@ -55,9 +60,10 @@ function UploadForm() {
     const newStoryObject = {
       story_title: title,
       story_description: storyDescription,
-      story_location: input,
+      story_country: input,
       story_date: date,
       story_main: story,
+      story_continent: continent,
     };
     setStoryObject(newStoryObject);
 
@@ -122,8 +128,9 @@ function UploadForm() {
             <select
              required
             className="search-input"
-            value={input}
-            onChange={(event) => setInput(event.target.value)}
+            value={continent}
+            
+            onChange={handleContinent}
             
           >
            <option value="">Search for a continent</option> {/* Default empty option */}
