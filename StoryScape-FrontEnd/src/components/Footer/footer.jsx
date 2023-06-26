@@ -24,27 +24,27 @@ export default function Footer() {
             <h5 className="text-white mb-3">Quick links</h5>
             <ul className="list-unstyled text-white">
             <li>
-             <Link classNameName="nav-link text-white link" to="/">
+             <Link className="text-white link" to="/">
            Home
          </Link>
              </li>
              <li>
-             <Link classNameName="nav-link text-white link" to="/aboutUs">
+             <Link className="text-white link" to="/aboutUs">
            About Us
          </Link>
              </li>
              <li>
-             <Link classNameName="nav-link text-white link" to="/uploadForm">
+             <Link className="text-white link" to="/uploadForm">
            Upload
          </Link>
              </li>
              <li>
-             <Link classNameName="nav-link text-white link" to="/discover">
+             <Link className="text-white link" to="/discover">
            Discover
          </Link>
              </li>
              <li>
-             <Link classNameName="nav-link text-white link" to="/signUp">
+             <Link className="text-white link" to="/signUp">
            Sign In
          </Link>
              </li>
