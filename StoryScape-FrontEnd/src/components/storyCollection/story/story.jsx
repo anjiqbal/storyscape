@@ -35,8 +35,7 @@ export default function StoryPage() {
             <p>{storyLocation}</p>
           </Container>
 
-          
-
+        
           <Container className="mainStoryMain">
             <p>{storyMain}</p>
           </Container>

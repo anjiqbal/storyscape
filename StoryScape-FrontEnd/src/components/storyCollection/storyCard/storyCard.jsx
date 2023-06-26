@@ -7,7 +7,7 @@ export default function StoryCard({ storyTitle, storyLocation, storyDescription,
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate("/story", { state: { storyId, storyTitle, storyLocation, storyDescription, storyMain } });
+    navigate("/story", { state: { storyId, storyTitle, storyLocation, storyDescription, storyMain} });
   }
   
   console.log(storyId);
@@ -21,7 +21,7 @@ export default function StoryCard({ storyTitle, storyLocation, storyDescription,
         <h2 className="title">{storyTitle}</h2>
         <em className="storyUserName">  {storyLocation} </em>
         <p className="storyDescription">{storyDescription}</p>
-        <p className="storyMain">{storyMain}</p>
+        {/* <p className="storyMain">{storyMain}</p> */}
       </div>
       <button onClick={handleClick} className="click-here-btn">Click here for more...</button>
     </Container>
