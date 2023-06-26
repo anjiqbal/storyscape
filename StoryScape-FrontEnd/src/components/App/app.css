@@ -4,7 +4,7 @@
 }
 
 #form-container {
-  padding: 60px 0 60px 90px;
+  padding: 60px 40px 60px 90px;
 }
 
 .upload-form form {
@@ -47,7 +47,7 @@
 .first-row {
   width: 80%;
   margin: 0 auto;
-  height: 50%;
+
   border: 2px solid black;
   background-color: #c8d6b9;
 }
