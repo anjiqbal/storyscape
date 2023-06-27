@@ -37,6 +37,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="success" element={<UploadSuccess/>} />
         <Route path="fail" element={<UploadFailed/>} />
         <Route path="*" element={<NotFound/>} />
+        <Route path=":continent/:id" element={<Story />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

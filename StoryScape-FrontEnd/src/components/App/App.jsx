@@ -92,7 +92,7 @@ function App() {
         <Row>
           {/* HomePageStory components */}
           <Col sm={12} md={4}>
-            <HomePageStory stories={stories} />
+          <HomePageStory stories={stories} />
           </Col>
           <Col sm={12} md={4}>
             <HomePageStory stories={stories} />
