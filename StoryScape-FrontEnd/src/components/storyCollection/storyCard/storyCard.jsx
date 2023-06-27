@@ -1,45 +1,72 @@
-import { useNavigate, useParams} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 import Container from "react-bootstrap/Container";
-import "../../homePageStory/homePageStory.css";
-// import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png"
+import "./storyCard.css";
 
-export default function StoryCard({ storyImage, storyTitle, storyContinent, storyDescription, storyMain, storyId, result, storyLocation, storyDate }) {
+export default function StoryCard({
+  storyImage,
+  storyTitle,
+  storyContinent,
+  storyDescription,
+  storyMain,
+  storyId,
+  result,
+  storyLocation,
+  storyDate,
+}) {
   const navigate = useNavigate();
-  const { story_id } = useParams();
-
-console.log(`THIS IS THE URL ${storyImage}`)
+  //const { story_id } = useParams();
 
   function handleClick(event) {
     event.preventDefault();
-    navigate(`/storyCollection/${storyLocation}/${storyId}`, { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate, storyImage} });
-    console.log(storyTitle)
+    navigate(`/storyCollection/${storyLocation}/${storyId}`, {
+      state: {
+        storyId,
+        storyTitle,
+        storyContinent,
+        storyDescription,
+        storyMain,
+        storyLocation,
+        storyDate,
+        storyImage,
+      },
+    });
   }
-  
 
-  // function handleClick() {
-  //   navigate("/story", { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate} });
-
-  // }
-  
-  console.log(storyId);
   return (
     <>
-    {result && (
-      <ul>
-      <Container className="piccontainer">
-      <img src={storyImage} alt="Story" className="image" />
-      <div className="ustorycontainer">
-        <h2 className="title">{storyTitle}</h2>
-        <em className="storyContinent">  {storyContinent} </em>
-        <em className="storyLocation"> {storyLocation}</em>
-        <em className="storyDate"> {storyDate}</em>
-        <p className="storyDescription">{storyDescription}</p>
-        {/* <p className="storyMain">{storyMain}</p> */}
-      </div>
-      <button onClick={handleClick} className="click-here-btn">Click here for more...</button>
-    </Container>
-      </ul>
-    )}
+      {result && (
+        <ul>
+          <Container className="card-container" onClick={handleClick}>
+            <div className="card-content">
+              <div className="first-half">
+                <div className="story-card-image-container">
+                  <img src={storyImage} alt="Story" className="story-card-image" />
+                </div>
+                <div className="story-details">
+                  <h2 className="title">{storyTitle}</h2>
+                  <em className="storyLocation">{storyLocation}, {storyContinent} </em>
+                  <em className="storyDate">{storyDate}</em>
+                </div>
+              </div>
+              <div className="second-half">
+                <p className="story-card-description">{storyDescription}</p>
+              </div>
+            </div>
+          </Container>
+        </ul>
+      )}
     </>
   );
-} 
+}
+StoryCard.propTypes = {
+  storyImage: PropTypes.string.isRequired,
+  storyTitle: PropTypes.string.isRequired,
+  storyContinent: PropTypes.string.isRequired,
+  storyDescription: PropTypes.string.isRequired,
+  storyMain: PropTypes.string.isRequired,
+  storyId: PropTypes.string.isRequired,
+  result: PropTypes.bool.isRequired,
+  storyLocation: PropTypes.string.isRequired,
+  storyDate: PropTypes.string.isRequired,
+};

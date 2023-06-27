@@ -62,7 +62,7 @@ export default function StoryCollection() {
                 </Col>
               ) : (
                 result.map((story) => (
-                  <Col sm={12} md={4}>
+                  <Col xs={12} sm={12} md={6} lg={4} key={story.story_id}>
                     <StoryCard
                       result={result}
                       storyImage={story.story_url}
