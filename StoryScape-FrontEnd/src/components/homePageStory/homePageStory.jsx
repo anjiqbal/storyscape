@@ -1,60 +1,58 @@
 import { useState, useEffect } from "react";
-
 import placeHolderImage from "./images/StoryScape_placeholder2.png";
-// import image2 from "./images/Story-2.jpg";
-// import image3 from "./images/Story-3.jpg";
-// import image4 from "./images/Story-4.jpg";
-// import image5 from "./images/Story-5.jpg";
-// import image6 from "./images/Story-6.jpg";
 import "./homePageStory.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
-import { pl } from "date-fns/locale";
+import {useNavigate} from "react-router-dom";
 
 const HomePageStory = (props) => {
   const [story, setStory] = useState({});
   const [previousIndex, setPreviousIndex] = useState(-1);
   const [imageToDisplay, setImageToDisplay] = useState(null);
-  console.log(props.stories)
-  const stories = props.stories
-  // console.log(stories)
-  
+const navigate = useNavigate();
   useEffect(() => {
-    if (props.stories !== null) {
-      const randomIndex = Math.floor(Math.random() * stories.length);
-      console.log();
-      
+    if (props.stories !== null && props.stories.length > 0) {
+      const randomIndex = Math.floor(Math.random() * props.stories.length);
+
       if (randomIndex === previousIndex) {
-            return;
-          }
-          setPreviousIndex(randomIndex);
-          setStory(stories[randomIndex]);
-        // }, [stories.length, previousIndex]);
-
-        if (story.image) {
-          setImageToDisplay(story.image);
-    
-        } else {
-          setImageToDisplay(placeHolderImage);
-        }
-        
-
-
+        return;
       }
-  }, [props.stories])
+
+      setPreviousIndex(randomIndex);
+      setStory(props.stories[randomIndex]);
+    }
+  }, [props.stories, previousIndex]);
+
+  useEffect(() => {
+    if (story.story_url) {
+      setImageToDisplay(story.story_url);
+    } else {
+      setImageToDisplay(placeHolderImage);
+    }
+  }, [story]);
+
+  function handleClick(event) {
+    event.preventDefault();
+    navigate(`/:${story.story_continent}/:${story.story_id}`);
+    console.log(storyTitle)
+  }
+  
 
   return (
     <>
-    {stories && (
-    <Container className="piccontainer">
-      <img src={imageToDisplay} alt="Story" className="image" />
-      <div className="ustorycontainer">
-        <h2 className="title">{story.story_title}</h2>
-        <em className="storyUserName">  {story.story_location} </em>
-        <p className="text">{story.story_Description}</p>
-      </div>
-    </Container>
-    )}</>
+      {props.stories && props.stories.length > 0 && (
+        <Container className="piccontainer">
+          <img src={imageToDisplay} alt="Story" className="image" />
+          <div className="ustorycontainer">
+            <h2 className="title">{story.story_title}</h2>
+            <em className="storyUserName">{story.story_continent}</em>
+            <em className="storyLocation">{story.story_country}</em>
+            <p className="text">{story.story_description}</p>
+          </div>
+          <button onClick={handleClick} className="click-here-btn">Click here for more...</button>
+        </Container>
+      )}
+    </>
   );
 };
 
