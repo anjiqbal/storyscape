@@ -26,9 +26,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="signUp" element={<SignUp />} />
         <Route path="uploadForm" element={<UploadForm />} />
         <Route path="storyCollection/*" element={<StoryCollection />} >
-            <Route path= ":continent/:id" element={<Story />} />
         </Route>
-
+            {/* <Route path= ":continent/:id" element={<Story />} /> */}
+          <Route path="story" element={<Story/>}></Route>
         {/* <Route path="storyCollection/:continent/:id" element={<Story />} /> */}
         <Route path="aboutUs" element={<AboutUs/>} />
         <Route path="profile" element={<ProfileOwn/>} />
