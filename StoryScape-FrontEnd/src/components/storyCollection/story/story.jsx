@@ -1,80 +1,61 @@
-import { GrMapLocation } from "react-icons/gr";
+import { useLocation } from "react-router-dom";
+import "./Story.css";
+import NavBar from "../../navBar/navBar";
+import Footer from "../../Footer/footer";
+import { Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png";
 
-import { useLocation, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-
-export default function Story() {
-  const { storyId } = useParams()
+export default function StoryPage() {
   const location = useLocation();
-  //const story_id = location.state; // grabs the state passed
- 
-  const [story, setStory] = useState(null); // Declare and initialise the story state
+  const { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate } =
+    location.state;
 
-  useEffect(() => {
-    const filteredStory = stories.find((s) => s["story_id"] === storyId);
-
-    setStory(filteredStory); // Update the story state with the filtered story
-  }, [stories, story_id]);
-
-  const renderAudioPlayer = () => {
-    const audioFile = story.files.find((file) => file.type === "audio");
-    if (audioFile) {
-      return (
-        <audio controls>
-          <source src={audioFile.url}  />
-          Your browser does not support the audio element.
-        </audio>
-      );
-    }
-    return null;
-  };
 
   return (
     <>
-      {story && <h1>{story.title}</h1>}{" "}
-      {story && (
-        <p>
-          {story["location-country"]}, {story["location-city"]}
-        </p>
-      )}{" "}
-      {story && (
-        <p>
-          {story.year}, {story.month}
-        </p>
-      )}{" "}
-      {story && <p>{story.description}</p>}
-      {story && renderAudioPlayer()}
-      {story && (
+    <div className="entireContainer">
+      <header>
+        {" "}
+        <NavBar />{" "}
+      </header>
+      <Container className="mainStoryContainer">
         <div>
-          {story.files
-            .filter((file) => file.type === "text")
-            .map((file, index) => (
-              <p key={index}>{JSON.stringify(file.content)}</p>
-            ))}
+          <Container className="mainStoryTitle">
+            <h2>{storyTitle}</h2>
+          </Container>
+          <Container className="imageContainerMain">  
+          <Container className="mainStoryImageContainer">
+            <img
+              src={placeholderImage}
+              alt="StoryImage"
+              className="mainStoryImage"
+            />
+          </Container>
+          </Container>
+          <Container className="mainStoryContinent">
+            <p>{storyContinent}</p>
+          </Container>
+          <Container className="storyLocation">
+            <p>{storyLocation}</p>
+          </Container>
+          <Container className="storyDate">
+            <p>{storyDate}</p>
+          </Container>
+        
+          <Container className="mainStoryMain">
+            <p>{storyMain}</p>
+          </Container>
+
+          {/* Render the full story content here */}
         </div>
-      )}
-      {/* Render the story title if story is not null */}
+      </Container>
+
+      <footer>
+        {" "}
+        <Footer />{" "}
+      </footer>
+      </div>
     </>
   );
-}
-
-{
-  /* <h1>Title</h1>
-      <video controls loop autoPlay muted poster="https://drive.google.com/file/d/1J2qrLOjQn_0CqlYnasZouqc7YItk8Pyi/view?usp=drive_link ">
-        <source src="https://drive.google.com/file/d/1J2qrLOjQn_0CqlYnasZouqc7YItk8Pyi/view?usp=drive_link" />
-      </video>
-        <p>Short description of video</p>
-        <p><GrMapLocation/> Location:</p>
-
-<figure ClassName="audio-section">
-    <figcaption>Listen to Audio:</figcaption>
-    <audio
-        controls
-        src="/media/cc0-audio/t-rex-roar.mp3">
-            <a href="/media/cc0-audio/t-rex-roar.mp3">
-                Download audio
-            </a>
-    </audio>
-</figure>
-<p>Story.description</p> */
 }

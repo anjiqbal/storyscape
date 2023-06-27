@@ -4,11 +4,11 @@
 }
 
 #form-container {
-  padding: 60px;
+  padding: 60px 40px 60px 90px;
 }
 
-.upload-form form{
-  padding-left: 48px;
+.upload-form form {
+  padding-left: 78px;
 }
 
 .homepage-input-headings {
@@ -35,8 +35,6 @@
   transition: 0.75s;
 }
 
-
-
 .upload-story-btn:hover {
   background-color: black;
   color: #f9d8c4;
@@ -44,7 +42,6 @@
   /* transform: rotate(360deg); */
   font-weight: bold;
   border: 2px solid black;
-  
 }
 
 .first-row {
@@ -91,7 +88,7 @@ h2 {
   top: 81px;
 }
 
-.dark-btn:hover{
+.dark-btn:hover {
   background-color: black;
   color: #f9d8c4;
   font-weight: bold;
@@ -136,4 +133,3 @@ h2 {
 .app.dark-mode .trending-title {
   color: #ffffff;
 }
-

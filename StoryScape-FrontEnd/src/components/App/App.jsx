@@ -8,6 +8,7 @@ import "./app.css";
 import StoryMission from "../storyMissionCard/storyMission";
 import HomePageStory from "../homePageStory/homePageStory";
 import supabase from "../../config/supabaseClient.jsx";
+import StoryCard from "../storyCollection/storyCard/storyCard.jsx";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,9 +50,9 @@ function App() {
       {/* Navbar section */}
       <header>
         <Navbar />
-        <button onClick={toggleDarkMode} className="dark-btn">
+        {/* <button onClick={toggleDarkMode} className="dark-btn">
           Toggle Dark Mode
-        </button>
+        </button> */}
       </header>
       <div className="filler"></div>
       <div className="first-row">
