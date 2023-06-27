@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Search from "../search/search";
 import Navbar from "../navBar/navBar";
 import Footer from "../Footer/footer";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation} from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import "./app.css";
 import StoryMission from "../storyMissionCard/storyMission";
@@ -15,12 +15,21 @@ function App() {
   const [fetchError, setFetchError] = useState(null);
   const [stories, setStories] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const {loggedIn} = location.state || {loggedIn:false};
+  // const [loggedIn, setLoggedIn] = useState(false);
 
   const [userData, setUserData] = useState([]); // State to store the fetched user data
   // console.log(supabase);
 
   function handleUploadButton(event) {
     event.preventDefault();
+    if (!loggedIn) {
+      alert("Please login to upload a story");
+      navigate("/signUp",{state: {loggedIn}});
+      return;
+    }
+    else
     navigate("/uploadForm");
   }
 
@@ -41,7 +50,7 @@ function App() {
 
     fetchData();
   }, []);
-
+console.log(loggedIn)
   //FOR DARK MODE
   const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => setDarkMode(!darkMode);

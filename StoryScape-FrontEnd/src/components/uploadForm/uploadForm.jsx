@@ -22,6 +22,8 @@ function UploadForm() {
   const [date, setDate] = useState("");
   const [storyObject, setStoryObject] = useState({});
 
+  
+
   function handleCountry(e) {
     const searchTerm = e.target.value;
     setInput(searchTerm);
