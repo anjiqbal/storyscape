@@ -13,12 +13,17 @@
 
 @media (max-width: 991px) {
   #form-container {
-    padding-left: 60px; /* Adjusted padding on the left */
+    padding-left: 40px; /* Adjusted padding on the left */
   }
 
   .upload-form form {
-    padding-left: 50px; /* Remove left padding */
+    padding-left: 30px; /* Remove left padding */
   }
+
+  .upload-form{
+    margin-top: -80px;
+  }
+
 }
 
 .homepage-input-headings {
