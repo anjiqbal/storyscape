@@ -5,6 +5,9 @@ footer {
 .footer-logo {
   height: 100px;
 }
+#footer-site-link:hover{
+  color: #f9d8c4 !important;
+}
 
 .footer-search .search-description {
   color: white;

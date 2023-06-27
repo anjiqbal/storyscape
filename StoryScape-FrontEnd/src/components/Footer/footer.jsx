@@ -15,7 +15,7 @@ export default function Footer() {
             </p>
             <p className="small text-white mb-0">
               &copy; Copyrights. All rights reserved.{" "}
-              <a className="text-primary" href="#">
+              <a className="link-light" id="footer-site-link" href="https://storyscape.netlify.app/">
                 storyscape.netlify.com
               </a>
             </p>
