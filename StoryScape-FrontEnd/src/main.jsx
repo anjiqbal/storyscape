@@ -15,6 +15,7 @@ import Discover from './components/discover/discover.jsx';
 import UploadSuccess from './components/uploadForm/uploadSuccess/uploadSuccess.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UploadFailed from './components/uploadForm/uploadError/uploadError.jsx';
+import NotFound from './components/notFound/NotFound.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
@@ -24,14 +25,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="login" element={<Login />} />
         <Route path="signUp" element={<SignUp />} />
         <Route path="uploadForm" element={<UploadForm />} />
-        <Route path="storyCollection" element={<StoryCollection />} />
-        <Route path="story" element={<Story />} />
+        <Route path="storyCollection/*" element={<StoryCollection />} >
+            <Route path= ":continent/:id" element={<Story />} />
+        </Route>
+
+        {/* <Route path="storyCollection/:continent/:id" element={<Story />} /> */}
         <Route path="aboutUs" element={<AboutUs/>} />
         <Route path="profile" element={<ProfileOwn/>} />
         <Route path="profileOther" element={<ProfileOther/>} />
         <Route path="discover" element={<Discover/>} />
         <Route path="success" element={<UploadSuccess/>} />
         <Route path="fail" element={<UploadFailed/>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

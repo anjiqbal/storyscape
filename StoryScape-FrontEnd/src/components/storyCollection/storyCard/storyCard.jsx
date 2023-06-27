@@ -6,9 +6,18 @@ import "../../homePageStory/homePageStory.css";
 export default function StoryCard({ storyTitle, storyContinent, storyDescription, storyMain, storyId, result, storyLocation, storyDate }) {
   const navigate = useNavigate();
 
-  function handleClick() {
-    navigate("/story", { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate} });
+
+  function handleClick(event) {
+    event.preventDefault();
+    navigate(`/storyCollection/${storyLocation}/${storyId}`, { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate} }); //key is the story_id - passed to story component
+    console.log(storyTitle)
   }
+  
+
+//   function handleClick() {
+//     navigate("/story", { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate} });
+
+//   }
   
   console.log(storyId);
   return (

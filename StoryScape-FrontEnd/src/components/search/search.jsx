@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
 import "./search.css";
 import PropTypes from "prop-types";
 
@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 
 function Search({ setSearchTerm, showDescription, isFooter }) {
   const navigate = useNavigate();
+ // const [searchParams, setSearchParams] = useSearchParams();
   const [input, setInput] = useState("");
 
   function handleContinent(e) {
@@ -16,20 +17,27 @@ function Search({ setSearchTerm, showDescription, isFooter }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    navigate("/storyCollection", { state: input });
+
+    // setSearchParams({filter: input})
+    navigate(`/storyCollection?continent=${input}`, { state: input });
+
+    // navigate({pathname:'/storyCollection', state: input, search: `?continent=${input}`});
     props.setSearchTerm(input);
     setInput("");
   }
 
   function handleEnter(event) {
     if (event.key === "Enter") {
+      // setSearchParams({filter: input})
       event.preventDefault();
-      navigate("/storyCollection", { state: input });
+      navigate(`/storyCollection?continent=${input}`, { state: input });
+      //navigate("/storyCollection", { state: input });
       props.setSearchTerm(input);
       setInput("");
     }
-  }
 
+  }
+console.log(useLocation() )
   return (
     <section className={`search-section ${isFooter ? "footer-search-section" : ""}`}>
       <form onSubmit={handleSubmit}>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import StoryCard from "./storyCard/storyCard";
 import { Row, Col } from "react-bootstrap";
 import Footer from "../Footer/footer";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import NavBar from "../navBar/navBar";
 import "./storyCollection.css";
 import supabase from "../../config/supabaseClient";
@@ -11,7 +11,10 @@ import "./../homePageStory/homePageStory.css"
 
 export default function StoryCollection() {
   const location = useLocation();
-  const input = location.state;
+  const searchParams = new URLSearchParams(location.search);
+  const input = searchParams.get("continent");
+  console.log(searchParams)
+  
   const [result, setResult] = useState([]);
 
   useEffect(() => {

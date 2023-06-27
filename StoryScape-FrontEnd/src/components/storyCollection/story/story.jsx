@@ -11,6 +11,7 @@ export default function StoryPage() {
   const { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate } =
     location.state;
 
+
   return (
     <>
     <div className="entireContainer">
