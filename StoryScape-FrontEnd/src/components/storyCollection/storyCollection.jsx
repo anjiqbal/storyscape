@@ -19,10 +19,14 @@ export default function StoryCollection() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data, error } = await supabase
+      const { data, error, isLoading } = await supabase
         .from("stories")
         .select()
         .eq("story_continent", input);
+
+      if (!data && isLoading ) {
+        return <div>Loading...</div>;
+      }
 
       if (data !== null) {
         setResult(data);
@@ -37,6 +41,8 @@ export default function StoryCollection() {
     fetchData();
   }, [input]);
 
+  console.log(location);
+
   useEffect(() => {
     // console.log(result); // Log the updated result state
   }, [result]);
@@ -50,7 +56,7 @@ export default function StoryCollection() {
         {result && (
           <main className="story-collection-content">
             <Row className="h-100">
-              {result.length === 0 ? (
+              {result!==null && result.length === 0 ? (
                 <Col>
                   <p>No matching stories found.</p>
                 </Col>
