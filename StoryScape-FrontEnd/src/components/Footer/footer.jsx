@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="col-lg-2 col-md-6 links-container">
-            <h5 className="text-white mb-3">Quick links</h5>
+            <p className="text-white mb-3 link-heading">Quick links</p>
             <ul className="list-unstyled text-white">
             <li>
              <Link className="text-white link" to="/">
@@ -51,7 +51,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="col-lg-2 col-md-6 links-container">
-            <h5 className="text-white mb-3">Useful links</h5>
+            <p className="text-white mb-3 link-heading">Useful links</p>
             <ul className="list-unstyled text-white">
               <li>
                 <a
