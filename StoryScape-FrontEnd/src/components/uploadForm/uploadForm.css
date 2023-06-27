@@ -90,15 +90,17 @@ h2 {
   margin: 0 10px; /* Adjust the margin between buttons as needed */
 }
 
-
 input, textarea {
   background-color: white;
   padding: 0.5rem;
   border: 2px solid black;
   border-radius: 4px;
   font-size: 1rem;
-  width: 50%;
-  
+  width: 100%;
+}
+
+Row.description-row{
+  width: 100%;
 }
 
 .title-row, .description-row, .location-row, .date-row, .story-text-row, .video-row, .image-row, .audio-row, .btn-row, .user-upload-container .continent-row  {
@@ -108,8 +110,9 @@ input, textarea {
   padding: 2rem;
 }
 
-
-
+.image-row{
+  max-width: max-content;
+}
 .btn-row {
   border-bottom: none;
 }
@@ -118,10 +121,13 @@ input, textarea {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 15px;
+  max-width: auto;
 }
 
 .input-container label {
   margin-bottom: 10px;
+  gap: 10px;
 }
 
 .user-upload-container .continent-row label#continent-row-label   {
@@ -131,13 +137,6 @@ input, textarea {
 .label-continent {
   width: 200px; /* Adjust the width as needed */
 }
-
-input,
-textarea {
-  width: 100%;
-}
-
-
 
 
 /* 
