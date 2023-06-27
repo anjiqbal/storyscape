@@ -1,16 +1,17 @@
 import { GrMapLocation } from "react-icons/gr";
-import dummyData from "../../../../db.json";
-import { useLocation } from "react-router-dom";
+
+import { useLocation, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function Story() {
+  const { storyId } = useParams()
   const location = useLocation();
-  const story_id = location.state; // grabs the state passed
-  const stories = dummyData.stories;
+  //const story_id = location.state; // grabs the state passed
+ 
   const [story, setStory] = useState(null); // Declare and initialise the story state
 
   useEffect(() => {
-    const filteredStory = stories.find((s) => s["story_id"] === story_id);
+    const filteredStory = stories.find((s) => s["story_id"] === storyId);
 
     setStory(filteredStory); // Update the story state with the filtered story
   }, [stories, story_id]);
