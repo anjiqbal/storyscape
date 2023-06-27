@@ -11,7 +11,7 @@ export default function StoryPage() {
   const { storyId, storyImage, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate } =
     location.state;
     console.log(`THIS IS THE URL ${storyImage}`)
-
+console.log(location.state)                                                                     
   return (
     <>
     <div className="entireContainer">
