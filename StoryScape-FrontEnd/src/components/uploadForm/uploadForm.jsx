@@ -104,7 +104,7 @@ function UploadForm() {
           <form onSubmit={handleSubmit}>
             <Row className="title-row">
               <div className="input-container">
-                <label>Story Title:</label>
+                <label>Story title:</label>
                 <input
                   required
                   type="text"
@@ -117,7 +117,7 @@ function UploadForm() {
             </Row>
             <Row className="description-row">
               <div className="input-container">
-                <label>Story Description:</label>
+                <label>Story description:</label>
                 <textarea
                   required
                   rows="4"
@@ -131,7 +131,7 @@ function UploadForm() {
             </Row>
             <Row className="image-row">
               <div className="input-container">
-                <label className="image-row-label">Upload Image</label>
+                <label className="image-row-label">Upload image:</label>
                 {/* <ImageUpload /> */}
                 <input
                   className="image-input"
@@ -143,8 +143,9 @@ function UploadForm() {
             </Row>
             <Row className="image-description-row">
               <div className="input-container">
-                <label id="image-row-label">Image description</label>
+                <label id="image-row-label">Image description:</label>
                 <input
+                
                   className="image-input"
                   type="text"
                   placeholder="Grandad as a young man..."
@@ -155,7 +156,7 @@ function UploadForm() {
             <Row className="continent-row">
               <div className="input-container">
                 <label id="continent-row-label">
-                  Story Location-continent:
+                  Story location - continent:
                 </label>
                 
                   <select
@@ -179,7 +180,7 @@ function UploadForm() {
             </Row>
             <Row className="location-row">
               <div className="input-container">
-                <label>Story Location-country:</label>
+                <label>Story location - country:</label>
 
                 <div id="input-container">
                   <select
@@ -200,7 +201,7 @@ function UploadForm() {
             </Row>
             <Row className="date-row">
               <div className="input-container">
-                <label>Story date</label>
+                <label>Story date:</label>
                 <DatePickerComponent handleDate={handleDate} />
               </div>
             </Row>
