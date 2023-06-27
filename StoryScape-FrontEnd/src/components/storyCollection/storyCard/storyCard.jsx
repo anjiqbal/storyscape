@@ -9,7 +9,7 @@ export default function StoryCard({ storyTitle, storyContinent, storyDescription
 
   function handleClick(event) {
     event.preventDefault();
-    navigate(`/storyCollection/${storyLocation}/${storyId}`,  { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate} } ); //key is the story_id - passed to story component
+    navigate(`/storyCollection/${storyLocation}/${storyId}`, { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate} });
     console.log(storyTitle)
   }
   
