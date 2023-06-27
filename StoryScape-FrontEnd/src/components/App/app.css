@@ -12,7 +12,8 @@
 }
 
 .homepage-input-headings {
-  margin-bottom: 30px;
+ font-size: 20px;
+  margin: 0 0 30px 0;
 }
 
 .card {
@@ -65,9 +66,10 @@
 .filler-two {
   height: 2rem;
 }
-h2 {
+
+.trending-title {
   text-align: center;
-  margin: 0;
+  margin: 40px;
   padding: 0;
 }
 

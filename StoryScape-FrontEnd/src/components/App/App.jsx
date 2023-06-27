@@ -65,9 +65,9 @@ function App() {
           <Col xs={12} s={12} md={12} lg={6}>
             <Row>
               <div id="form-container">
-                <h4 className="homepage-input-headings">
+                <h2 className="homepage-input-headings">
                   Discover stories from around the world
-                </h4>
+                </h2>
                 <Search />
               </div>
             </Row>
@@ -75,7 +75,7 @@ function App() {
               
                 <section className="upload-form">
                   <form onSubmit={handleUploadButton}>
-                  <h4 className="homepage-input-headings">Or, upload your own...</h4>
+                  <h2 className="homepage-input-headings">Or, upload your own...</h2>
                     <button type="submit" className="upload-story-btn">
                       Upload
                     </button>
@@ -88,7 +88,7 @@ function App() {
       </div>
       <div className="filler-two"></div>
       <div className="second-row">
-        <h2 className="trending-title">Trending on StoryScape</h2>
+        <h3 className="trending-title">Trending on StoryScape</h3>
         <Row>
           {/* HomePageStory components */}
           <Col sm={12} md={4}>
