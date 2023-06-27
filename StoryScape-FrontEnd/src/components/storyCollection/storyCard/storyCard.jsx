@@ -1,7 +1,7 @@
 import { useNavigate, useParams} from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png"
 import "../../homePageStory/homePageStory.css";
+// import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png"
 
 export default function StoryCard({ storyImage, storyTitle, storyContinent, storyDescription, storyMain, storyId, result, storyLocation, storyDate }) {
   const navigate = useNavigate();
