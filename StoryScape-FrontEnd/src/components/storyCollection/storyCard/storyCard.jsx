@@ -3,13 +3,13 @@ import Container from "react-bootstrap/Container";
 import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png"
 import "../../homePageStory/homePageStory.css";
 
-export default function StoryCard({ storyTitle,storyLocation , storyDescription, storyId, result, key }) {
+export default function StoryCard({ storyTitle, storyContinent, storyDescription, storyMain, storyId, result, storyLocation, storyDate }) {
   const navigate = useNavigate();
 
-  function handleClick(event) {
-    event.preventDefault();
-    navigate("/story", { state: storyId }); //key is the story_id - passed to story component
+  function handleClick() {
+    navigate("/story", { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate} });
   }
+  
   console.log(storyId);
   return (
     <>
@@ -19,8 +19,11 @@ export default function StoryCard({ storyTitle,storyLocation , storyDescription,
       <img src={placeholderImage} alt="Story" className="image" />
       <div className="ustorycontainer">
         <h2 className="title">{storyTitle}</h2>
-        <em className="storyUserName">  {storyLocation} </em>
-        <p className="text">{storyDescription}</p>
+        <em className="storyContinent">  {storyContinent} </em>
+        <em className="storyLocation"> {storyLocation}</em>
+        <em className="storyDate"> {storyDate}</em>
+        <p className="storyDescription">{storyDescription}</p>
+        {/* <p className="storyMain">{storyMain}</p> */}
       </div>
       <button onClick={handleClick} className="click-here-btn">Click here for more...</button>
     </Container>
@@ -28,4 +31,4 @@ export default function StoryCard({ storyTitle,storyLocation , storyDescription,
     )}
     </>
   );
-}
+} 
