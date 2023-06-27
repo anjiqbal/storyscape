@@ -124,8 +124,8 @@ function UploadForm() {
               </div>
             </Row>
             <Row className="continent-row">
-              <div className="input-container">
-                <label>Story Location-continent:</label>
+              <div>
+                <label id="continent-row-label" style={{ marginBottom: '10px' }}>Story Location-continent:</label>
                 <div id="continent-container">
                   <select
                     required
