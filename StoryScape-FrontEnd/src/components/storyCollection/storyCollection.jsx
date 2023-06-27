@@ -13,7 +13,7 @@ export default function StoryCollection() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const input = searchParams.get("continent");
-  console.log(searchParams)
+  // console.log(searchParams)
   
   const [result, setResult] = useState([]);
 
@@ -30,7 +30,7 @@ export default function StoryCollection() {
 
       if (error) {
         alert("error");
-        console.log(error);
+        // console.log(error);
       }
     };
 
@@ -38,7 +38,7 @@ export default function StoryCollection() {
   }, [input]);
 
   useEffect(() => {
-    console.log(result); // Log the updated result state
+    // console.log(result); // Log the updated result state
   }, [result]);
 
   return (
@@ -59,6 +59,7 @@ export default function StoryCollection() {
                   <Col sm={12} md={4}>
                     <StoryCard
                       result={result}
+                      storyImage={story.story_url}
                       storyId={story.story_id}
                       storyTitle={story.story_title}
                       storyContinent={story.story_continent}
