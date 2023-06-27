@@ -1,0 +1,18 @@
+.discover-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .central-content {
+    flex: 1;
+    background-color: #fbf5e0;
+  }
+  
+  .central-content .container {
+    height: 100%;
+  }
+   
+  .discover-heading {
+    padding-top: 200px;
+  }

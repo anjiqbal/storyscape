@@ -101,19 +101,14 @@ input, textarea {
   
 }
 
-.title-row, .description-row, .location-row, .date-row, .story-text-row, .video-row, .image-row, .audio-row, .btn-row {
+.title-row, .description-row, .location-row, .date-row, .story-text-row, .video-row, .image-row, .audio-row, .btn-row, .user-upload-container .continent-row  {
   display: flex;
   align-items: center;
   width: 100%;
   padding: 2rem;
 }
 
-.user-upload-container .continent-row {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 2rem;
-}
+
 
 .btn-row {
   border-bottom: none;
@@ -127,6 +122,10 @@ input, textarea {
 
 .input-container label {
   margin-bottom: 10px;
+}
+
+.user-upload-container .continent-row label#continent-row-label   {
+  margin-bottom: 10px !important;
 }
 
 .label-continent {
