@@ -132,11 +132,11 @@ function UploadForm() {
             </Row>
             <Row className="image-row">
             <div className="input-container">
-              <label>Upload Image</label>
+              <label className="image-row-label">Upload Image</label>
               {/* <ImageUpload /> */}
-              <input type="text" onChange={(event) => handleStoryImage(event.target.value)}/>
+              <input className="image-input" type="text" placeholder="Please input URL" onChange={(event) => handleStoryImage(event.target.value)}/>
               <label id="image-row-label">Image description</label>
-              <input type="text" placeholder="Grandad as a young man..." />
+              <input className="image-input" type="text" placeholder="Grandad as a young man..." />
             </div>
           </Row>
             
