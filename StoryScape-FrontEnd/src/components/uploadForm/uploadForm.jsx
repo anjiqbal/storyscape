@@ -8,7 +8,7 @@ import LocationInput from "./locationInput/locationInput";
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
 import countries from "./../search/countries";
-import ImageUpload from "./imageUpload/imageUpload";
+// import ImageUpload from "./imageUpload/imageUpload";
 
 
 function UploadForm() {
@@ -47,6 +47,9 @@ function UploadForm() {
   // function handleLocation(input) {
   //   setLocation(input);
   // }
+  function handleStoryImage(input) {
+    setStoryImage(input);
+  }
 
   function handleDate(input) {
     setDate(input);
@@ -130,7 +133,8 @@ function UploadForm() {
             <Row className="image-row">
             <div className="input-container">
               <label>Upload Image</label>
-              <ImageUpload />
+              {/* <ImageUpload /> */}
+              <input type="text" onChange={(event) => handleStoryImage(event.target.value)}/>
               <label id="image-row-label">Image description</label>
               <input type="text" placeholder="Grandad as a young man..." />
             </div>
