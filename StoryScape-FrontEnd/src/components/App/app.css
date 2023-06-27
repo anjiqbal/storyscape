@@ -48,7 +48,7 @@
 .first-row {
   width: 80%;
   margin: 0 auto;
-
+  border-radius: 10px;
   border: 2px solid black;
   background-color: #c8d6b9;
 }
