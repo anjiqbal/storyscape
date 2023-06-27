@@ -16,10 +16,12 @@ import UploadSuccess from './components/uploadForm/uploadSuccess/uploadSuccess.j
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UploadFailed from './components/uploadForm/uploadError/uploadError.jsx';
 import NotFound from './components/notFound/NotFound.jsx';
+import SmoothScroll from './components/SmoothScroll/SmoothScroll.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
     <BrowserRouter>
+    <SmoothScroll>
       <Routes>
         <Route index path="/" element={<App />} />
         <Route path="login" element={<Login />} />
@@ -39,6 +41,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="*" element={<NotFound/>} />
         {/* <Route path="storyCollection/:continent/:id" element={<Story />} /> */}
       </Routes>
+      </SmoothScroll>
     </BrowserRouter>
   </React.StrictMode>
 )
