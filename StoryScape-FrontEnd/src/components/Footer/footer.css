@@ -33,6 +33,9 @@ li {
   padding-bottom: 0.2rem;
 }
 
+.link-heading {
+  font-weight: bold;
+}
 
 /* .footer-logo {
   width: 80%;
