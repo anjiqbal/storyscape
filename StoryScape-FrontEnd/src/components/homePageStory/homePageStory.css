@@ -11,6 +11,8 @@
   border: 1px solid black;
   transition: transform 0.3s;
   min-width: 0;
+
+  
 }
 
 .home-card-container:hover {

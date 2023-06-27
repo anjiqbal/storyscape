@@ -36,7 +36,7 @@ export default function StoryCard({
   return (
     <>
       {result && (
-        <ul>
+        
           <Container className="card-container" onClick={handleClick}>
             <div className="card-content">
               <div className="first-half">
@@ -54,7 +54,7 @@ export default function StoryCard({
               </div>
             </div>
           </Container>
-        </ul>
+       
       )}
     </>
   );

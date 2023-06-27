@@ -5,7 +5,7 @@ import "./footer.css";
 
 export default function Footer() {
   return (
-    <footer className="w-100 py-4 flex-shrink-0">
+    <footer className="w-100 py-4 flex-shrink-0 footer-container">
       <div className="container py-4 outer-container">
         <div className="row gy-4 gx-5">
           <div className="col-lg-4 col-md-6">
