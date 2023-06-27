@@ -1,0 +1,10 @@
+.error-div{
+    background-color: #fbf5e0;
+    padding: 210px 40px 60px 90px;
+    height: 60rem;
+}
+
+h1, h3 {
+    text-align: center;
+    justify-content: center;
+}
