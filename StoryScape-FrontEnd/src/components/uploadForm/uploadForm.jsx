@@ -8,12 +8,14 @@ import LocationInput from "./locationInput/locationInput";
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
 import countries from "./../search/countries";
+import ImageUpload from "./imageUpload/imageUpload";
 
 function UploadForm() {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
   const [title, setTitle] = useState("");
   const [storyDescription, setStoryDescription] = useState("");
+  const [storyImage, setStoryImage] = useState("");
   const [story, setStory] = useState("");
   const [continent, setContinent] = useState("");
   const [date, setDate] = useState("");
@@ -60,6 +62,7 @@ function UploadForm() {
     const newStoryObject = {
       story_title: title,
       story_description: storyDescription,
+      story_url: storyImage,
       story_country: input,
       story_date: date,
       story_main: story,
@@ -123,6 +126,15 @@ function UploadForm() {
                 />
               </div>
             </Row>
+            <Row className="image-row">
+            <div className="input-container">
+              <label>Upload Image</label>
+              <ImageUpload />
+              <label>Image description</label>
+              <input type="text" placeholder="Grandad as a young man..." />
+            </div>
+          </Row>
+            
             <Row className="continent-row">
               <div>
                 <label id="continent-row-label" style={{ marginBottom: '10px' }}>Story Location-continent:</label>

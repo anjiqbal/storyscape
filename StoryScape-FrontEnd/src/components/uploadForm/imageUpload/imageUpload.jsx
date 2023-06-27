@@ -8,8 +8,6 @@ function ImageUpload() {
     <span className="file-message">or drag and drop your image files here</span>
     <input type="file" className="file-input" accept=".jfif,.jpg,.jpeg,.png,.gif" multiple />
     
-
-
 </div>
 </div>
   )
