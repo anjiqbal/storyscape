@@ -3,7 +3,7 @@ import placeHolderImage from "./images/StoryScape_placeholder2.png";
 import "./homePageStory.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HomePageStory = (props) => {
   const [story, setStory] = useState({});
@@ -33,9 +33,20 @@ const navigate = useNavigate();
 
   function handleClick(event) {
     event.preventDefault();
-    navigate(`/:${story.story_continent}/:${story.story_id}`);
-    console.log(storyTitle)
+    navigate(`/storyCollection/${story.story_continent}/${story.story_id}`, {
+      state: {
+        storyId: story.story_id,
+        storyTitle: story.story_title,
+        storyContinent: story.story_continent,
+        storyDescription: story.story_description,
+        storyMain: story.story_main,
+        storyLocation: story.story_country,
+        storyDate: story.story_date,
+        storyImage: story.story_url,
+      },
+    });
   }
+  
   
 
   return (
@@ -55,5 +66,6 @@ const navigate = useNavigate();
     </>
   );
 };
+
 
 export default HomePageStory;
