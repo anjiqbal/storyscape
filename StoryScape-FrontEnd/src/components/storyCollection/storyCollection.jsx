@@ -59,6 +59,7 @@ export default function StoryCollection() {
                   <Col sm={12} md={4}>
                     <StoryCard
                       result={result}
+                      storyImage={story.story_url}
                       storyId={story.story_id}
                       storyTitle={story.story_title}
                       storyContinent={story.story_continent}
