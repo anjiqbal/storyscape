@@ -1,4 +1,19 @@
+
+.discover-collection-wrapper {
+  background-color: #fbf5e0;
+padding-top: 4rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
 .main-content {
-    margin: 20px 0 50px 0;
-  }
+ 
+  overflow-x: hidden;
+  padding: 6rem 3rem;
   
+}
+.discover-heading {
+  margin: 0 auto;
+  padding-top: 50px;
+}

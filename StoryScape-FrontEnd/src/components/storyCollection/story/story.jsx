@@ -8,64 +8,63 @@ import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2
 
 export default function StoryPage() {
   const location = useLocation();
-  const { storyId, storyImage, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate } =
-    location.state;
-    console.log(`THIS IS THE URL ${storyImage}`)
-console.log(location.state)                                                                     
+  const {
+    storyId,
+    storyImage,
+    storyTitle,
+    storyContinent,
+    storyDescription,
+    storyMain,
+    storyLocation,
+    storyDate,
+  } = location.state;
+  console.log(`THIS IS THE URL ${storyImage}`);
+  console.log(location.state);
   return (
     <>
-    <div className="entireContainer">
-      <header>
-        {" "}
-        <NavBar />{" "}
-      </header>
-      <Container className="mainStoryContainer">
-        <div>
-          <Container className="mainStoryTitle">
-            <h2>{storyTitle}</h2>
-          </Container>
+      <div className="entireContainer">
+        <header>
+          {" "}
+          <NavBar />{" "}
+        </header>
+        <Container className="mainStoryContainer">
+          <h2 className="mainStoryTitle">{storyTitle}</h2>
+
           <Container className="imageContainerMain">
-              {storyImage && (
-                <Container className="mainStoryImageContainer">
-                  <img
-                    src={storyImage}
-                    alt="StoryImage"
-                    className="mainStoryImage"
-                  />
-                </Container>
-              )}
-              {!storyImage && (
-                <Container className="mainStoryImageContainer">
-                  <img
-                    src={placeholderImage}
-                    alt="PlaceholderImage"
-                    className="mainStoryImage"
-                  />
-                </Container>
-              )}
+            {storyImage && (
+              <Container className="mainStoryImageContainer">
+                <img
+                  src={storyImage}
+                  alt="StoryImage"
+                  className="mainStoryImage"
+                />
+              </Container>
+            )}
+            {!storyImage && (
+              <Container className="mainStoryImageContainer">
+                <img
+                  src={placeholderImage}
+                  alt="PlaceholderImage"
+                  className="mainStoryImage"
+                />
+              </Container>
+            )}
           </Container>
-          <Container className="mainStoryContinent">
-            <p>{storyContinent}</p>
-          </Container>
-          <Container className="storyLocation">
-            <p>{storyLocation}</p>
-          </Container>
-          <Container className="storyDate">
-            <p>{storyDate}</p>
-          </Container>
-        
-          <Container className="mainStoryMain">
-            <p>{storyMain}</p>
-          </Container>
+          <Container className="main-story-content">
+            <p className="mainStoryContinent">{storyContinent}</p>
 
-          {/* Render the full story content here */}
-        </div>
-      </Container>
+            <p className="storyLocation">{storyLocation}</p>
 
-      <footer>
-        {" "}
-        <Footer />{" "}
-      </footer>
+            <p className="storyDate">{storyDate}</p>
+
+            <p className="mainStoryMain">{storyMain}</p>
+          </Container>
+        </Container>
+
+        <footer>
+          {" "}
+          <Footer />{" "}
+        </footer>
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 import placeHolderImage from "./images/StoryScape_placeholder2.png";
 import "./homePageStory.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -52,16 +53,27 @@ const navigate = useNavigate();
   return (
     <>
       {props.stories && props.stories.length > 0 && (
-        <Container className="piccontainer">
-          <img src={imageToDisplay} alt="Story" className="image" />
-          <div className="ustorycontainer">
-            <h2 className="title">{story.story_title}</h2>
-            <em className="storyUserName">{story.story_continent}</em>
-            <em className="storyLocation">{story.story_country}</em>
-            <p className="text">{story.story_description}</p>
-          </div>
-          <button onClick={handleClick} className="click-here-btn">Click here for more...</button>
-        </Container>
+
+        <Container className="home-card-container" onClick={handleClick}>
+            <div className="home-card-content">
+              <div className="first-half">
+                <div className="home-card-image-container">
+                  <img src={imageToDisplay} alt="Story" className="story-card-image" />
+                </div>
+                <div className="home-story-details">
+                  <h2 className="home-title">{story.story_title}</h2>
+                  <em className="storyLocation">{story.story_country}, {story.story_continent} </em>
+                  <em className="home-story-date">{story.story_date}</em>
+                </div>
+              </div>
+              <div className="second-half">
+                <p className="home-story-card-description">{story.story_description}</p>
+              </div>
+            </div>
+          </Container>
+
+
+
       )}
     </>
   );
@@ -69,3 +81,18 @@ const navigate = useNavigate();
 
 
 export default HomePageStory;
+
+HomePageStory.propTypes = {
+  stories: PropTypes.arrayOf(
+    PropTypes.shape({
+      story_id: PropTypes.string.isRequired,
+      story_title: PropTypes.string.isRequired,
+      story_continent: PropTypes.string.isRequired,
+      story_description: PropTypes.string.isRequired,
+      story_main: PropTypes.string.isRequired,
+      story_country: PropTypes.string.isRequired,
+      story_date: PropTypes.string.isRequired,
+      story_url: PropTypes.string,
+    })
+  ),
+};

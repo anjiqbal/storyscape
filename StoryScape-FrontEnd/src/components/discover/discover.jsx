@@ -3,7 +3,7 @@ import supabase from "../../config/supabaseClient.jsx";
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
 import StoryCard from "../storyCollection/storyCard/storyCard.jsx";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col} from "react-bootstrap";
 import "./discover.css";
 
 export default function Discover() {
@@ -31,13 +31,14 @@ export default function Discover() {
   }, [result]);
 
   return (
-    <div className="story-collection-wrapper">
+    <div className="discover-collection-wrapper">
       <header>
         <NavBar />
       </header>
-      <div>
+      <>
+      <h1 className="discover-heading">Discover stories from around the world</h1>
         {result && (
-          <Container>
+         
             <main className="main-content">
               <Row className="h-100">
                 {result.length === 0 ? (
@@ -63,9 +64,9 @@ export default function Discover() {
                 )}
               </Row>
             </main>
-          </Container>
+          
         )}
-      </div>
+      </>
       <footer>
         <Footer />
       </footer>
