@@ -10,7 +10,7 @@ export default function StoryPage() {
   const location = useLocation();
   const { storyId, storyImage, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate } =
     location.state;
-console.log(storyImage)
+    console.log(`THIS IS THE URL ${storyImage}`)
 
   return (
     <>

@@ -7,9 +7,11 @@ export default function StoryCard({ storyImage, storyTitle, storyContinent, stor
   const navigate = useNavigate();
   const { story_id } = useParams();
 
+console.log(`THIS IS THE URL ${storyImage}`)
+
   function handleClick(event) {
     event.preventDefault();
-    navigate(`/storyCollection/${storyLocation}/${storyId}`, { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate} });
+    navigate(`/storyCollection/${storyLocation}/${storyId}`, { state: { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate, storyImage} });
     console.log(storyTitle)
   }
   
