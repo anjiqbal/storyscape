@@ -48,12 +48,15 @@ export default function Discover() {
                   result.map((story) => (
                     <Col xs={12} sm={12} md={6} lg={4}  key={story.story_id}>
                       <StoryCard
-                        result={result}
-                        storyId={story.story_id}
-                        storyImage={story.story_url}
-                        storyTitle={story.story_title}
-                        storyLocation={story.story_continent}
-                        storyDescription={story.story_description}
+                       result={result}
+                      storyImage={story.story_url}
+                      storyId={story.story_id}
+                      storyTitle={story.story_title}
+                      storyContinent={story.story_continent}
+                      storyDescription={story.story_description}
+                      storyMain={story.story_main}
+                      storyLocation={story.story_country}
+                      storyDate={story.story_date}
                       />
                     </Col>
                   ))
