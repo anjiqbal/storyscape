@@ -8,9 +8,9 @@ import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2
 
 export default function StoryPage() {
   const location = useLocation();
-  const { storyId, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate } =
+  const { storyId, storyImage, storyTitle, storyContinent, storyDescription, storyMain, storyLocation, storyDate } =
     location.state;
-
+console.log(storyImage)
 
   return (
     <>
@@ -24,14 +24,25 @@ export default function StoryPage() {
           <Container className="mainStoryTitle">
             <h2>{storyTitle}</h2>
           </Container>
-          <Container className="imageContainerMain">  
-          <Container className="mainStoryImageContainer">
-            <img
-              src={placeholderImage}
-              alt="StoryImage"
-              className="mainStoryImage"
-            />
-          </Container>
+          <Container className="imageContainerMain">
+              {storyImage && (
+                <Container className="mainStoryImageContainer">
+                  <img
+                    src={storyImage}
+                    alt="StoryImage"
+                    className="mainStoryImage"
+                  />
+                </Container>
+              )}
+              {!storyImage && (
+                <Container className="mainStoryImageContainer">
+                  <img
+                    src={placeholderImage}
+                    alt="PlaceholderImage"
+                    className="mainStoryImage"
+                  />
+                </Container>
+              )}
           </Container>
           <Container className="mainStoryContinent">
             <p>{storyContinent}</p>
