@@ -96,35 +96,34 @@ input, textarea {
   width: 100%;
 }
 
-Row.description-row{
-  width: 100%;
-}
 
-.title-row, .description-row, .location-row, .date-row, .story-text-row, .video-row, .image-row, .audio-row, .btn-row, .user-upload-container .continent-row  {
+
+.title-row, .description-row, .location-row, .date-row, .story-text-row, .video-row, .image-row, .audio-row, .btn-row, .user-upload-container .continent-row .image-row, .image-description-row {
   display: flex;
   align-items: center;
   width: 100%;
   padding: 2rem;
 }
 
-.image-row{
-  max-width: max-content;
-}
-.btn-row {
-  border-bottom: none;
+.user-upload-container .continent-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  margin-top:10px;
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 15px;
+
   max-width: auto;
 }
 
 .input-container label {
   margin-bottom: 10px;
-  gap: 10px;
+ 
 }
 
 .user-upload-container .continent-row label#continent-row-label   {

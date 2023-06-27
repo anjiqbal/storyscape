@@ -10,7 +10,6 @@ import Footer from "../Footer/footer";
 import countries from "./../search/countries";
 // import ImageUpload from "./imageUpload/imageUpload";
 
-
 function UploadForm() {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
@@ -21,8 +20,6 @@ function UploadForm() {
   const [continent, setContinent] = useState("");
   const [date, setDate] = useState("");
   const [storyObject, setStoryObject] = useState({});
-
-  
 
   function handleCountry(e) {
     const searchTerm = e.target.value;
@@ -133,19 +130,34 @@ function UploadForm() {
               </div>
             </Row>
             <Row className="image-row">
-            <div className="input-container">
-              <label className="image-row-label">Upload Image</label>
-              {/* <ImageUpload /> */}
-              <input className="image-input" type="text" placeholder="Please input URL" onChange={(event) => handleStoryImage(event.target.value)}/>
-              <label id="image-row-label">Image description</label>
-              <input className="image-input" type="text" placeholder="Grandad as a young man..." />
-            </div>
-          </Row>
-            
+              <div className="input-container">
+                <label className="image-row-label">Upload Image</label>
+                {/* <ImageUpload /> */}
+                <input
+                  className="image-input"
+                  type="text"
+                  placeholder="Please input URL"
+                  onChange={(event) => handleStoryImage(event.target.value)}
+                />
+              </div>
+            </Row>
+            <Row className="image-description-row">
+              <div className="input-container">
+                <label id="image-row-label">Image description</label>
+                <input
+                  className="image-input"
+                  type="text"
+                  placeholder="Grandad as a young man..."
+                />
+              </div>
+            </Row>
+
             <Row className="continent-row">
-              <div>
-                <label id="continent-row-label" style={{ marginBottom: '10px' }}>Story Location-continent:</label>
-                <div id="continent-container">
+              <div className="input-container">
+                <label id="continent-row-label">
+                  Story Location-continent:
+                </label>
+                
                   <select
                     required
                     className="search-input"
@@ -162,7 +174,7 @@ function UploadForm() {
                     <option value="Oceania">Oceania</option>
                     <option value="South America">South America</option>
                   </select>
-                </div>
+                
               </div>
             </Row>
             <Row className="location-row">
