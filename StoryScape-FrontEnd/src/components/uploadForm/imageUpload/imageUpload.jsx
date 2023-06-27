@@ -1,5 +1,6 @@
 import pngjs from 'png-js';
 import { useState } from 'react';
+import "./imageUpload.css"
 
 function ImageUpload() {
 
@@ -42,8 +43,8 @@ function ImageUpload() {
     <div className="file-drop-area">
 
     <span className="choose-file-button">Choose Files</span>
-    <span className="file-message">or drag and drop your image files here</span>
-    <input type="file" className="file-input" accept=".jfif,.jpg,.jpeg,.png,.gif" onChange={(event) => {
+    <span className="file-message">&nbsp; or drag and drop your image files here:</span>
+    <input type="file" accept=".jfif,.jpg,.jpeg,.png,.gif" onChange={(event) => {
                     handleFileChange(event.target.value);
                   }}
 />
