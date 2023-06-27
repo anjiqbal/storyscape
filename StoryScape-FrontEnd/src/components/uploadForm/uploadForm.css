@@ -101,7 +101,7 @@ input, textarea {
   
 }
 
-.title-row, .description-row, .location-row, .date-row, .story-text-row, .video-row, .image-row, .audio-row, .btn-row, .user-upload-container .continent-row  {
+.title-row,.image-row, .description-row, .location-row, .date-row, .story-text-row, .video-row, .image-row, .audio-row, .btn-row, .user-upload-container .continent-row  {
   display: flex;
   align-items: center;
   width: 100%;

@@ -10,6 +10,7 @@ import Footer from "../Footer/footer";
 import countries from "./../search/countries";
 import ImageUpload from "./imageUpload/imageUpload";
 
+
 function UploadForm() {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
@@ -130,7 +131,7 @@ function UploadForm() {
             <div className="input-container">
               <label>Upload Image</label>
               <ImageUpload />
-              <label>Image description</label>
+              <label id="image-row-label">Image description</label>
               <input type="text" placeholder="Grandad as a young man..." />
             </div>
           </Row>
