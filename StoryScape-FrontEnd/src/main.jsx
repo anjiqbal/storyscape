@@ -28,8 +28,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="storyCollection/*" element={<StoryCollection />} >
         </Route>
             {/* <Route path= ":continent/:id" element={<Story />} /> */}
-          <Route path="story" element={<Story/>}></Route>
-        {/* <Route path="storyCollection/:continent/:id" element={<Story />} /> */}
+          {/* <Route path="story" element={<Story/>}></Route> */}
+        <Route path="storyCollection/:continent/:id" element={<Story />} />
         <Route path="aboutUs" element={<AboutUs/>} />
         <Route path="profile" element={<ProfileOwn/>} />
         <Route path="profileOther" element={<ProfileOther/>} />
