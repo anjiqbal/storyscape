@@ -51,6 +51,16 @@
   overflow: ellipsis;
 }
 
+.storyDescription {
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
+.storyDate {
+  padding-top: 5px;
+}
+
+
 .click-here-btn{
   background-color: #f9d8c4;
   color: black; 
