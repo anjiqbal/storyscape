@@ -50,6 +50,7 @@ export default function Discover() {
                       <StoryCard
                         result={result}
                         storyId={story.story_id}
+                        storyImage={story.story_url}
                         storyTitle={story.story_title}
                         storyLocation={story.story_continent}
                         storyDescription={story.story_description}
