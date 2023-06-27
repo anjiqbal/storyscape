@@ -1,9 +1,22 @@
 import logo from "./logo-image.png";
 import "./navBar.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 export default function NavBar() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const loggedIn = location.state ? location.state.loggedIn : false;
+
+  const handleUploadClick = (event) => {
+    event.preventDefault();
+
+    if (!loggedIn) {
+      alert("Please login to upload a story");
+      navigate("/signUp", { state: { loggedIn } });
+    } else {
+      navigate("/uploadForm");
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top">
@@ -27,7 +40,7 @@ export default function NavBar() {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <div className="navbar-nav ms-auto">
-            <Link className="nav-link" to="/uploadForm">
+            <Link className="nav-link" to="/uploadForm" onClick={handleUploadClick}>
               Upload
             </Link>
             <Link className="nav-link" to="/discover">

@@ -2,12 +2,16 @@ import React, {useState} from "react";
 import "./signUp.css";
 import NavBar from "../navBar/navBar";
 import { useNavigate } from "react-router-dom";
+import {useLocation} from "react-router-dom"
 
 export default function SignUp(props) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+  const location = useLocation();
+  const {loggedIn} = location.state || { loggedIn: false };
+
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -18,7 +22,8 @@ export default function SignUp(props) {
     //test@gmail.com
     //test123
     if(emailValue === "test@gmail.com" && passwordValue === "test123"){
-      navigate("/")
+      navigate("/", { state: { loggedIn: true } });
+
 
   } else{
     alert("Email or password is incorrect")
