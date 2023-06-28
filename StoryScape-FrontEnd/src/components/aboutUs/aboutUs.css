@@ -8,15 +8,58 @@
     border-radius: 20px;
     padding: 5px;
 }
+
+.story-heading {
+    padding-bottom: 40px;
+    margin: 0 auto;
+}
+
+.sys32-heading{
+    padding: 30px 0;
+    margin: 0 auto;
+}
+
+
 .about-us-page{
-    background-color: #FBF5E0;
-    padding: 85px;
-    display: flex;
+    background-color: #fbf5e0;
+    padding-top: 4rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
-.wedabest {
-    padding-top: 100px;
+.about-us {
+    padding-top: 5rem;
+    background-color: #fbf5e0;
+    width: 100%; /* Remove fixed width */
 }
-.wedabest img {
-    width: 20%;
-    height: 20%;
+
+.about-us-mission {
+    width: 60%;
+    margin: 0 auto;
 }
+
+.our-team {
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .mainStoryContainer {
+      padding-top: 3rem;
+    }
+    
+    .main-story-content {
+      max-width: 89%;
+    }
+    
+    .mainStoryImageContainer {
+      padding: 20px;
+    }
+    
+    .mainStoryImage {
+      max-height: 200px;
+    }
+  }
+  
