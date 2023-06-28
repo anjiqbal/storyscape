@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import "./Story.css";
 import NavBar from "../../navBar/navBar";
 import Footer from "../../Footer/footer";
 import { Row } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import placeholderImage from "../../homePageStory/images/StoryScape_placeholder2.png";
-import supabase from "../../../../src/config/supabaseClient";
-
-
+import supabase from "../../../config/supabaseClient";
 
 export default function StoryPage() {
   const location = useLocation();
-  const { storyId } = location.state;
+  const { id } = useParams(); // Retrieve storyId from the URL
   const [storyData, setStoryData] = useState(null);
 
   useEffect(() => {
@@ -21,7 +19,7 @@ export default function StoryPage() {
         const { data, error } = await supabase
           .from("stories")
           .select()
-          .eq("story_id", storyId)
+          .eq("story_id", id)
           .single();
 
         if (error) {
@@ -35,7 +33,7 @@ export default function StoryPage() {
     };
 
     fetchStoryData();
-  }, [storyId]);
+  }, [id]);
 
   return (
     <>
