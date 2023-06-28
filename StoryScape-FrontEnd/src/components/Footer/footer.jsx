@@ -1,9 +1,24 @@
 import logo from "./inverted-logo-pic.png";
 import Search from "../search/search";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation,Link } from "react-router-dom";
 import "./footer.css";
 
 export default function Footer() {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const loggedIn = location.state ? location.state.loggedIn : false;
+
+  const handleUploadClick = (event) => {
+    event.preventDefault();
+
+    if (!loggedIn) {
+      alert("Please login to upload a story");
+      navigate("/signUp", { state: { loggedIn } });
+    } else {
+      navigate("/uploadForm");
+    }
+  };
   return (
     <footer className="w-100 py-4 flex-shrink-0 footer-container">
       <div className="container py-4 outer-container">
@@ -34,7 +49,7 @@ export default function Footer() {
          </Link>
              </li>
              <li>
-             <Link className="text-white link" to="/uploadForm">
+             <Link className="text-white link" to="/uploadForm" onClick={handleUploadClick}>
            Upload
          </Link>
              </li>
