@@ -2,16 +2,16 @@ import { Row, Col } from "react-bootstrap";
 import "./uploadForm.css";
 import supabase from "../../config/supabaseClient";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation} from "react-router-dom";
 import DatePickerComponent from "./datePicker/datePickerForm";
 import LocationInput from "./locationInput/locationInput";
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
 import countries from "./../search/countries";
-// import ImageUpload from "./imageUpload/imageUpload";
 
 function UploadForm() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [input, setInput] = useState("");
   const [title, setTitle] = useState("");
   const [storyDescription, setStoryDescription] = useState("");
@@ -43,9 +43,6 @@ function UploadForm() {
     setStory(input);
   }
 
-  // function handleLocation(input) {
-  //   setLocation(input);
-  // }
   function handleStoryImage(input) {
     setStoryImage(input);
   }
@@ -53,12 +50,19 @@ function UploadForm() {
   function handleDate(input) {
     setDate(input);
   }
+
   function handleSubmit(event) {
     event.preventDefault();
 
     if (!date) {
       // Date is not selected, display error message or take necessary action
       alert("Please select a date");
+      return;
+    }
+
+    if (!storyImage && !story) {
+      // Both image and main story inputs are empty, display error message or take necessary action
+      alert("Please provide an image or write a story");
       return;
     }
 
@@ -83,7 +87,7 @@ function UploadForm() {
       console.log(error);
       console.log(status);
       if (status === 201) {
-        navigate("/success");
+        navigate("/success",{ state: { loggedIn: true } });
       } else {
         navigate("/fail");
       }
@@ -91,6 +95,7 @@ function UploadForm() {
 
     uploadStory();
   }
+
   console.log(storyObject);
 
   return (
@@ -104,7 +109,7 @@ function UploadForm() {
           <form onSubmit={handleSubmit}>
             <Row className="title-row">
               <div className="input-container">
-                <label>Story title:</label>
+                <label>Story title*:</label>
                 <input
                   required
                   type="text"
@@ -117,7 +122,7 @@ function UploadForm() {
             </Row>
             <Row className="description-row">
               <div className="input-container">
-                <label>Story description:</label>
+                <label>Story description*:</label>
                 <textarea
                   required
                   rows="4"
@@ -132,7 +137,6 @@ function UploadForm() {
             <Row className="image-row">
               <div className="input-container">
                 <label className="image-row-label">Upload image:</label>
-                {/* <ImageUpload /> */}
                 <input
                   className="image-input"
                   type="text"
@@ -145,43 +149,38 @@ function UploadForm() {
               <div className="input-container">
                 <label id="image-row-label">Image description:</label>
                 <input
-                
                   className="image-input"
                   type="text"
                   placeholder="Grandad as a young man..."
                 />
               </div>
             </Row>
-
             <Row className="continent-row">
               <div className="input-container">
                 <label id="continent-row-label">
-                  Story location - continent:
+                  Story location - continent*:
                 </label>
-                
-                  <select
-                    required
-                    className="search-input"
-                    value={continent}
-                    onChange={handleContinent}
-                  >
-                    <option value="">Search for a continent</option>{" "}
-                    {/* Default empty option */}
-                    <option value="Africa">Africa</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Antarctica">Antarctica</option>
-                    <option value="Europe">Europe</option>
-                    <option value="North America">North America</option>
-                    <option value="Oceania">Oceania</option>
-                    <option value="South America">South America</option>
-                  </select>
-                
+                <select
+                  required
+                  className="search-input"
+                  value={continent}
+                  onChange={handleContinent}
+                >
+                  <option value="">Search for a continent</option>{" "}
+                  {/* Default empty option */}
+                  <option value="Africa">Africa</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Antarctica">Antarctica</option>
+                  <option value="Europe">Europe</option>
+                  <option value="North America">North America</option>
+                  <option value="Oceania">Oceania</option>
+                  <option value="South America">South America</option>
+                </select>
               </div>
             </Row>
             <Row className="location-row">
               <div className="input-container">
-                <label>Story location - country:</label>
-
+                <label>Story location - country*:</label>
                 <div id="input-container">
                   <select
                     className="search-input"
@@ -201,16 +200,16 @@ function UploadForm() {
             </Row>
             <Row className="date-row">
               <div className="input-container">
-                <label>Story date:</label>
+                <label>Story date*:</label>
                 <DatePickerComponent handleDate={handleDate} />
               </div>
             </Row>
-
             <Row className="story-text-row">
               <div className="input-container">
                 <label>Write your story:</label>
                 <textarea
-                  required
+                  className="main-story-input"
+                  
                   rows="10"
                   type="textarea"
                   placeholder="Growing up in Birmingham in the 40's"
@@ -220,11 +219,8 @@ function UploadForm() {
                 />
               </div>
             </Row>
-
             <Row className="btn-row">
               <div className="btn-container">
-                {/* <button id="draft-btn">Save Draft</button> */}
-                <button id="preview-btn">Preview</button>
                 <button className="upload-btn" type="submit">
                   Upload
                 </button>

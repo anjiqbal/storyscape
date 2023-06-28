@@ -30,7 +30,7 @@ function App() {
       return;
     }
     else
-    navigate("/uploadForm");
+    navigate("/uploadForm",{state: {loggedIn}});
   }
 
   useEffect(() => {

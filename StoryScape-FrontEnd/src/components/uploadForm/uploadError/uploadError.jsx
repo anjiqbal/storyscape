@@ -10,7 +10,7 @@ function UploadError() {
   const navigate = useNavigate();
   function handleClick(event) {
     event.preventDefault();
-    navigate("/uploadForm");
+    navigate("/uploadForm",{ state: { loggedIn: true } });
   }
 
   return (

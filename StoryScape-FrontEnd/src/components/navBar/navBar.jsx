@@ -18,10 +18,14 @@ export default function NavBar() {
     }
   };
 
+  // const handleClick = (event) => {
+  //   event.preventDefault();
+  //   navigate("/", { state: { loggedIn } });
+  // };
   return (
     <nav className="navbar navbar-expand-lg fixed-top">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/" >
           <img src={logo} alt="Logo" className="navbar-logo" />
           <span className="navbar-brand-name">StoryScape</span>
         </Link>

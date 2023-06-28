@@ -9,7 +9,7 @@ function UploadSuccess() {
   const navigate = useNavigate();
   function handleClick(event) {
     event.preventDefault();
-    navigate("/");
+    navigate("/",{ state: { loggedIn: true } });
   }
 
   return (
