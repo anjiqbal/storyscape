@@ -25,8 +25,8 @@ You should be able to search through stories by continent, check out what's tren
 - [Tripti Gurung](https://github.com/Trip25)
 - [Anjum Iqbal](https://github.com/anjiqbal)
 - [Jay Kirtlan](https://github.com/JayKirt)
-- [AkielCh](https://github.com/AkielCh)
-- [Qas1m0m0](https://github.com/Qas1m0m0)
+- [Akiel Chaudry](https://github.com/AkielCh)
+- [Qasim Mohammed](https://github.com/Qas1m0m0)
 - [Abdirahman Mohamed](https://github.com/Abdirahmanmo10)
 
 ## Run Locally
@@ -75,16 +75,17 @@ To run the Playwright tests, run the following command:
 
 ## Stretch Goals
 <br>
+<li>Able to share stories with link ✅</li>
+<br>
+<br>
 <li>Implement a way for images upload(.png, .jpg etc) to be converted to url </li>
 <br>
 <li> More Testing </li>
 <br>
 <li> Use TypeScript </li>
 <br>
+<li> Improve Responsiveness even more ✅ </li>
 <br>
-<li> Improve Responsiveness even more </li>
-<br>
-<br>
-<li> Get Accessibility to 100 </li>
+<li> Improve Accessibility ✅ </li>
 <br>
 </ul>
