@@ -9,5 +9,8 @@ export default defineConfig({
   build: {
     outDir: 'dist'
   },
-  publicDir: 'public'
-})
+  test: {
+    globals: true,
+    environent:'jsdom',
+    setupFiles: './src/tests/setup.js',
+}})
