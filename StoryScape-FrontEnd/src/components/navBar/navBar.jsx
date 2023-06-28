@@ -1,11 +1,13 @@
 import logo from "./logo-image.png";
 import "./navBar.css";
 import { useNavigate, useLocation, Link } from "react-router-dom";
+import React, { useState } from "react";
 
 export default function NavBar() {
   const navigate = useNavigate();
   const location = useLocation();
   const loggedIn = location.state ? location.state.loggedIn : false;
+  const [isLoggedOut, setIsLoggedOut] = useState(!loggedIn);
 
   const handleUploadClick = (event) => {
     event.preventDefault();
@@ -16,6 +18,12 @@ export default function NavBar() {
     } else {
       navigate("/uploadForm");
     }
+    setIsLoggedOut(false);
+  };
+
+  const handleSignOut = () => {
+    setIsLoggedOut(true);
+    // Add your sign out logic here
   };
 
   // const handleClick = (event) => {
@@ -50,9 +58,10 @@ export default function NavBar() {
             <Link className="nav-link" to="/discover">
               Discover
             </Link>
-            <Link className="nav-link" to="/signUp">
-              Sign In
+            <Link className="nav-link" to={isLoggedOut ? "/signUp" : "/"} onClick={isLoggedOut ? undefined : handleSignOut}>
+              {isLoggedOut ? "Sign In" : "Sign Out"}
             </Link>
+            
           </div>
         </div>
       </div>
