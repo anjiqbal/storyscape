@@ -54,6 +54,12 @@ export default function StoryCollection() {
     setFilteredResults(filteredResults);
   };
 
+  const formatDateToUK = (dateString) => {
+    const date = new Date(dateString);
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    return date.toLocaleDateString('en-GB', options);
+  };
+
   const handleFilterClick = () => {
     filterResultsByDateRange();
   };
@@ -83,7 +89,7 @@ export default function StoryCollection() {
               onChange={(e) => setEndDate(e.target.value)}
             />
           </div>
-          <Button onClick={handleFilterClick}>Filter</Button>
+          <Button onClick={handleFilterClick} className="filter-btn">Filter</Button>
         </div>
         {filteredResults && (
           <main className="story-collection-content">
@@ -104,7 +110,7 @@ export default function StoryCollection() {
                       storyDescription={story.story_description}
                       storyMain={story.story_main}
                       storyLocation={story.story_country}
-                      storyDate={story.story_date}
+                      storyDate={formatDateToUK(story.story_date)} // Format the date to UK format
                     />
                   </Col>
                 ))

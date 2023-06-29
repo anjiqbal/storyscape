@@ -13,6 +13,30 @@ padding-top: 2rem;
     
   }
   
+  .date-range-picker-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+    margin-top: 4rem;
+    gap: 2rem;
+  }
  
-
+.filter-btn{
+  background-color: #f9d8c4;
+  color: black;
+  display: block;
+  font-weight: bold;
+  border: 2px solid black;
+  padding: 2px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+  width: 100px;
+}
  
+.filter-btn:hover{
+  background-color: black;
+  color: #f9d8c4;
+  border: 2px solid black;
+}
