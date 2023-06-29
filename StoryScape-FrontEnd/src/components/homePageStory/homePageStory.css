@@ -17,6 +17,8 @@
 
 .home-card-container:hover {
   transform: scale(1.03);
+  transform: scale(1.03);
+  border: 2px solid black;
 }
 
 .card-content {

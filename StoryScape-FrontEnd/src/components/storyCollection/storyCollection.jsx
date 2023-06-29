@@ -45,10 +45,7 @@ export default function StoryCollection() {
   const filterResultsByDateRange = () => {
     const filteredResults = result.filter((story) => {
       const storyDate = new Date(story.story_date);
-      return (
-        storyDate >= new Date(startDate) &&
-        storyDate <= new Date(endDate)
-      );
+      return storyDate >= new Date(startDate) && storyDate <= new Date(endDate);
     });
 
     setFilteredResults(filteredResults);
@@ -56,8 +53,8 @@ export default function StoryCollection() {
 
   const formatDateToUK = (dateString) => {
     const date = new Date(dateString);
-    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-    return date.toLocaleDateString('en-GB', options);
+    const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+    return date.toLocaleDateString("en-GB", options);
   };
 
   const handleFilterClick = () => {
@@ -89,7 +86,12 @@ export default function StoryCollection() {
               onChange={(e) => setEndDate(e.target.value)}
             />
           </div>
-          <Button onClick={handleFilterClick} className="filter-btn">Filter</Button>
+          <div>
+        
+          <button onClick={handleFilterClick} className="filter-btn">
+            Filter
+          </button>
+          </div>
         </div>
         {filteredResults && (
           <main className="story-collection-content">
