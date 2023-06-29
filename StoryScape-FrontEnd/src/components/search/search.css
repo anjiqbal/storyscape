@@ -45,9 +45,11 @@ form {
 
 .search-button:hover {
   background-color: black;
-  border: 2px solid black;
   color: #c8d6b9;
   border-radius: 48px;
+  font-weight: bold;
+  border: 2px solid black;
+}
 }
 
 .description {
