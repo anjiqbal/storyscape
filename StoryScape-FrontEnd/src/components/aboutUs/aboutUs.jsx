@@ -1,7 +1,7 @@
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
-import weDaBest from "./djk.png";
-import team from "./grouppic.png";
+
+import team from "./dreamteam.png";
 import "./aboutUs.css";
 import Container from "react-bootstrap/esm/Container";
 export default function aboutUs() {
@@ -54,8 +54,9 @@ export default function aboutUs() {
           </div>
           <div className="our-team">
           <h2 className="sys32-heading">We are System 32</h2>
-          <h4>Our team consists of 6 members:</h4>
-          <h5>
+          <p>Thrown together after 11 weeks on the School of Code bootcamp, the team has come together and created this product that we are all incredibly proud of.</p>
+          <p>Our team consists of 6 members. Feel free to click on to our profiles and get in touch.</p>
+          <h5 className="about-linkedin">
             <i className="bi bi-linkedin"></i>
             <a
               rel="noreferrer"
@@ -66,7 +67,7 @@ export default function aboutUs() {
               &nbsp;Abdiraman Mohamed
             </a>
           </h5>
-          <h5>
+          <h5 className="about-linkedin">
             <i className="bi bi-linkedin"></i>
             <a
               rel="noreferrer"
@@ -77,7 +78,7 @@ export default function aboutUs() {
               &nbsp;Akiel Chaudry
             </a>
           </h5>
-          <h5>
+          <h5 className="about-linkedin">
             <i className="bi bi-linkedin"></i>
             <a
               rel="noreferrer"
@@ -88,7 +89,7 @@ export default function aboutUs() {
               &nbsp;Anjum Iqbal
             </a>
           </h5>
-          <h5>
+          <h5 className="about-linkedin">
             <i className="bi bi-linkedin"></i>
             <a
               rel="noreferrer"
@@ -99,7 +100,7 @@ export default function aboutUs() {
               &nbsp;Jay Kirtlan
             </a>
           </h5>
-          <h5>
+          <h5 className="about-linkedin">
             <i className="bi bi-linkedin"></i>
             <a
               rel="noreferrer"
@@ -110,7 +111,7 @@ export default function aboutUs() {
               &nbsp;Qasim Mohammed
             </a>
           </h5>
-          <h5>
+          <h5 className="about-linkedin">
             <i className="bi bi-linkedin"></i>
             <a
               rel="noreferrer"
@@ -122,8 +123,9 @@ export default function aboutUs() {
             </a>
           </h5>
           </div>
-          {/* <img src={team} /> */}
-   
+          <div className="about-img">
+          <img src={team} />
+          </div>
       </Container>
       <footer>
         <Footer />

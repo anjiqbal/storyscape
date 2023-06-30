@@ -1,12 +1,14 @@
 .team-anchor{
     text-decoration: none;
+    color: black;
 }
 .team-anchor:hover{
     /* text-decoration: underline; */
-    color: #FBF5E0;
-    background-color: black;
-    border-radius: 20px;
-    padding: 5px;
+color:  #565555;
+}
+
+.about-linkedin{
+    padding-bottom: 10px;
 }
 
 .story-heading {
@@ -17,6 +19,7 @@
 .sys32-heading{
     padding: 30px 0;
     margin: 0 auto;
+    text-align: center;
 }
 
 
@@ -28,9 +31,12 @@
     min-height: 100vh;
 }
 .about-us {
-    padding-top: 5rem;
+    padding: 5rem 0;
     background-color: #fbf5e0;
     width: 100%; /* Remove fixed width */
+    display: flex; /* Add this line */
+    flex-direction: column; /* Add this line */
+    align-items: center; /* Add this line */
 }
 
 .about-us-mission {
@@ -42,6 +48,27 @@
     width: 60%;
     margin: 0 auto;
 }
+
+.about-sub {
+    padding: 30px 0;
+    text-align: start;
+}
+
+.about-img {
+    width: 100%; /* Modify this line */
+    max-width: 100%; /* Add this line */
+    text-align: center; /* Add this line */
+    margin-top: 2rem; /* Add this line for spacing */
+
+}
+
+.about-img img {
+    width: 100%; /* Add this line */
+    max-width: 100%; /* Add this line */
+    height: auto; /* Add this line for aspect ratio */
+  }
+
+
 
 /* Media Queries */
 
