@@ -64,7 +64,7 @@ export default function aboutUs() {
               target="_blank"
               className="team-anchor"
             >
-              &nbsp;Abdiraman Mohamed
+              &nbsp;Abdirahman Mohamed
             </a>
           </h5>
           <h5 className="about-linkedin">
