@@ -41,7 +41,7 @@ export default function StoryPage() {
         <header>
           <NavBar />
         </header>
-        <Container className="mainStoryContainer">
+        <div className="main-story-container">
           {storyData ? (
             <>
               <h2 className="mainStoryTitle">{storyData.story_title}</h2>
@@ -80,7 +80,7 @@ export default function StoryPage() {
           ) : (
             <p>Loading...</p>
           )}
-        </Container>
+        </div>
 
         <footer>
           <Footer />
