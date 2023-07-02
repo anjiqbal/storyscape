@@ -66,7 +66,9 @@ export default function StoryPage() {
                 )}
               </Container>
               <Container className="main-story-content">
-                <p className="mainStoryContinent">{storyData.story_continent}</p>
+                <p className="mainStoryContinent">
+                  {storyData.story_continent}
+                </p>
 
                 <p className="storyLocation">{storyData.story_country}</p>
 

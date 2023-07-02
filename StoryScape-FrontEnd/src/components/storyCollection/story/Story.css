@@ -12,7 +12,7 @@
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   background-color: #fbf5e0;
-  width: 100%; /* Remove fixed width */
+
 }
 
 .imageContainerMain {

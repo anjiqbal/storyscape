@@ -56,7 +56,7 @@ color:  #565555;
 
 .about-img {
     width: 100%; /* Modify this line */
-    max-width: 100%; /* Add this line */
+    max-width: 60%; /* Add this line */
     text-align: center; /* Add this line */
     margin-top: 2rem; /* Add this line for spacing */
 
