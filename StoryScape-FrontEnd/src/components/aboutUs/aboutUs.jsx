@@ -1,7 +1,7 @@
 import NavBar from "../navBar/navBar";
 import Footer from "../Footer/footer";
 
-import team from "./dreamteam.png";
+import team from "./dreamteam.jpg";
 import "./aboutUs.css";
 import Container from "react-bootstrap/esm/Container";
 export default function aboutUs() {
