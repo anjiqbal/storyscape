@@ -7,7 +7,7 @@
 }
 
 .main-story-container {
-  padding-top: 5rem;
+  padding-top: 8rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
