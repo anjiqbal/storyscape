@@ -50,6 +50,13 @@
   transition: 0.75s;
 }
 
+.upload-story-btn:focus {
+  outline: none ;
+  border-color:  black;
+  box-shadow: 0 0 5px  black;
+}
+
+
 .upload-story-btn:hover {
   background-color: black;
   color: #c8d6b9;

@@ -29,6 +29,12 @@ form {
   width: 100%;
 }
 
+.search-input:focus {
+  outline: none ;
+  border-color:  black;
+  box-shadow: 0 0 5px  black;
+}
+
 .search-button {
   padding: 0.5rem 1rem;
   background-color: white;
@@ -37,7 +43,6 @@ form {
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-
   font-weight: bold;
   transition: 0.75s;
   border: 2px solid black;
@@ -50,6 +55,11 @@ form {
   font-weight: bold;
   border: 2px solid black;
 }
+
+.search-button:focus{
+  outline: none ;
+  border-color:  black;
+  box-shadow: 0 0 5px  black;
 }
 
 .description {
